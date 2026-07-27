@@ -1,0 +1,61 @@
+:root {
+  color-scheme: light;
+
+  --color-background: #f4f5f7;
+  --color-surface: #ffffff;
+  --color-surface-muted: #eceff3;
+  --color-text-primary: #172033;
+  --color-text-secondary: #596273;
+  --color-text-muted: #7d8594;
+  --color-border: #d8dde6;
+  --color-border-strong: #b8c0cd;
+  --color-accent: #2463eb;
+  --color-accent-hover: #1d4ed8;
+  --color-accent-soft: #dce7ff;
+  --color-focus: #2463eb;
+  --color-git-blue: #5b7cfa;
+  --color-git-purple: #8b6fd6;
+  --color-git-coral: #e77968;
+  --color-git-neutral: #b4bdca;
+
+  --font-sans:
+    system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  --content-width: 56.25rem;
+  --sidebar-width: clamp(20rem, 32vw, 28.75rem);
+  --mobile-header-height: 4rem;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --color-background: #171a20;
+  --color-surface: #1f232b;
+  --color-surface-muted: #292e38;
+  --color-text-primary: #f0f2f5;
+  --color-text-secondary: #b7bec9;
+  --color-text-muted: #8d96a5;
+  --color-border: #343a46;
+  --color-border-strong: #4a5261;
+  --color-accent: #7398ff;
+  --color-accent-hover: #91adff;
+  --color-accent-soft: #25345c;
+  --color-focus: #91adff;
+  --color-git-blue: #7398ff;
+  --color-git-purple: #a68ae0;
+  --color-git-coral: #ef8b7d;
+  --color-git-neutral: #667080;
+}

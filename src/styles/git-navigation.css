@@ -1,0 +1,173 @@
+.git-navigation {
+  --git-graph-width: 4rem;
+  --git-nav-row-height: 2rem;
+
+  position: relative;
+  flex: 1 0 calc(var(--git-nav-row-height) * 9);
+  width: 100%;
+  min-height: calc(var(--git-nav-row-height) * 9);
+}
+
+.git-navigation__graph {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--git-graph-width);
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.git-navigation__path,
+.git-navigation__active-path {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.git-navigation__path {
+  stroke-width: 1.25;
+  opacity: 0.42;
+}
+
+.git-navigation__path--blue {
+  stroke: var(--color-git-blue);
+}
+
+.git-navigation__path--purple {
+  stroke: var(--color-git-purple);
+}
+
+.git-navigation__path--coral {
+  stroke: var(--color-git-coral);
+}
+
+.git-navigation__active-path {
+  stroke-width: 2.25;
+}
+
+.git-navigation__active-path--blue {
+  stroke: var(--color-git-blue);
+}
+
+.git-navigation__active-path--purple {
+  stroke: var(--color-git-purple);
+}
+
+.git-navigation__active-path--coral {
+  stroke: var(--color-git-coral);
+}
+
+.git-navigation__list {
+  display: grid;
+  grid-template-rows: repeat(9, minmax(var(--git-nav-row-height), 1fr));
+  height: 100%;
+  list-style: none;
+}
+
+.git-navigation__link {
+  --git-node-color: var(--color-git-neutral);
+
+  display: grid;
+  grid-template-columns: var(--git-graph-width) minmax(0, 1fr);
+  align-items: center;
+  height: 100%;
+  border-radius: 0.25rem;
+  color: var(--color-text-secondary);
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+.git-navigation__link:hover {
+  color: var(--color-accent-hover);
+  background: var(--color-surface-muted);
+}
+
+.git-navigation__link[aria-current='location'] {
+  color: var(--color-text-primary);
+  background: var(--color-accent-soft);
+}
+
+.git-navigation__node-track {
+  position: relative;
+  align-self: stretch;
+}
+
+.git-navigation__node {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 0;
+  border-radius: 50%;
+  background: var(--git-node-color);
+  transform: translate(-50%, -50%);
+}
+
+.git-navigation__node--blue {
+  left: 18.75%;
+  --git-node-color: var(--color-git-blue);
+}
+
+.git-navigation__node--coral,
+.git-navigation__node--origin,
+.git-navigation__node--merge {
+  left: 50%;
+}
+
+.git-navigation__node--purple {
+  left: 81.25%;
+  --git-node-color: var(--color-git-purple);
+}
+
+.git-navigation__node--coral {
+  --git-node-color: var(--color-git-coral);
+}
+
+.git-navigation__link[aria-current='location'] .git-navigation__node {
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 0;
+  background: var(--git-node-color);
+  box-shadow: none;
+}
+
+.git-navigation__link[aria-current='location'] .git-navigation__node--merge {
+  --git-node-color: var(--color-text-primary);
+}
+
+.git-navigation__label {
+  min-width: 0;
+  font-size: 0.9375rem;
+  font-weight: 550;
+  white-space: nowrap;
+}
+
+.mobile-navigation.git-navigation {
+  --git-graph-width: clamp(7rem, 36vw, 9rem);
+  --git-nav-row-height: 3rem;
+
+  min-height: calc(var(--git-nav-row-height) * 9);
+  padding: var(--space-2) 0 var(--space-4);
+}
+
+.mobile-navigation.git-navigation[hidden] {
+  display: none;
+}
+
+.mobile-navigation .git-navigation__link {
+  column-gap: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+.mobile-navigation .git-navigation__label {
+  font-size: 1rem;
+}
+
+@media (min-width: 64rem) {
+  .mobile-navigation.git-navigation {
+    display: none;
+  }
+}
