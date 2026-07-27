@@ -59,16 +59,17 @@
   min-width: min(100%, 18rem);
   gap: var(--space-1);
   padding: var(--space-3) var(--space-6);
-  border: 1px solid var(--color-accent);
+  border: 1px solid var(--color-accent-red);
   border-radius: 0.25rem;
   color: var(--color-surface);
-  background: var(--color-accent);
+  background: var(--color-accent-red);
   font-weight: 700;
   text-decoration: none;
 }
 
 .contact-section__primary-action:hover {
-  background: var(--color-accent-hover);
+  border-color: var(--color-accent-red-strong);
+  background: var(--color-accent-red-strong);
 }
 
 .contact-section__primary-action span:last-child {
@@ -83,9 +84,9 @@
   align-items: center;
   justify-content: center;
   padding: var(--space-3) var(--space-6);
-  border: 1px solid var(--color-accent);
+  border: 1px solid var(--color-accent-red);
   border-radius: 0.25rem;
-  color: var(--color-accent);
+  color: var(--color-accent-red-strong);
   background: var(--color-surface);
   font-weight: 700;
   text-decoration: none;
@@ -93,7 +94,7 @@
 
 .contact-section__download-action:hover {
   color: var(--color-surface);
-  background: var(--color-accent-hover);
+  background: var(--color-accent-red-strong);
 }
 
 .contact-section__supporting-actions {

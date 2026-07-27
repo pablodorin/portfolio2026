@@ -480,6 +480,14 @@ A complete English-language professional portfolio page.
 
 Complete the light and dark themes and introduce controlled visual motion.
 
+### Phase 5A — Light/Dark Theme System
+
+Implementation status: Implemented.
+
+Phase 4D — Projects: Deferred.
+
+Phase 4X — Endpoint Blog: Deferred.
+
 ### Theme tasks
 
 - Detect the operating-system preference on the first visit.

@@ -13,11 +13,18 @@
 
 .education-entry__dates,
 .education-distinction__eyebrow {
-  color: var(--color-accent);
   font-family: var(--font-mono);
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.education-entry__dates {
+  color: var(--color-text-muted);
+}
+
+.education-distinction__eyebrow {
+  color: var(--color-section-label);
 }
 
 .education-section h2 {
@@ -50,7 +57,7 @@
 
 .education-section__studies > h3 {
   margin-bottom: var(--space-4);
-  color: var(--color-text-muted);
+  color: var(--color-section-label);
   font-family: var(--font-mono);
   font-size: 0.75rem;
   letter-spacing: 0.08em;
@@ -83,7 +90,8 @@
 }
 
 .education-entry__program {
-  color: var(--color-text-secondary);
+  color: var(--color-heading-secondary);
+  font-weight: 650;
   line-height: 1.4;
 }
 
@@ -109,7 +117,7 @@
 
 .education-distinction h3 {
   margin-block: var(--space-4) var(--space-2);
-  color: var(--color-git-purple);
+  color: var(--color-heading-primary);
   font-size: clamp(2rem, 5vw, 3rem);
   line-height: 1.1;
   letter-spacing: -0.04em;
@@ -117,7 +125,7 @@
 
 .education-distinction__title {
   margin-bottom: var(--space-3);
-  color: var(--color-text-primary);
+  color: var(--color-heading-secondary);
   font-weight: 650;
   line-height: 1.45;
 }

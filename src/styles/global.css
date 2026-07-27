@@ -8,6 +8,7 @@
 @import './about-section.css';
 @import './ai-workflow-section.css';
 @import './contact-section.css';
+@import './theme-toggle.css';
 
 body {
   min-height: 100svh;
@@ -19,6 +20,16 @@ body {
   line-height: 1.7;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  color: var(--color-selection-text);
+  background: var(--color-selection-background);
+}
+
+h1,
+h2 {
+  color: var(--color-heading);
 }
 
 html,
@@ -105,7 +116,7 @@ html {
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
   background: var(--color-surface);
-  box-shadow: 0 0.75rem 1.5rem rgb(23 32 51 / 12%);
+  box-shadow: var(--shadow-menu);
 }
 
 .mobile-navigation[hidden] {

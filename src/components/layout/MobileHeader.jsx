@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import GitSectionNavigation from '../navigation/GitSectionNavigation.jsx'
+import ThemeToggle from '../ui/ThemeToggle.jsx'
 
-function MobileHeader({ activeSectionId }) {
+function MobileHeader({ activeSectionId, onThemeToggle, theme }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const menuButtonRef = useRef(null)
 
@@ -42,17 +43,20 @@ function MobileHeader({ activeSectionId }) {
     <header className="mobile-header">
       <div className="mobile-header__bar">
         <p className="mobile-header__name">Pablo Dorin</p>
-        <button
-          ref={menuButtonRef}
-          className="mobile-menu-button"
-          type="button"
-          aria-label={`${isMenuOpen ? 'Close' : 'Open'} portfolio navigation`}
-          aria-expanded={isMenuOpen}
-          aria-controls="mobile-navigation"
-          onClick={() => setIsMenuOpen((currentValue) => !currentValue)}
-        >
-          <span aria-hidden="true">{isMenuOpen ? 'Close' : 'Menu'}</span>
-        </button>
+        <div className="mobile-header__controls">
+          <ThemeToggle theme={theme} onToggle={onThemeToggle} />
+          <button
+            ref={menuButtonRef}
+            className="mobile-menu-button"
+            type="button"
+            aria-label={`${isMenuOpen ? 'Close' : 'Open'} portfolio navigation`}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
+            onClick={() => setIsMenuOpen((currentValue) => !currentValue)}
+          >
+            <span aria-hidden="true">{isMenuOpen ? 'Close' : 'Menu'}</span>
+          </button>
+        </div>
       </div>
 
       <GitSectionNavigation

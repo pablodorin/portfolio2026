@@ -139,6 +139,18 @@ The light theme is the primary visual direction.
 
 The dark theme must preserve the same editorial identity and readability.
 
+Implementation status: Phase 5A implemented.
+
+The selected theme is applied through a `data-theme` attribute on the root
+document element. The operating-system preference determines the first visit.
+An explicit user selection is persisted locally and overrides the system
+preference on later visits. The visual direction is French editorial
+minimalism with software-engineering structure, without literal flag
+decoration or neon treatment.
+
+Projects and Endpoint Blog remain deferred and retain their existing
+placeholders.
+
 ## Main navigation
 
 Desktop navigation:
@@ -510,11 +522,11 @@ The portfolio should feel:
 
 Primary characteristics:
 
-- light background;
+- near-white light environment;
 - generous whitespace;
 - clear typography;
-- restrained blue accent;
-- dark-theme alternative;
+- structural blue with restrained red counterpoints;
+- selectable dark-navy theme with warm off-white text;
 - vertical desktop navigation;
 - a Git-history-inspired desktop navigation graph;
 - subtle use of technology logos;

@@ -115,8 +115,8 @@
 }
 
 .experience-entry--supporting {
-  padding-left: var(--space-3);
-  border-left: 0.1875rem solid var(--color-border);
+  padding-left: 0;
+  border-left: 0;
 }
 
 .experience-entry__meta {
@@ -150,7 +150,7 @@
 }
 
 .experience-entry__role {
-  color: var(--color-text-primary);
+  color: var(--color-heading-secondary);
   font-size: 1.0625rem;
   font-weight: 700;
 }

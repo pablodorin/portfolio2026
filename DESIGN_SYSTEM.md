@@ -286,53 +286,73 @@ Do not use body text smaller than a comfortable reading size.
 
 Use CSS custom properties.
 
+The implemented visual direction is French editorial minimalism with
+software-engineering structure. Blue provides structure, navigation, links,
+and primary actions. Red is a restrained counterpoint for validation,
+accountability, and selected details. This influence must not be represented
+with flag imagery, tricolour stripes, patriotic symbols, or blue-white-red
+gradients.
+
 ### Light theme
 
-Suggested palette:
+Implemented palette:
 
-- background: `#f4f5f7`;
+- background: `#ffffff`;
+- subtle background: `#f6f7fa`;
 - surface: `#ffffff`;
-- muted surface: `#eceff3`;
-- primary text: `#172033`;
-- secondary text: `#596273`;
-- muted text: `#7d8594`;
+- raised surface: `#f8f9fc`;
+- muted surface: `#f1f3f7`;
+- primary text: `#111827`;
+- secondary text: `#475569`;
+- muted text: `#64748b`;
+- heading blue: `#173a7a`;
 - border: `#d8dde6`;
-- stronger border: `#b8c0cd`;
-- accent: `#2463eb`;
-- accent hover: `#1d4ed8`;
-- soft accent: `#dce7ff`;
-- focus: `#2463eb`.
+- stronger border: `#b8c2d1`;
+- interactive blue: `#2457c5`;
+- strong blue: `#173a7a`;
+- red accent: `#c93643`;
+- strong red: `#a92332`;
+- focus: `#2457c5`.
 
-Git-history decorative colors:
+Git-navigation colors:
 
-- blue: `#5b7cfa`;
-- purple: `#8b6fd6`;
-- coral: `#e77968`;
-- neutral: `#b4bdca`.
+- blue: `#3768ca`;
+- purple: `#7156a8`;
+- coral: `#c93643`;
+- neutral: `#a8b2c1`.
 
 ### Dark theme
 
-Suggested palette:
+Implemented palette:
 
-- background: `#171a20`;
-- surface: `#1f232b`;
-- muted surface: `#292e38`;
-- primary text: `#f0f2f5`;
-- secondary text: `#b7bec9`;
-- muted text: `#8d96a5`;
-- border: `#343a46`;
-- stronger border: `#4a5261`;
-- accent: `#7398ff`;
-- accent hover: `#91adff`;
-- soft accent: `#25345c`;
-- focus: `#91adff`.
+- dark navy background: `#0b1020`;
+- subtle background: `#0f1628`;
+- surface: `#121a2b`;
+- raised surface: `#182237`;
+- warm off-white primary text: `#f5f1e8`;
+- secondary text: `#c3cbd8`;
+- muted text: `#9ba7ba`;
+- border: `#2c3850`;
+- stronger border: `#42506a`;
+- blue accent: `#7ea7ff`;
+- strong blue: `#a2beff`;
+- red accent: `#ff7b82`;
+- strong red: `#ff9ba0`;
+- focus: `#a2beff`.
 
 Dark-theme Git-history colors:
 
-- blue: `#7398ff`;
-- purple: `#a68ae0`;
-- coral: `#ef8b7d`;
-- neutral: `#667080`.
+- blue: `#7ea7ff`;
+- purple: `#b39ae8`;
+- coral: `#ff7b82`;
+- neutral: `#6f7d93`.
+
+The root `html` element receives `data-theme="light"` or
+`data-theme="dark"`. On the first visit, the operating-system preference is
+applied before React paints. An explicit user selection is stored in
+`localStorage` and overrides the operating-system preference on later visits.
+Theme controls remain visible and accessible in the desktop sidebar and mobile
+header.
 
 ### Color rules
 
@@ -352,7 +372,6 @@ Secondary Git colors should appear only in decorative elements.
 Avoid:
 
 - pure black as the main background;
-- pure white as the large page background;
 - neon green;
 - cyberpunk purple;
 - rainbow palettes;
