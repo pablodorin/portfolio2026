@@ -1,5 +1,7 @@
 import { navigationItems } from '../../content/navigation.js'
 
+import useTranslation from '../../i18n/useTranslation.js'
+
 function SectionNavigation({
   activeSectionId,
   className,
@@ -7,11 +9,13 @@ function SectionNavigation({
   hidden,
   onNavigate,
 }) {
+  const { t } = useTranslation()
+
   return (
     <nav
       id={id}
       className={className}
-      aria-label="Portfolio sections"
+      aria-label={t('navigation.ariaLabel')}
       hidden={hidden}
     >
       <ol className="section-navigation">

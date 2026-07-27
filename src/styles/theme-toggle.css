@@ -42,11 +42,6 @@
   background: var(--color-surface-raised);
 }
 
-.sidebar__theme-control {
-  display: flex;
-  flex: 0 0 auto;
-}
-
 .mobile-header__controls {
   display: flex;
   align-items: center;

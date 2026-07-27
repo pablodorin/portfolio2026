@@ -149,8 +149,13 @@
   --git-graph-width: clamp(7rem, 36vw, 9rem);
   --git-nav-row-height: 3rem;
 
-  min-height: calc(var(--git-nav-row-height) * 9);
+  min-height: 0;
   padding: var(--space-2) 0 var(--space-4);
+}
+
+.mobile-navigation .git-navigation__graph,
+.mobile-navigation .git-navigation__list {
+  height: calc(var(--git-nav-row-height) * 9);
 }
 
 .mobile-navigation.git-navigation[hidden] {
@@ -164,6 +169,8 @@
 
 .mobile-navigation .git-navigation__label {
   font-size: 1rem;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 @media (min-width: 64rem) {

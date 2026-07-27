@@ -1,31 +1,38 @@
 import ActionLink from '../components/ui/ActionLink.jsx'
+import useTranslation from '../i18n/useTranslation.js'
 
 function HomeSection() {
+  const { messages } = useTranslation()
+  const { actions, actionsLabel, introduction, specialization, subtitle, title } =
+    messages.home
+
   return (
     <section id="home" className="home-section" aria-labelledby="home-title">
       <div className="home-section__content">
-        <h1 id="home-title">Pablo Dorin</h1>
-        <p className="home-section__specialization">
-          Java Backend &amp; Full-Stack Development
+        <h1 id="home-title" data-home-reveal="1">
+          {title}
+        </h1>
+        <p className="home-section__specialization" data-home-reveal="2">
+          {specialization}
         </p>
-        <p className="home-section__subtitle">
-          Enterprise Applications <span aria-hidden="true">·</span> System
-          Integration <span aria-hidden="true">·</span> AI-Augmented Engineering
+        <p className="home-section__subtitle" data-home-reveal="3">
+          {subtitle}
         </p>
-        <p className="home-section__introduction">
-          Senior Software Engineer with 18+ years of professional experience
-          delivering enterprise software, Java backend development, system
-          integration, and full-stack solutions across international teams and
-          business-critical environments.
+        <p className="home-section__introduction" data-home-reveal="3">
+          {introduction}
         </p>
 
-        <nav className="home-section__actions" aria-label="Primary actions">
+        <nav
+          className="home-section__actions"
+          aria-label={actionsLabel}
+          data-home-reveal="4"
+        >
           <ActionLink href="#projects" variant="primary">
-            View Projects
+            {actions.projects}
           </ActionLink>
-          <ActionLink href="#endpoint">Read Endpoint</ActionLink>
+          <ActionLink href="#endpoint">{actions.endpoint}</ActionLink>
           <ActionLink href="#contact" variant="red">
-            Contact Me
+            {actions.contact}
           </ActionLink>
         </nav>
       </div>

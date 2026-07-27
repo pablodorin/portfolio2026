@@ -1,27 +1,26 @@
 import ExperienceEntry from '../components/experience/ExperienceEntry.jsx'
 import ExperienceIndex from '../components/experience/ExperienceIndex.jsx'
-import { experienceItems } from '../content/experience.js'
+import useTranslation from '../i18n/useTranslation.js'
 
 function ExperienceSection() {
+  const { messages } = useTranslation()
+  const { introduction, items, title } = messages.experience
+
   return (
     <section
       id="experience"
       className="experience-section"
       aria-labelledby="experience-title"
     >
-      <header className="experience-section__header">
-        <h2 id="experience-title">Professional Experience</h2>
-        <p>
-          Enterprise engineering, architecture, integration, and technical
-          coordination across international and business-critical environments.
-          Concurrent engagements are identified explicitly.
-        </p>
+      <header className="experience-section__header" data-reveal>
+        <h2 id="experience-title">{title}</h2>
+        <p>{introduction}</p>
       </header>
 
-      <ExperienceIndex experiences={experienceItems} />
+      <ExperienceIndex experiences={items} />
 
       <div className="experience-section__timeline">
-        {experienceItems.map((experience) => (
+        {items.map((experience) => (
           <ExperienceEntry key={experience.id} experience={experience} />
         ))}
       </div>

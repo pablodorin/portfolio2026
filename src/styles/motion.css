@@ -1,0 +1,235 @@
+:root {
+  --motion-duration-reveal: 520ms;
+  --motion-duration-interface: 180ms;
+  --motion-offset-reveal: 0.875rem;
+  --motion-stagger: 70ms;
+  --motion-easing-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.motion-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(var(--motion-offset-reveal));
+  transition:
+    opacity var(--motion-duration-reveal) var(--motion-easing-editorial),
+    transform var(--motion-duration-reveal) var(--motion-easing-editorial);
+}
+
+.motion-ready [data-reveal-delay='1'] {
+  transition-delay: var(--motion-stagger);
+}
+
+.motion-ready [data-reveal-delay='2'] {
+  transition-delay: calc(var(--motion-stagger) * 2);
+}
+
+.motion-ready [data-reveal-delay='3'] {
+  transition-delay: calc(var(--motion-stagger) * 3);
+}
+
+.motion-ready [data-reveal].is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.motion-ready [data-home-reveal] {
+  animation: home-editorial-entrance var(--motion-duration-reveal)
+    var(--motion-easing-editorial) both;
+}
+
+.motion-ready [data-home-reveal='2'] {
+  animation-delay: 60ms;
+}
+
+.motion-ready [data-home-reveal='3'] {
+  animation-delay: 120ms;
+}
+
+.motion-ready [data-home-reveal='4'] {
+  animation-delay: 180ms;
+}
+
+@keyframes home-editorial-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(var(--motion-offset-reveal));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:where(a, button) {
+  transition:
+    color var(--motion-duration-interface) ease,
+    background-color var(--motion-duration-interface) ease,
+    border-color var(--motion-duration-interface) ease,
+    box-shadow var(--motion-duration-interface) ease,
+    transform var(--motion-duration-interface) var(--motion-easing-editorial);
+}
+
+:where(
+    .action-link,
+    .theme-toggle,
+    .language-selector__button,
+    .mobile-menu-button,
+    .contact-section__primary-action,
+    .contact-section__download-action,
+    .contact-section__supporting-actions a,
+    .experience-index a,
+    .technologies-index a,
+    .education-index a,
+    .about-index a,
+    .workflow-diagram__link
+  ):is(:hover, :focus-visible) {
+  position: relative;
+  z-index: 2;
+  transform: scale(1.02);
+}
+
+.workflow-diagram__image {
+  transition:
+    border-color var(--motion-duration-interface) ease,
+    color var(--motion-duration-interface) ease,
+    transform var(--motion-duration-interface) var(--motion-easing-editorial);
+}
+
+.workflow-diagram__link:is(:hover, :focus-visible)
+  .workflow-diagram__image {
+  transform: scale(1.07);
+}
+
+:where(.technology-item, .education-entry, .workflow-step, .about-theme) {
+  transform-origin: center;
+  transition:
+    background-color var(--motion-duration-interface) ease,
+    border-color var(--motion-duration-interface) ease,
+    box-shadow var(--motion-duration-interface) ease,
+    transform var(--motion-duration-interface) var(--motion-easing-editorial);
+}
+
+:where(.technology-item, .education-entry):hover {
+  position: relative;
+  z-index: 1;
+  transform: scale(1.018);
+}
+
+.motion-ready
+  :where(.education-entry, .workflow-step, .about-theme).is-revealed:is(
+    :hover,
+    :focus-within
+  ) {
+  position: relative;
+  z-index: 1;
+  transform: translateY(0) scale(1.012);
+}
+
+.experience-entry {
+  transform-origin: center;
+  transition:
+    border-color var(--motion-duration-interface) ease,
+    transform var(--motion-duration-interface) var(--motion-easing-editorial);
+}
+
+.motion-ready .experience-entry.is-revealed:is(:hover, :focus-within) {
+  position: relative;
+  z-index: 1;
+  transform: translateY(0) scale(1.006);
+}
+
+.git-navigation__label {
+  display: inline-block;
+  transform-origin: left center;
+  transition:
+    color var(--motion-duration-interface) ease,
+    transform var(--motion-duration-interface) var(--motion-easing-editorial);
+}
+
+.git-navigation__link:is(:hover, :focus-visible) .git-navigation__label {
+  transform: scale(1.025);
+}
+
+.git-navigation__link:is(:hover, :focus-visible) .git-navigation__node {
+  transform: translate(-50%, -50%) scale(1.12);
+}
+
+:where(body, .sidebar, .mobile-header, .mobile-navigation) {
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+.git-navigation__path,
+.git-navigation__active-path {
+  transition:
+    stroke var(--motion-duration-interface) ease,
+    opacity var(--motion-duration-interface) ease;
+}
+
+.git-navigation__node {
+  transition:
+    background-color var(--motion-duration-interface) ease,
+    box-shadow var(--motion-duration-interface) ease,
+    opacity var(--motion-duration-interface) ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-ready [data-reveal],
+  .motion-ready [data-home-reveal] {
+    opacity: 1;
+    transform: none;
+    animation: none;
+    transition: none;
+  }
+
+  :where(
+      body,
+      a,
+      button,
+      .sidebar,
+      .mobile-header,
+      .mobile-navigation,
+      .git-navigation__path,
+      .git-navigation__active-path,
+      .git-navigation__node,
+      .git-navigation__label,
+      .workflow-diagram__image,
+      .technology-item,
+      .education-entry,
+      .workflow-step,
+      .about-theme,
+      .experience-entry
+    ) {
+    transition: none;
+  }
+
+  :where(
+      .action-link,
+      .theme-toggle,
+      .language-selector__button,
+      .mobile-menu-button,
+      .contact-section__primary-action,
+      .contact-section__download-action,
+      .contact-section__supporting-actions a,
+      .experience-index a,
+      .technologies-index a,
+      .education-index a,
+      .about-index a,
+      .workflow-diagram__link,
+      .workflow-diagram__image,
+      .technology-item,
+      .education-entry,
+      .workflow-step,
+      .about-theme,
+      .experience-entry,
+      .git-navigation__label
+    ) {
+    transform: none;
+  }
+
+  .git-navigation__node {
+    transform: translate(-50%, -50%);
+  }
+}

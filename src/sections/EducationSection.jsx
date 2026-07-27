@@ -1,35 +1,47 @@
-import {
-  educationItems,
-  internationalDistinction,
-} from '../content/education.js'
 import EducationIndex from '../components/education/EducationIndex.jsx'
+import useTranslation from '../i18n/useTranslation.js'
 
 function EducationSection() {
+  const { messages } = useTranslation()
+  const {
+    academicStudies,
+    distinction,
+    distinctionLabel,
+    introduction,
+    items,
+    title,
+  } = messages.education
+
   return (
     <section
       id="education"
       className="education-section"
       aria-labelledby="education-title"
     >
-      <header className="education-section__header">
-        <h2 id="education-title">Education</h2>
-        <p>
-          Formal studies in systems analysis, psychology, and economics,
-          complemented by an international leadership distinction.
-        </p>
+      <header className="education-section__header" data-reveal>
+        <h2 id="education-title">{title}</h2>
+        <p>{introduction}</p>
       </header>
 
       <EducationIndex
-        studies={educationItems}
-        distinction={internationalDistinction}
+        studies={items}
+        distinction={distinction}
       />
 
       <div className="education-section__grid">
         <div className="education-section__studies">
-          <h3>Academic studies</h3>
+          <h3 data-reveal data-reveal-delay="1">
+            {academicStudies}
+          </h3>
           <ol className="education-list">
-            {educationItems.map(({ dates, id, institution, program }) => (
-              <li key={id} id={id} className="education-entry">
+            {items.map(({ dates, id, institution, program }, index) => (
+              <li
+                key={id}
+                id={id}
+                className="education-entry"
+                data-reveal
+                data-reveal-delay={String((index % 3) + 1)}
+              >
                 <p className="education-entry__meta">
                   <span className="education-entry__dates">{dates}</span>
                 </p>
@@ -41,23 +53,25 @@ function EducationSection() {
         </div>
 
         <aside
-          id={internationalDistinction.id}
+          id={distinction.id}
           className="education-distinction"
           aria-labelledby="education-distinction-title"
+          data-reveal
+          data-reveal-delay="2"
         >
           <p className="education-distinction__eyebrow">
-            International distinction · {internationalDistinction.date}
+            {distinctionLabel} · {distinction.date}
           </p>
           <h3 id="education-distinction-title">
-            {internationalDistinction.abbreviation}
+            {distinction.abbreviation}
           </h3>
           <p className="education-distinction__title">
-            {internationalDistinction.title}
+            {distinction.title}
           </p>
           <p className="education-distinction__meta">
-            <span>{internationalDistinction.organization}</span>
+            <span>{distinction.organization}</span>
             <span aria-hidden="true"> · </span>
-            <span>{internationalDistinction.location}</span>
+            <span>{distinction.location}</span>
           </p>
         </aside>
       </div>

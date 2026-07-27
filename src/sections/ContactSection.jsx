@@ -1,4 +1,4 @@
-import { contactContent, contactLinks } from '../content/contact.js'
+import useTranslation from '../i18n/useTranslation.js'
 
 function BrandIcon({ brand }) {
   const paths = {
@@ -16,6 +16,9 @@ function BrandIcon({ brand }) {
 }
 
 function ContactSection() {
+  const { messages } = useTranslation()
+  const contactContent = messages.contact.content
+  const contactLinks = messages.contact.links
   const primaryLink = contactLinks.find((link) => link.primary)
   const cvLink = contactLinks.find((link) => link.id === 'cv')
   const socialLinks = contactLinks.filter((link) => link.external)
@@ -27,16 +30,20 @@ function ContactSection() {
       aria-labelledby="contact-title"
     >
       <div className="contact-section__content">
-        <header className="contact-section__header">
+        <header className="contact-section__header" data-reveal>
           <h2 id="contact-title">{contactContent.title}</h2>
         </header>
 
-        <div className="contact-section__copy">
+        <div className="contact-section__copy" data-reveal data-reveal-delay="1">
           <p>{contactContent.introduction}</p>
           <p>{contactContent.availability}</p>
         </div>
 
-        <div className="contact-section__actions">
+        <div
+          className="contact-section__actions"
+          data-reveal
+          data-reveal-delay="2"
+        >
           <div className="contact-section__principal-actions">
             <a
               className="contact-section__primary-action"
@@ -57,7 +64,7 @@ function ContactSection() {
 
           <nav
             className="contact-section__supporting-actions"
-            aria-label="Professional profiles"
+            aria-label={messages.contact.profilesLabel}
           >
             {socialLinks.map(
               ({ external, href, id, label }) => (

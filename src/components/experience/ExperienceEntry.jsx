@@ -1,4 +1,8 @@
+import useTranslation from '../../i18n/useTranslation.js'
+
 function ExperienceEntry({ experience }) {
+  const { messages } = useTranslation()
+  const labels = messages.experience.entry
   const {
     company,
     context,
@@ -19,6 +23,7 @@ function ExperienceEntry({ experience }) {
       id={id}
       className={`experience-entry experience-entry--${emphasis}`}
       aria-labelledby={`${id}-company`}
+      data-reveal
     >
       <div className="experience-entry__meta">
         <p className="experience-entry__dates">{dates}</p>
@@ -42,7 +47,9 @@ function ExperienceEntry({ experience }) {
         {mobileSummary && (
           <p className="experience-entry__mobile-summary">
             <strong>
-              {contributions.length > 0 ? 'Selected contributions.' : 'Summary.'}
+              {contributions.length > 0
+                ? labels.selectedContributionsSummary
+                : labels.summary}
             </strong>{' '}
             {mobileSummary}
           </p>
@@ -50,7 +57,7 @@ function ExperienceEntry({ experience }) {
 
         {contributions.length > 0 && (
           <div className="experience-entry__details">
-            <h4>Selected contributions</h4>
+            <h4>{labels.selectedContributions}</h4>
             <ul className="experience-entry__contributions">
               {contributions.map((contribution) => (
                 <li key={contribution}>{contribution}</li>
@@ -62,7 +69,7 @@ function ExperienceEntry({ experience }) {
         {technologies.length > 0 && (
           <ul
             className="experience-entry__technologies"
-            aria-label="Technologies and practices"
+            aria-label={labels.technologiesLabel}
           >
             {technologies.map((technology) => (
               <li key={technology}>{technology}</li>

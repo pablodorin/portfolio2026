@@ -22,6 +22,22 @@
               : 'light'
 
         document.documentElement.dataset.theme = theme
+
+        const languageStorageKey = 'portfolio-language'
+        const supportedLanguages = ['en', 'es', 'fr']
+        let savedLanguage = null
+
+        try {
+          savedLanguage = window.localStorage.getItem(languageStorageKey)
+        } catch {
+          savedLanguage = null
+        }
+
+        document.documentElement.lang = supportedLanguages.includes(
+          savedLanguage,
+        )
+          ? savedLanguage
+          : 'en'
       })()
     </script>
     <title>Pablo Dorin — Senior Software Engineer</title>

@@ -1,3 +1,5 @@
+import useTranslation from '../../i18n/useTranslation.js'
+
 function WorkflowGlyph({ stepId }) {
   const glyphs = {
     'frame-the-problem': (
@@ -43,8 +45,15 @@ function WorkflowGlyph({ stepId }) {
 }
 
 function WorkflowDiagram({ steps }) {
+  const { messages } = useTranslation()
+
   return (
-    <nav className="workflow-diagram" aria-label="AI workflow steps">
+    <nav
+      className="workflow-diagram"
+      aria-label={messages.aiWorkflow.stepsLabel}
+      data-reveal
+      data-reveal-delay="1"
+    >
       <ol className="workflow-diagram__list">
         {steps.map(({ id, number, title }) => (
           <li key={id} className="workflow-diagram__item">

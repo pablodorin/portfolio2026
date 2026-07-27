@@ -1,4 +1,5 @@
 import { navigationItems } from '../../content/navigation.js'
+import useTranslation from '../../i18n/useTranslation.js'
 
 const branchPaths = {
   blue: 'M32 16C32 30 12 30 12 48V208C12 228 32 220 32 240',
@@ -49,18 +50,21 @@ const activePathsBySection = {
 
 function GitSectionNavigation({
   activeSectionId,
+  children,
   className = '',
   hidden,
   id,
   onNavigate,
 }) {
+  const { messages, t } = useTranslation()
   const activePaths = activePathsBySection[activeSectionId] ?? []
+  const translatedItems = messages.navigation.items
 
   return (
     <nav
       id={id}
       className={`git-navigation ${className}`.trim()}
-      aria-label="Portfolio sections"
+      aria-label={t('navigation.ariaLabel')}
       hidden={hidden}
     >
       <svg
@@ -93,7 +97,7 @@ function GitSectionNavigation({
       </svg>
 
       <ol className="git-navigation__list">
-        {navigationItems.map(({ id, label }) => (
+        {navigationItems.map(({ id }, index) => (
           <li key={id}>
             <a
               className="git-navigation__link"
@@ -109,11 +113,14 @@ function GitSectionNavigation({
                   />
                 ))}
               </span>
-              <span className="git-navigation__label">{label}</span>
+              <span className="git-navigation__label">
+                {translatedItems[index].label}
+              </span>
             </a>
           </li>
         ))}
       </ol>
+      {children}
     </nav>
   )
 }

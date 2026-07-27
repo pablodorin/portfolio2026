@@ -2,7 +2,7 @@ export const contactContent = {
   label: 'Contact',
   title: 'Let’s talk.',
   introduction:
-    'I am open to senior backend and full-stack opportunities involving enterprise applications, system integration, and AI-augmented engineering.',
+    'I am open to opportunities involving enterprise applications, system integration, and AI-augmented engineering.',
   availability:
     'Based in Buenos Aires, Argentina, I am available for remote collaboration and international projects. For professional enquiries, email is the best way to reach me.',
 }

@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import GitSectionNavigation from '../navigation/GitSectionNavigation.jsx'
+import LanguageSelector from '../ui/LanguageSelector.jsx'
 import ThemeToggle from '../ui/ThemeToggle.jsx'
+import useTranslation from '../../i18n/useTranslation.js'
 
 function MobileHeader({ activeSectionId, onThemeToggle, theme }) {
+  const { t } = useTranslation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const menuButtonRef = useRef(null)
 
@@ -42,19 +45,29 @@ function MobileHeader({ activeSectionId, onThemeToggle, theme }) {
   return (
     <header className="mobile-header">
       <div className="mobile-header__bar">
-        <p className="mobile-header__name">Pablo Dorin</p>
+        <p className="mobile-header__name">{t('site.name')}</p>
         <div className="mobile-header__controls">
           <ThemeToggle theme={theme} onToggle={onThemeToggle} />
           <button
             ref={menuButtonRef}
             className="mobile-menu-button"
             type="button"
-            aria-label={`${isMenuOpen ? 'Close' : 'Open'} portfolio navigation`}
+            aria-label={t(
+              isMenuOpen
+                ? 'controls.mobileMenu.closeLabel'
+                : 'controls.mobileMenu.openLabel',
+            )}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-navigation"
             onClick={() => setIsMenuOpen((currentValue) => !currentValue)}
           >
-            <span aria-hidden="true">{isMenuOpen ? 'Close' : 'Menu'}</span>
+            <span aria-hidden="true">
+              {t(
+                isMenuOpen
+                  ? 'controls.mobileMenu.closeText'
+                  : 'controls.mobileMenu.openText',
+              )}
+            </span>
           </button>
         </div>
       </div>
@@ -65,7 +78,11 @@ function MobileHeader({ activeSectionId, onThemeToggle, theme }) {
         activeSectionId={activeSectionId}
         hidden={!isMenuOpen}
         onNavigate={handleNavigation}
-      />
+      >
+        <div className="mobile-navigation__language">
+          <LanguageSelector />
+        </div>
+      </GitSectionNavigation>
     </header>
   )
 }

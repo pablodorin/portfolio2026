@@ -1,12 +1,21 @@
+import useTranslation from '../../i18n/useTranslation.js'
+
 function ThemeToggle({ theme, onToggle }) {
+  const { t } = useTranslation()
   const nextTheme = theme === 'dark' ? 'light' : 'dark'
-  const visibleLabel = theme === 'dark' ? 'Light' : 'Dark'
+  const visibleLabel = t(
+    theme === 'dark' ? 'controls.theme.lightLabel' : 'controls.theme.darkLabel',
+  )
 
   return (
     <button
       className="theme-toggle"
       type="button"
-      aria-label={`Switch to ${nextTheme} theme`}
+      aria-label={t(
+        nextTheme === 'dark'
+          ? 'controls.theme.switchToDark'
+          : 'controls.theme.switchToLight',
+      )}
       aria-pressed={theme === 'dark'}
       onClick={onToggle}
     >

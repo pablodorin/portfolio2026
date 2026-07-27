@@ -114,6 +114,18 @@ Do not use flags as language selectors.
 
 The selected language should persist in local storage.
 
+Phase 6A implementation:
+
+- English remains the default language;
+- explicit selection is persisted under `portfolio-language`;
+- the root document `lang` attribute updates to `en`, `es`, or `fr`;
+- section ids and anchor destinations remain language-independent;
+- language changes do not reload the page or modify the URL;
+- the complete Spanish interface and approved portfolio content are available
+  through the `es` locale;
+- the complete French interface and approved portfolio content are available
+  through the `fr` locale.
+
 Target navigation structure:
 
 - `/en`

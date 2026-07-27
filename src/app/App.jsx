@@ -1,5 +1,5 @@
 import PortfolioLayout from '../components/layout/PortfolioLayout.jsx'
-import { navigationItems } from '../content/navigation.js'
+import useTranslation from '../i18n/useTranslation.js'
 import AIWorkflowSection from '../sections/AIWorkflowSection.jsx'
 import AboutSection from '../sections/AboutSection.jsx'
 import ContactSection from '../sections/ContactSection.jsx'
@@ -10,6 +10,9 @@ import SectionPlaceholder from '../sections/SectionPlaceholder.jsx'
 import TechnologiesSection from '../sections/TechnologiesSection.jsx'
 
 function App() {
+  const { messages } = useTranslation()
+  const navigationItems = messages.navigation.items
+
   return (
     <PortfolioLayout>
       <HomeSection />

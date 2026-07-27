@@ -5,6 +5,7 @@ function WorkflowStep({ body, emphasis, id, number, title }) {
       className={`workflow-step${
         emphasis ? ` workflow-step--${emphasis}` : ''
       }`}
+      data-reveal
     >
       <article aria-labelledby={`${id}-title`}>
         <p className="workflow-step__number" aria-hidden="true">

@@ -1,9 +1,13 @@
+import useTranslation from '../../i18n/useTranslation.js'
+
 function TechnologiesIndex({ groups }) {
+  const { messages } = useTranslation()
+  const index = messages.technologies.index
   const indexItems = [
     ...groups,
     {
       id: 'ai-workflow',
-      title: 'AI-Augmented Software Development',
+      title: index.aiWorkflow,
     },
   ]
 
@@ -21,13 +25,15 @@ function TechnologiesIndex({ groups }) {
   return (
     <nav
       className="technologies-index"
-      aria-label="Technology groups"
+      aria-label={index.ariaLabel}
+      data-reveal
+      data-reveal-delay="1"
     >
       <label
         className="technologies-index__mobile-label"
         htmlFor="technologies-selector"
       >
-        Select a technology group
+        {index.mobileLabel}
       </label>
       <select
         id="technologies-selector"
@@ -36,7 +42,7 @@ function TechnologiesIndex({ groups }) {
         onChange={handleSelection}
       >
         <option value="" disabled>
-          Choose a group
+          {index.placeholder}
         </option>
         {indexItems.map(({ id, title }) => (
           <option key={id} value={id}>
@@ -46,7 +52,7 @@ function TechnologiesIndex({ groups }) {
       </select>
 
       <div className="technologies-index__desktop">
-        <p>Jump to a technology group</p>
+        <p>{index.jumpLabel}</p>
         <ol>
           {indexItems.map(({ id, title }) => (
             <li key={id}>

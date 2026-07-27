@@ -6,6 +6,7 @@ function TechnologyGroup({ description, emphasis, id, items, title }) {
       id={id}
       className={`technology-group technology-group--${emphasis}`}
       aria-labelledby={`${id}-title`}
+      data-reveal
     >
       <header className="technology-group__header">
         <h3 id={`${id}-title`}>{title}</h3>

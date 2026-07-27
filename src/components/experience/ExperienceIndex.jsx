@@ -1,9 +1,13 @@
+import useTranslation from '../../i18n/useTranslation.js'
+
 function ExperienceIndex({ experiences }) {
+  const { messages } = useTranslation()
+  const index = messages.experience.index
   const indexItems = [
     ...experiences,
     {
-      company: 'Freelance',
-      dates: 'View Projects',
+      company: index.freelanceCompany,
+      dates: index.freelanceAction,
       id: 'projects',
     },
   ]
@@ -22,13 +26,15 @@ function ExperienceIndex({ experiences }) {
   return (
     <nav
       className="experience-index"
-      aria-label="Professional experience entries"
+      aria-label={index.ariaLabel}
+      data-reveal
+      data-reveal-delay="1"
     >
       <label
         className="experience-index__mobile-label"
         htmlFor="experience-selector"
       >
-        Select an experience
+        {index.mobileLabel}
       </label>
       <select
         id="experience-selector"
@@ -37,7 +43,7 @@ function ExperienceIndex({ experiences }) {
         onChange={handleSelection}
       >
         <option value="" disabled>
-          Choose a company
+          {index.placeholder}
         </option>
         {indexItems.map(({ company, id }) => (
           <option key={id} value={id}>
@@ -47,7 +53,7 @@ function ExperienceIndex({ experiences }) {
       </select>
 
       <div className="experience-index__desktop">
-        <p className="experience-index__label">Jump to an experience</p>
+        <p className="experience-index__label">{index.jumpLabel}</p>
         <ol>
           {indexItems.map(({ company, dates, id }) => (
             <li key={id}>

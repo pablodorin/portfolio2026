@@ -176,6 +176,20 @@ Suggested horizontal padding:
 
 - approximately 1.25rem.
 
+### Language control
+
+The language selector is a typographic `EN / ES / FR` button group without
+flags. It appears in the desktop sidebar secondary controls and inside the
+mobile navigation panel.
+
+The selected language uses an accessible pressed state in addition to colour.
+The control uses existing semantic tokens and works in both light and dark
+themes. Translated labels must support variable text length without changing
+Git graph geometry or clipping mobile navigation.
+
+Language switching must not reload the page, reset scroll position, change the
+selected theme, or modify section ids.
+
 ---
 
 ## Spacing
@@ -545,6 +559,51 @@ Avoid:
 - dense networks;
 - excessive line crossings;
 - animations that distract from reading.
+
+---
+
+## Editorial reveal motion
+
+Phase 5B.1 uses restrained, one-time viewport entrance motion for completed
+sections. A single browser-native `IntersectionObserver` reveals editorial
+groups rather than individual text fragments.
+
+The implemented reveal language uses:
+
+- opacity from `0` to `1`;
+- a small vertical displacement of `14px`;
+- a `520ms` duration;
+- limited `70ms` staggering;
+- `cubic-bezier(0.22, 1, 0.36, 1)` easing.
+
+Home uses one short entrance sequence per page load. Completed section groups
+reveal only on their first viewport entrance. Interactive states and
+theme-aware properties use brief transitions without moving layout.
+
+Content remains visible by default. Hidden reveal states are enabled only when
+the native motion system is available. When `prefers-reduced-motion: reduce`
+is active, content is immediately visible, translation and delays are removed,
+and non-essential transitions are disabled.
+
+Phase 5B.1 does not include parallax, scroll-linked transforms, animated path
+drawing, or scroll hijacking. More advanced motion remains pending visual
+approval.
+
+### Sticky editorial section headings
+
+Phase 5B.2 adds desktop sticky heading columns to the long Experience,
+Technologies, AI Workflow, and About Me sections. These sections use an
+editorial two-column CSS Grid, with the real semantic heading preceding its
+associated content in source order.
+
+Sticky positioning uses CSS only, remains constrained by each section, and
+uses `top: clamp(2rem, 6vh, 4.5rem)`. It is enabled only at the established
+`64rem` desktop breakpoint and when the viewport is at least `44rem` high.
+Narrow and short viewports retain the natural stacked flow.
+
+Home, Education, Projects, Endpoint Blog, and Contact do not use sticky
+headings. No JavaScript scroll tracking, fixed positioning, internal heading
+scrolling, parallax, or scroll hijacking is used.
 
 ---
 

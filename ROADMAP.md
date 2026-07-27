@@ -488,6 +488,16 @@ Phase 4D — Projects: Deferred.
 
 Phase 4X — Endpoint Blog: Deferred.
 
+### Phase 5B.1 — Section Reveal and Microinteractions
+
+Implementation status: Implemented.
+
+Parallax and more advanced motion remain pending visual approval.
+
+### Phase 5B.2 — Sticky Editorial Section Headings
+
+Implementation status: Implemented.
+
 ### Theme tasks
 
 - Detect the operating-system preference on the first visit.
@@ -554,6 +564,24 @@ A complete theme system with subtle and accessible visual depth.
 ### Goal
 
 Support English, Spanish, and French.
+
+### Phase 6A — Internationalisation Foundation
+
+Implementation status: Implemented.
+
+Projects and Endpoint Blog remain deferred.
+
+### Phase 6B — Spanish Translation
+
+Implementation status: Implemented.
+
+### Phase 6C — French Translation
+
+Implementation status: Implemented.
+
+### Phase 6D — Linguistic and Responsive Validation
+
+Implementation status: Pending.
 
 ### Tasks
 
