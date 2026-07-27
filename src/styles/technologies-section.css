@@ -18,14 +18,6 @@
   margin-bottom: clamp(var(--space-8), 6vw, var(--space-12));
 }
 
-.technologies-section__eyebrow {
-  color: var(--color-accent);
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 .technologies-section h2 {
   font-size: clamp(2.25rem, 8vw, 4.5rem);
   line-height: 1.05;

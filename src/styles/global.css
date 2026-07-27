@@ -6,6 +6,8 @@
 @import './education-section.css';
 @import './technologies-section.css';
 @import './about-section.css';
+@import './ai-workflow-section.css';
+@import './contact-section.css';
 
 body {
   min-height: 100svh;

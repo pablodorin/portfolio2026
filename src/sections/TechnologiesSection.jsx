@@ -11,9 +11,6 @@ function TechnologiesSection() {
     >
       <div className="technologies-section__intro">
         <header className="technologies-section__header">
-          <p className="technologies-section__eyebrow">
-            Backend-first · Full-stack capable
-          </p>
           <h2 id="technologies-title">Technologies</h2>
           <p>
             A Java-centered engineering profile spanning enterprise backend

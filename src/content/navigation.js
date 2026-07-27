@@ -38,7 +38,7 @@ export const navigationItems = [
   },
   {
     id: 'endpoint',
-    label: 'Endpoint',
+    label: 'Endpoint Blog',
     sectionTitle: 'Endpoint Blog',
     branch: 'blue-purple',
     description: 'The editorial area will be created in its dedicated phase.',

@@ -774,49 +774,63 @@ Core technologies must receive greater visual emphasis than additional tools.
 
 # AI-assisted engineering
 
-## Central concept
+## Approved introductory principle
 
-AI is a machine tool.
+I use artificial intelligence as an engineering tool, not as a substitute for
+technical judgement.
 
-Approved statement:
+AI can accelerate exploration, implementation, documentation, and review.
+However, understanding the problem, defining the constraints, making technical
+decisions, validating the results, and assuming responsibility for the final
+solution remain human responsibilities.
 
-AI is powerful and transformative, but technical judgment, validation,
-security decisions, and professional responsibility remain human.
+## Frame the Problem
 
-## Current tools
+I begin by defining the problem, its scope, its constraints, and the expected
+outcome. Clear acceptance criteria and explicit limits help prevent the tool
+from producing solutions that are technically correct but irrelevant to the
+actual need.
 
-- OpenAI Codex
-- ChatGPT
+## Explore and Plan
 
-## Approved uses
+I use AI to explore alternatives, compare possible approaches, identify risks,
+and divide complex work into smaller, verifiable steps. The tool can suggest
+options, but architecture, priorities, and trade-offs require professional
+judgement.
 
-- problem analysis;
-- technical exploration;
-- implementation support;
-- code explanation;
-- refactoring;
-- code review;
-- test design;
-- debugging;
-- documentation;
-- continuous learning;
-- solution comparison;
-- development acceleration.
+## Implement with Assistance
 
-## Human responsibilities
+AI can accelerate scaffolding, repetitive code, refactoring proposals,
+documentation, and initial test cases. I provide the context and constraints,
+review the generated output, and adapt it to the standards and structure of the
+project.
 
-The portfolio must explain that Pablo retains responsibility for:
+## Review and Validate
 
-- understanding the business problem;
-- defining technical goals;
-- architecture decisions;
-- validating generated code;
-- accepting or rejecting suggestions;
-- functional validation;
-- testing;
-- security judgment;
-- maintainability;
-- professional accountability.
+Generated output is never accepted only because it compiles or appears
+plausible. I review functionality, readability, maintainability, security,
+accessibility, and architectural consistency, then validate the result through
+tests, linting, builds, and direct inspection where appropriate.
+
+## Iterate and Document
+
+Development proceeds through small, controlled iterations. Decisions,
+limitations, and relevant context are documented so that the work remains
+understandable, consistent, and easier to review or continue.
+
+## Final principle
+
+The result is not autonomous software generation, but a human-directed
+engineering process supported by a powerful tool. AI increases speed and
+exploration capacity; professional judgement provides direction, validation,
+and accountability.
+
+## Portfolio example
+
+This portfolio was developed using the same approach: its objectives, content,
+visual direction, constraints, and acceptance criteria were defined and
+validated by me, while AI-assisted tools supported implementation, review, and
+iteration.
 
 ## Prohibited claims
 
@@ -1012,6 +1026,19 @@ Do not publish unsupported claims as facts.
 
 # Contact and availability
 
+## Approved public copy
+
+Contact
+
+Let’s talk.
+
+I am open to senior backend and full-stack opportunities involving enterprise
+applications, system integration, and AI-augmented engineering.
+
+Based in Buenos Aires, Argentina, I am available for remote collaboration and
+international projects. For professional enquiries, email is the best way to
+reach me.
+
 Public location:
 
 Buenos Aires, Argentina
@@ -1022,10 +1049,10 @@ Available for remote and international software engineering opportunities.
 
 Public contact methods:
 
-- LinkedIn
-- GitHub
-- professional email
-- downloadable CV
+- Email: dorin1979@gmail.com
+- LinkedIn: https://www.linkedin.com/in/pablo-dorin
+- GitHub: https://github.com/pablodorin
+- Downloadable CV: public/cv/Pablo_Dorin_CV_24_JUL_2026.pdf
 
 Do not publish:
 

@@ -1,4 +1,12 @@
 function TechnologiesIndex({ groups }) {
+  const indexItems = [
+    ...groups,
+    {
+      id: 'ai-workflow',
+      title: 'AI-Augmented Software Development',
+    },
+  ]
+
   function handleSelection(event) {
     const groupId = event.target.value
 
@@ -30,7 +38,7 @@ function TechnologiesIndex({ groups }) {
         <option value="" disabled>
           Choose a group
         </option>
-        {groups.map(({ id, title }) => (
+        {indexItems.map(({ id, title }) => (
           <option key={id} value={id}>
             {title}
           </option>
@@ -40,7 +48,7 @@ function TechnologiesIndex({ groups }) {
       <div className="technologies-index__desktop">
         <p>Jump to a technology group</p>
         <ol>
-          {groups.map(({ id, title }) => (
+          {indexItems.map(({ id, title }) => (
             <li key={id}>
               <a href={`#${id}`}>{title}</a>
             </li>
