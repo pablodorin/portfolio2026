@@ -1,4 +1,5 @@
 import useTranslation from '../../i18n/useTranslation.js'
+import { InstitutionLogo } from '../ui/InstitutionIdentity.jsx'
 
 function ExperienceIndex({ experiences }) {
   const { messages } = useTranslation()
@@ -58,8 +59,14 @@ function ExperienceIndex({ experiences }) {
           {indexItems.map(({ company, dates, id }) => (
             <li key={id}>
               <a href={`#${id}`}>
-                <span>{company}</span>
-                <span>{dates}</span>
+                <span className="experience-index__identity">
+                  <InstitutionLogo
+                    institutionId={id}
+                    source={id === 'projects' ? '/favicon.svg' : undefined}
+                  />
+                  <span>{company}</span>
+                </span>
+                <span className="experience-index__dates">{dates}</span>
               </a>
             </li>
           ))}

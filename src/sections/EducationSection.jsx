@@ -1,5 +1,8 @@
 import EducationIndex from '../components/education/EducationIndex.jsx'
 import OfficialExternalLink from '../components/ui/OfficialExternalLink.jsx'
+import InstitutionIdentity, {
+  InstitutionLogo,
+} from '../components/ui/InstitutionIdentity.jsx'
 import { officialLinks } from '../content/officialLinks.js'
 import useTranslation from '../i18n/useTranslation.js'
 
@@ -44,17 +47,20 @@ function EducationSection() {
                 data-reveal
                 data-reveal-delay={String((index % 3) + 1)}
               >
-                <p className="education-entry__meta">
-                  <span className="education-entry__dates">{dates}</span>
-                </p>
-                <h4>
-                  <OfficialExternalLink
-                    href={officialLinks.institutions[id]}
-                  >
-                    {institution}
-                  </OfficialExternalLink>
-                </h4>
-                <p className="education-entry__program">{program}</p>
+                <InstitutionLogo institutionId={id} />
+                <div className="education-entry__content">
+                  <p className="education-entry__meta">
+                    <span className="education-entry__dates">{dates}</span>
+                  </p>
+                  <h4>
+                    <OfficialExternalLink
+                      href={officialLinks.institutions[id]}
+                    >
+                      {institution}
+                    </OfficialExternalLink>
+                  </h4>
+                  <p className="education-entry__program">{program}</p>
+                </div>
               </li>
             ))}
           </ol>
@@ -70,14 +76,13 @@ function EducationSection() {
           <p className="education-distinction__eyebrow">
             {distinctionLabel} · {distinction.date}
           </p>
-          <p className="education-distinction__title">
-            {distinction.participantLabel}
-          </p>
           <h3 id="education-distinction-title">
             <OfficialExternalLink
               href={officialLinks.programmes[distinction.id]}
             >
-              {distinction.programName} ({distinction.abbreviation})
+              <InstitutionIdentity institutionId={distinction.id}>
+                {distinction.programName} ({distinction.abbreviation})
+              </InstitutionIdentity>
             </OfficialExternalLink>
           </h3>
           <p className="education-distinction__meta">

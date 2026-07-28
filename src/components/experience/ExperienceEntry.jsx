@@ -1,6 +1,7 @@
 import useTranslation from '../../i18n/useTranslation.js'
 import { officialLinks } from '../../content/officialLinks.js'
 import OfficialExternalLink from '../ui/OfficialExternalLink.jsx'
+import { InstitutionLogo } from '../ui/InstitutionIdentity.jsx'
 
 function ExperienceEntry({ experience }) {
   const { messages } = useTranslation()
@@ -31,6 +32,7 @@ function ExperienceEntry({ experience }) {
       <div className="experience-entry__meta">
         <p className="experience-entry__dates">{dates}</p>
         {location && <p>{location}</p>}
+        <InstitutionLogo institutionId={id} />
       </div>
 
       <div className="experience-entry__body">

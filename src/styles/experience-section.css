@@ -96,10 +96,33 @@
   background: var(--color-surface-muted);
 }
 
-.experience-index a span:last-child {
+.experience-index__dates {
   color: var(--color-text-muted);
   font-family: var(--font-mono);
   font-size: 0.6875rem;
+}
+
+.experience-index__identity {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.experience-index__identity > span:last-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.experience-index__identity .institution-logo {
+  flex: 0 0 2rem;
+  width: 2rem;
+  height: 1.5rem;
+  padding: 0.125rem;
+}
+
+.experience-index__identity .institution-logo img {
+  max-height: 1.125rem;
 }
 
 .experience-entry {
