@@ -105,6 +105,12 @@ pablodorin.com
 
 The site must work correctly over HTTPS.
 
+Phase 10A provides a GitHub Actions workflow that builds the application from
+the locked npm dependencies and deploys the generated `dist/` artifact through
+GitHub Pages. GitHub Pages must use GitHub Actions as its source. The workflow
+exists in the repository, but public deployment has not yet been validated.
+Custom-domain configuration, DNS, and HTTPS validation remain pending.
+
 ## SEO and metadata
 
 Production origin:

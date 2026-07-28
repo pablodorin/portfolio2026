@@ -80,8 +80,10 @@ The approved production URL structure is:
 - `https://pablodorin.com/es/`
 - `https://pablodorin.com/fr/`
 
-Deployment preparation is still pending. The repository does not yet claim a
-completed public deployment.
+A GitHub Actions workflow now builds and deploys the generated `dist/` artifact
+through GitHub Pages. Final GitHub Pages setup and public custom-domain
+validation are still pending; the repository does not yet claim a completed
+deployment at `pablodorin.com`.
 
 ## Repository structure
 
@@ -117,7 +119,7 @@ and repository cleanup are implemented. The following remain deferred:
 - Endpoint Blog;
 - final social-sharing image;
 - final LinkedIn banner;
-- deployment and DNS configuration;
+- final GitHub Pages, custom-domain, DNS, and HTTPS validation;
 - analytics and Search Console;
 - final hands-on cross-browser and linguistic validation.
 

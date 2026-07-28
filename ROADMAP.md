@@ -987,6 +987,18 @@ A production-ready release candidate.
 
 Publish the portfolio using GitHub Pages and connect the custom domain.
 
+### Phase 10A — GitHub Pages deployment workflow
+
+Implementation status: Implemented; public deployment validation pending.
+
+The repository contains a GitHub Actions workflow that uses locked npm
+dependencies, runs lint and the three-entry Vite build, uploads `dist/` as a
+Pages artifact, and deploys it through the `github-pages` environment. GitHub
+Pages must use GitHub Actions as its source.
+
+No deployment is considered complete yet. Custom-domain configuration, DNS,
+and HTTPS validation remain pending for a later approved phase.
+
 ### Tasks
 
 - Initialize or verify the Git repository.
