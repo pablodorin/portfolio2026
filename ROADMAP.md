@@ -581,7 +581,14 @@ Implementation status: Implemented.
 
 ### Phase 6D — Linguistic and Responsive Validation
 
-Implementation status: Pending.
+Implementation status: Pending final hands-on validation.
+
+The multilingual implementation, URL-based language resolution, translated
+content, responsive CSS review, and source-oriented accessibility review are
+complete. Final linguistic proofreading in rendered pages and hands-on
+cross-browser validation of language switching, refresh behaviour, reflow, and
+mobile layouts remain outstanding. Phase 7's static review does not replace
+those browser checks.
 
 ### Tasks
 
@@ -803,7 +810,8 @@ Completed:
 - one stable canonical homepage;
 - one language-aware `ProfilePage` / `Person` JSON-LD block;
 - public `robots.txt`;
-- single-homepage `sitemap.xml`;
+- a single-homepage `sitemap.xml` at the time of Phase 8A, later superseded by
+  the three-language sitemap in Phase 8C;
 - favicon integration audit;
 - `SEO_AUDIT.md`.
 

@@ -33,14 +33,6 @@ function LanguageSelector() {
           onClick={() => rememberLanguage(code)}
         >
           {shortLabel}
-          {language === code && (
-            <span
-              className="language-selector__selected-mark"
-              aria-hidden="true"
-            >
-              ✓
-            </span>
-          )}
         </a>
       ))}
     </div>

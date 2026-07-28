@@ -2,8 +2,8 @@
 
 ## Project
 
-This repository contains Pablo Dorin's professional software engineering
-portfolio and the Endpoint technology blog.
+This repository contains Pablo Dorin's professional software development
+portfolio and the planned Endpoint technology blog.
 
 Before making changes, read:
 

@@ -27,11 +27,6 @@
   text-decoration: none;
 }
 
-.language-selector__selected-mark {
-  font-size: 0.75rem;
-  line-height: 1;
-}
-
 .language-selector__link:hover {
   border-color: var(--color-accent-blue);
   color: var(--color-accent-blue-strong);

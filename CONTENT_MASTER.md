@@ -193,7 +193,7 @@ Freelance
 
 Professional description:
 
-Independent Software Engineering
+Independent Software Development
 
 Time description:
 

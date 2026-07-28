@@ -67,59 +67,61 @@ function GitSectionNavigation({
       aria-label={t('navigation.ariaLabel')}
       hidden={hidden}
     >
-      <svg
-        className="git-navigation__graph"
-        viewBox="0 0 64 288"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-        focusable="false"
-      >
-        <path
-          className="git-navigation__path git-navigation__path--blue"
-          d={branchPaths.blue}
-        />
-        <path
-          className="git-navigation__path git-navigation__path--purple"
-          d={branchPaths.purple}
-        />
-        <path
-          className="git-navigation__path git-navigation__path--coral"
-          d={branchPaths.coral}
-        />
-
-        {activePaths.map(({ branch, path }) => (
+      <div className="git-navigation__map">
+        <svg
+          className="git-navigation__graph"
+          viewBox="0 0 64 288"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+          focusable="false"
+        >
           <path
-            key={branch}
-            className={`git-navigation__active-path git-navigation__active-path--${branch}`}
-            d={path}
+            className="git-navigation__path git-navigation__path--blue"
+            d={branchPaths.blue}
           />
-        ))}
-      </svg>
+          <path
+            className="git-navigation__path git-navigation__path--purple"
+            d={branchPaths.purple}
+          />
+          <path
+            className="git-navigation__path git-navigation__path--coral"
+            d={branchPaths.coral}
+          />
 
-      <ol className="git-navigation__list">
-        {navigationItems.map(({ id }, index) => (
-          <li key={id}>
-            <a
-              className="git-navigation__link"
-              href={`#${id}`}
-              aria-current={activeSectionId === id ? 'location' : undefined}
-              onClick={onNavigate}
-            >
-              <span className="git-navigation__node-track" aria-hidden="true">
-                {nodeLanesBySection[id].map((lane) => (
-                  <span
-                    key={lane}
-                    className={`git-navigation__node git-navigation__node--${lane}`}
-                  />
-                ))}
-              </span>
-              <span className="git-navigation__label">
-                {translatedItems[index].label}
-              </span>
-            </a>
-          </li>
-        ))}
-      </ol>
+          {activePaths.map(({ branch, path }) => (
+            <path
+              key={branch}
+              className={`git-navigation__active-path git-navigation__active-path--${branch}`}
+              d={path}
+            />
+          ))}
+        </svg>
+
+        <ol className="git-navigation__list">
+          {navigationItems.map(({ id }, index) => (
+            <li key={id}>
+              <a
+                className="git-navigation__link"
+                href={`#${id}`}
+                aria-current={activeSectionId === id ? 'location' : undefined}
+                onClick={onNavigate}
+              >
+                <span className="git-navigation__node-track" aria-hidden="true">
+                  {nodeLanesBySection[id].map((lane) => (
+                    <span
+                      key={lane}
+                      className={`git-navigation__node git-navigation__node--${lane}`}
+                    />
+                  ))}
+                </span>
+                <span className="git-navigation__label">
+                  {translatedItems[index].label}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </div>
       {children}
     </nav>
   )

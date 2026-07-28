@@ -113,12 +113,21 @@ html {
 }
 
 .mobile-navigation {
+  --mobile-menu-viewport-height: min(100svh, 100dvh);
+
   position: absolute;
   top: 100%;
   right: 0;
   left: 0;
-  max-height: calc(100svh - var(--mobile-header-height));
+  height: calc(
+    var(--mobile-menu-viewport-height) - var(--mobile-header-height)
+  );
+  max-height: calc(
+    var(--mobile-menu-viewport-height) - var(--mobile-header-height)
+  );
+  overflow-x: hidden;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   padding: var(--space-3) var(--space-6) var(--space-6);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
@@ -241,14 +250,12 @@ html {
 @media (min-width: 64rem) {
   html {
     scroll-padding-top: 0;
-    scroll-snap-type: none;
   }
 
   .portfolio-layout {
     display: grid;
     grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
-    height: 100svh;
-    overflow: hidden;
+    min-height: 100svh;
   }
 
   .sidebar {
@@ -286,10 +293,7 @@ html {
   }
 
   .portfolio-main {
-    height: 100svh;
-    overflow-y: auto;
     scroll-padding-top: 0;
-    scroll-snap-type: y proximity;
   }
 
   .portfolio-content,

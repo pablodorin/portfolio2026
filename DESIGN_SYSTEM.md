@@ -1065,12 +1065,15 @@ Use:
 - global typography;
 - scoped component styles.
 
-Suggested global structure:
+Current global structure:
 
 - `src/styles/reset.css`
 - `src/styles/tokens.css`
 - `src/styles/global.css`
-- `src/styles/utilities.css`
+
+`src/styles/global.css` imports the reset, tokens, section-specific styles, and
+shared navigation, theme, language-selector, and motion styles. Shared utility
+rules live in `global.css`; there is no separate utilities stylesheet.
 
 Component-specific styles should use clearly named files.
 

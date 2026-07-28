@@ -147,7 +147,8 @@ EN · ES · FR
 
 Do not use flags as language selectors.
 
-The selected language should persist in local storage.
+An explicit language selection may be recorded in local storage as advisory
+data, but the current URL remains the authoritative language source.
 
 Current implementation:
 

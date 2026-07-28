@@ -1,156 +1,135 @@
 # Pablo Dorin — Professional Portfolio
 
-Professional portfolio of Pablo Dorin, Senior Software Developer specializing
-in Java Backend and Full-Stack Development.
+Multilingual professional portfolio for Pablo Dorin, Senior Software
+Developer specialising in Java backend and full-stack development.
 
-Professional focus:
+The site presents professional experience, technologies, education,
+AI-augmented development practices, personal interests, and contact resources
+for recruiters, engineering teams, and international employers.
 
-- Enterprise Applications
-- System Integration
-- Java Backend Development
-- Software Architecture
-- Full-Stack Development
-- AI-Augmented Engineering
+## Current implementation
 
-The portfolio also includes **Endpoint**, an editorial technology blog with the
-tagline:
+The portfolio is a static React application with three independently loadable
+language entry points:
 
-> Request & Response on the IT Industry
+- English: `/`
+- Spanish: `/es/`
+- French: `/fr/`
 
-## Project status
+Implemented features include:
 
-This project is currently in development.
+- static multilingual HTML entry points;
+- reciprocal `hreflang` links;
+- language-specific metadata;
+- light and dark themes with persisted preference;
+- accessible desktop and mobile navigation;
+- Git-inspired desktop section navigation;
+- responsive layouts;
+- SEO metadata, Open Graph, Twitter/X metadata, and JSON-LD;
+- professional experience, technologies, education, AI Workflow, About Me,
+  and Contact sections;
+- downloadable English CV.
 
-The React and Vite foundation has been created and validated. Portfolio
-sections, navigation, themes, languages, professional content, and Endpoint
-will be implemented incrementally according to `ROADMAP.md`.
+Projects and the Endpoint technology blog currently remain intentional
+placeholders.
 
-## Implementation stack
-
-The portfolio application uses:
+## Core technologies
 
 - React
 - JavaScript
-- JSX
+- Vite
 - HTML
 - CSS
-- Vite
-- ESLint
-- npm
-- Git
-- GitHub
 
-TypeScript is not currently used.
-
-Java and Spring Boot are Pablo's primary professional backend technologies.
-They are represented through professional experience, projects, repositories,
-case studies, architecture explanations, and technical content.
-
-The portfolio itself is a static React application and does not require a Java
-backend.
-
-## Planned features
-
-- Responsive desktop and mobile design
-- Fixed vertical navigation on desktop
-- Accessible mobile navigation
-- English, Spanish, and French
-- Light and dark themes
-- Professional experience
-- Technology overview
-- Software project case studies
-- AI Workflow section
-- About Me section
-- Endpoint technology blog
-- Downloadable English CV
-- Git-history-inspired visual identity
-- Restrained and accessible parallax effects
-- GitHub Pages deployment
-- Custom domain: `pablodorin.com`
+The project does not use TypeScript or require a backend.
 
 ## Local development
 
-### Requirements
+Requirements:
 
 - Node.js 20.19 or later
 - npm
 
-### Install dependencies
+Install dependencies and start the development server:
 
 ```bash
 npm install
-```
-
-### Start the development server
-
-```bash
 npm run dev
 ```
 
-The terminal will display the local address, normally:
+Local language URLs:
 
-```text
-http://localhost:5173/
-```
+- `http://localhost:5173/`
+- `http://localhost:5173/es/`
+- `http://localhost:5173/fr/`
 
-### Run code validation
+Validate and build:
 
 ```bash
 npm run lint
-```
-
-### Create the production build
-
-```bash
 npm run build
 ```
 
-The generated production files are placed in the `dist` directory.
+Vite writes generated production output to the ignored `dist/` directory.
 
-### Preview the production build
+## Production URLs
 
-```bash
-npm run preview
-```
+The approved production URL structure is:
 
-## Project documentation
+- `https://pablodorin.com/`
+- `https://pablodorin.com/es/`
+- `https://pablodorin.com/fr/`
 
-Before making changes, read:
+Deployment preparation is still pending. The repository does not yet claim a
+completed public deployment.
 
-- `AGENTS.md` — engineering and AI-agent working rules
-- `PROJECT_CONTEXT.md` — product purpose, scope, and structure
-- `CONTENT_MASTER.md` — approved professional information
-- `DESIGN_SYSTEM.md` — visual and interaction guidelines
-- `ROADMAP.md` — implementation phases
-
-`CONTENT_MASTER.md` is the source of truth for professional information.
-
-Employment dates, roles, technologies, achievements, education, and project
-results must not be invented or exaggerated.
-
-## Development principles
-
-- Work in small, reviewable phases.
-- Use English for code and technical documentation.
-- Keep professional content separate from presentation components.
-- Prefer readable JavaScript over unnecessary abstractions.
-- Preserve semantic HTML and keyboard accessibility.
-- Respect `prefers-reduced-motion`.
-- Avoid unnecessary dependencies.
-- Run lint and production-build validation after changes.
-
-## Professional links
-
-- Portfolio: `https://pablodorin.com`
-- LinkedIn: `https://www.linkedin.com/in/pablo-dorin`
-- GitHub: `https://github.com/pablodorin`
-
-## Deployment
-
-The production portfolio will be published with GitHub Pages and connected to:
+## Repository structure
 
 ```text
-https://pablodorin.com
+.
+├── index.html             English entry document
+├── es/index.html          Spanish entry document
+├── fr/index.html          French entry document
+├── public/                Static public assets, CV, robots, and sitemap
+├── src/
+│   ├── app/               Application composition
+│   ├── assets/            Vite-managed source assets
+│   ├── components/        Reusable interface components
+│   ├── content/           Approved English source content
+│   ├── hooks/             Application hooks
+│   ├── i18n/              Language resources and URL-based resolution
+│   ├── sections/          Portfolio sections
+│   ├── seo/               Runtime metadata and structured data
+│   └── styles/            Design tokens and scoped styles
+└── vite.config.js         Multi-entry production build
 ```
 
-Deployment has not yet been completed.
+Project decisions and factual professional content are documented in
+`PROJECT_CONTEXT.md`, `CONTENT_MASTER.md`, `DESIGN_SYSTEM.md`, and
+`ROADMAP.md`.
+
+## Project status
+
+The core multilingual portfolio, accessibility review, metadata foundation,
+and repository cleanup are implemented. The following remain deferred:
+
+- Projects content;
+- Endpoint Blog;
+- final social-sharing image;
+- final LinkedIn banner;
+- deployment and DNS configuration;
+- analytics and Search Console;
+- final hands-on cross-browser and linguistic validation.
+
+## Author
+
+Pablo Dorin — Senior Software Developer
+
+- Portfolio: `https://pablodorin.com/`
+- LinkedIn: `https://www.linkedin.com/in/pablo-dorin/`
+- GitHub: `https://github.com/pablodorin`
+
+## Licence
+
+No open-source licence has been declared. All rights are reserved unless a
+licence is added explicitly.

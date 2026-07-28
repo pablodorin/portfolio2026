@@ -71,6 +71,11 @@ Local storage records the chosen language only as advisory data; it does not
 select or redirect a document. Theme preference remains effective because all
 pages share the same origin and theme-storage key.
 
+Each static language document includes
+`<meta name="google" content="notranslate">`. Google Chrome's browser-level
+translation suggestions are disabled because the portfolio already provides
+human-authored English, Spanish, and French versions.
+
 ## 7. Open Graph
 
 Each page contains a language-specific `og:title`, `og:description`, `og:url`,
