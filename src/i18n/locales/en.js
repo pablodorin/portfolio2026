@@ -12,6 +12,7 @@ import {
 } from '../../content/education.js'
 import { experienceItems } from '../../content/experience.js'
 import { navigationItems } from '../../content/navigation.js'
+import { projects } from '../../content/projects.js'
 import { technologyGroups } from '../../content/technologies.js'
 
 const en = {
@@ -95,6 +96,23 @@ const en = {
       aiWorkflow: 'AI-Augmented Software Development',
     },
   },
+  projects: {
+    title: 'Projects',
+    introduction:
+      'Selected portfolio projects designed to demonstrate backend, full-stack, integration, testing, and AI-augmented development skills.',
+    items: projects,
+    labels: {
+      carousel: 'Selected portfolio projects',
+      previous: 'Previous project',
+      next: 'Next project',
+      indicators: 'Choose a project',
+      goToProject: 'Go to project {number}',
+      slidePosition: 'Project {current} of {total}',
+      status: 'Status',
+      technicalApproach: 'Technical approach',
+      plannedStack: 'Planned stack',
+    },
+  },
   education: {
     title: 'Education',
     introduction:
@@ -109,6 +127,28 @@ const en = {
       jumpToPrefix: 'Jump to',
       distinctionAccessibleLabel:
         'International Visitor Leadership Program',
+    },
+  },
+  endpointBlog: {
+    label: 'Technical writing',
+    tagline: 'Request & Response about the IT industry',
+    introduction:
+      'Endpoint is a technical blog about software development, enterprise systems, integration, architecture, and the responsible use of AI in engineering workflows.',
+    writtenBy: 'Written by Pablo Dorin',
+    tagsLabel: 'Article tags',
+    article: {
+      back: 'Back to Endpoint',
+      backPath: '/#endpoint',
+      previous: 'Previous article',
+      next: 'Next article',
+      writtenBy: 'Written by Pablo Dorin',
+      date: 'July 28, 2026',
+      disclosure:
+        'Originally written in Spanish. The English and French versions were translated with AI assistance and reviewed by the author.',
+      signatureRole: 'Senior Software Developer',
+      tagsLabel: 'Article tags',
+      navigationLabel: 'Article navigation',
+      languageLabel: 'Article language',
     },
   },
   aiWorkflow: {

@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Footer from './Footer.jsx'
 import MobileHeader from './MobileHeader.jsx'
 import Sidebar from './Sidebar.jsx'
@@ -16,6 +17,23 @@ function PortfolioLayout({ children }) {
   const { theme, toggleTheme } = useTheme()
   useDocumentMetadata()
   useSectionReveal()
+
+  useEffect(() => {
+    const sectionId = window.location.hash.slice(1)
+
+    if (!sectionIds.includes(sectionId)) {
+      return
+    }
+
+    const animationFrame = requestAnimationFrame(() => {
+      document.getElementById(sectionId)?.scrollIntoView({
+        behavior: 'auto',
+        block: 'start',
+      })
+    })
+
+    return () => cancelAnimationFrame(animationFrame)
+  }, [])
 
   return (
     <div className="portfolio-layout">

@@ -3,8 +3,10 @@
 ## 1. Scope
 
 Phase 8A provides the metadata foundation. Phase 8C adds three independently
-loadable static language documents and reciprocal `hreflang`. Deployment,
-social imagery, Projects, and Endpoint Blog remain outside this scope.
+loadable static language documents and reciprocal `hreflang`. Endpoint adds
+nine localized static article documents with article metadata and reciprocal
+article-level alternates. Social imagery and Projects remain outside this
+scope.
 
 ## 2. Static multilingual architecture
 
@@ -113,8 +115,14 @@ claiming French fluency or including private data.
 
 `https://pablodorin.com/sitemap.xml`
 
-The sitemap contains exactly the three canonical language pages. It excludes
-hashes, `/en/`, CV files, assets, Projects, Endpoint, and invented dates.
+The sitemap contains the three canonical language pages and all nine localized
+Endpoint article URLs. It excludes hashes, `/en/`, CV files, assets, Projects,
+and unrelated routes.
+
+Each article document includes one localized `BlogPosting` JSON-LD block,
+self-referencing canonical, reciprocal EN/ES/FR `hreflang`, English
+`x-default`, `robots: index, follow`, Open Graph article metadata, publication
+date, author, tags, and localized Twitter metadata.
 
 ## 11. Assets and favicon
 

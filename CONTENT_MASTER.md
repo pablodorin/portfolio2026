@@ -900,7 +900,7 @@ JS1 — Job Application Manager
 
 Status:
 
-In development
+Planned
 
 Purpose:
 
@@ -934,6 +934,13 @@ Do not claim that the project is complete.
 Do not claim production usage.
 
 Do not invent metrics, users, employers, integrations, or deployment results.
+
+The portfolio Projects section presents a four-position editorial showcase.
+All four visible positions remain undefined until their objectives, scope, and
+demonstration value are approved for publication. Existing project source
+material is not assigned to a showcase position at this stage. The showcase
+does not claim client delivery, commercial adoption, production use,
+repositories, demos, or project metrics.
 
 ---
 
@@ -1035,9 +1042,13 @@ Blog name:
 
 Endpoint
 
+Visible portfolio section heading:
+
+Endpoint Blog
+
 Tagline:
 
-Request & Response on the IT Industry
+Request & Response about the IT industry
 
 Approved subjects:
 
@@ -1061,6 +1072,47 @@ Endpoint articles should distinguish between:
 - personal opinion;
 - inference;
 - external research.
+
+Approved initial editorial topics and order:
+
+1. AI-Augmented Engineering
+2. Code Is No Longer the Bottleneck
+3. Microservices: When They Solve Problems—and When They Multiply Them
+
+These three articles are published in complete Spanish, English, and French
+versions. Spanish is the editorial source language. The publication date is
+2026-07-28.
+
+Endpoint articles are written originally in Spanish. English and French
+versions are translated with AI assistance and reviewed by Pablo before
+publication. Every published version displays the approved localized
+disclosure near its beginning.
+
+Approved future disclosure wording:
+
+- Spanish: `Artículo escrito originalmente en español. Las versiones en inglés
+  y francés fueron traducidas con asistencia de IA y revisadas por el autor.`
+- English: `Originally written in Spanish. The English and French versions
+  were translated with AI assistance and reviewed by the author.`
+- French: `Article rédigé à l’origine en espagnol. Les versions anglaise et
+  française ont été traduites avec l’aide de l’IA et révisées par l’auteur.`
+
+Article navigation provides a localized Back to Endpoint link using
+the stable `#endpoint` destination, plus Previous article and Next article
+links that name their destinations. The initial three-article sequence is
+circular: 1 previous 3 / next 2; 2 previous 1 / next 3; 3 previous 2 / next 1.
+
+Back to Endpoint destinations and labels:
+
+- English: `Back to Endpoint` → `https://pablodorin.com/#endpoint`
+- Spanish: `Volver a Endpoint` → `https://pablodorin.com/es/#endpoint`
+- French: `Retour à Endpoint` → `https://pablodorin.com/fr/#endpoint`
+
+Navigation labels:
+
+- English: `Previous article` / `Next article`
+- Spanish: `Artículo anterior` / `Artículo siguiente`
+- French: `Article précédent` / `Article suivant`
 
 Do not publish unsupported claims as facts.
 

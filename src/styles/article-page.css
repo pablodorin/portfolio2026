@@ -1,0 +1,213 @@
+.article-page {
+  min-height: 100svh;
+  color: var(--color-text-primary);
+  background: var(--color-background);
+}
+
+.article-site-header {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: var(--space-4);
+  align-items: center;
+  padding: var(--space-3) clamp(var(--space-4), 4vw, var(--space-8));
+  border-bottom: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-surface) 94%, transparent);
+  backdrop-filter: blur(0.75rem);
+}
+
+.article-site-header__brand {
+  color: var(--color-text-primary);
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.article-site-header nav {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.article-site-header nav a {
+  display: inline-flex;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.article-site-header nav a[aria-current='page'] {
+  border-color: var(--color-accent-red);
+  color: var(--color-text-primary);
+  background: var(--color-accent-soft);
+}
+
+.article-main {
+  width: min(100% - 2rem, 72rem);
+  margin-inline: auto;
+  padding-block: clamp(var(--space-8), 7vw, var(--space-16));
+}
+
+.article-main > article {
+  width: min(100%, 48rem);
+  margin-inline: auto;
+}
+
+.article-back-link {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  margin-bottom: var(--space-6);
+  color: var(--color-accent-blue-strong);
+  font-weight: 700;
+  text-underline-offset: 0.2em;
+}
+
+.article-header {
+  display: grid;
+  gap: var(--space-4);
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.article-header h1 {
+  overflow-wrap: anywhere;
+  color: var(--color-accent-red);
+  font-size: clamp(2.25rem, 7vw, 4.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+}
+
+.article-copete {
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.article-bajada {
+  color: var(--color-text-secondary);
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+}
+
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-6);
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.article-disclosure {
+  padding: var(--space-4);
+  border-left: 0.1875rem solid var(--color-accent-blue);
+  color: var(--color-text-muted);
+  background: var(--color-surface-muted);
+  font-size: 0.9rem;
+}
+
+.article-body {
+  display: grid;
+  gap: var(--space-12);
+  padding-block: clamp(var(--space-8), 7vw, var(--space-16));
+}
+
+.article-body section {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.article-body h2 {
+  color: var(--color-heading);
+  font-size: clamp(1.6rem, 4vw, 2.35rem);
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+.article-body p {
+  color: var(--color-text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.article-footer {
+  display: grid;
+  gap: var(--space-8);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+}
+
+.article-signature {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.article-signature span {
+  color: var(--color-accent-red);
+  font-weight: 700;
+}
+
+.article-pagination {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.article-pagination a {
+  display: grid;
+  min-width: 0;
+  min-height: 7rem;
+  align-content: start;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.article-pagination a:last-child {
+  text-align: right;
+}
+
+.article-pagination span {
+  color: var(--color-accent-blue-strong);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 750;
+  text-transform: uppercase;
+}
+
+.article-pagination strong {
+  overflow-wrap: anywhere;
+  color: var(--color-accent-red);
+}
+
+@media (max-width: 40rem) {
+  .article-site-header {
+    grid-template-columns: 1fr auto;
+  }
+
+  .article-site-header .theme-toggle {
+    grid-column: 1 / -1;
+    justify-self: end;
+  }
+
+  .article-pagination {
+    grid-template-columns: 1fr;
+  }
+
+  .article-pagination a:last-child {
+    text-align: left;
+  }
+}

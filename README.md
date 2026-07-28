@@ -30,8 +30,10 @@ Implemented features include:
   and Contact sections;
 - downloadable English CV.
 
-Projects and the Endpoint technology blog currently remain intentional
-placeholders.
+Projects is an accessible four-position editorial showcase carousel. All four
+positions remain explicitly undefined; no repository or demo links are
+claimed. Endpoint publishes three complete articles in Spanish, English, and
+French through nine static article pages.
 
 ## Core technologies
 
@@ -80,6 +82,11 @@ The approved production URL structure is:
 - `https://pablodorin.com/es/`
 - `https://pablodorin.com/fr/`
 
+Endpoint adds three localized article families under `/endpoint/`,
+`/es/endpoint/`, and `/fr/endpoint/`. Article language controls preserve the
+current article, while portfolio language controls preserve stable section
+hashes such as `#endpoint`.
+
 A GitHub Actions workflow now builds and deploys the generated `dist/` artifact
 through GitHub Pages. Final GitHub Pages setup and public custom-domain
 validation are still pending; the repository does not yet claim a completed
@@ -115,8 +122,7 @@ Project decisions and factual professional content are documented in
 The core multilingual portfolio, accessibility review, metadata foundation,
 and repository cleanup are implemented. The following remain deferred:
 
-- Projects content;
-- Endpoint Blog;
+- implementation and publication of the planned portfolio projects;
 - final social-sharing image;
 - final LinkedIn banner;
 - final GitHub Pages, custom-domain, DNS, and HTTPS validation;

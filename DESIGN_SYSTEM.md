@@ -756,6 +756,11 @@ Do not rely on logos alone to communicate a technology.
 
 Projects should be presented as case studies rather than simple image cards.
 
+The implemented showcase uses one large editorial panel, four accessible
+position controls, circular Previous/Next navigation, and no autoplay. All
+four positions are reserved without invented content. Project titles use the
+red editorial accent, while structural numbering and controls use blue.
+
 Each project may contain:
 
 - project title;
@@ -870,7 +875,7 @@ Endpoint is the editorial area of the portfolio.
 
 Tagline:
 
-Request & Response on the IT Industry
+Request & Response about the IT industry
 
 Endpoint should remain visually connected to the portfolio through:
 
@@ -881,27 +886,28 @@ Endpoint should remain visually connected to the portfolio through:
 - theme system;
 - Git-history details.
 
-It may have a stronger editorial identity through:
+The Endpoint landing has a restrained editorial identity through:
 
-- larger article titles;
-- publication metadata;
+- red article titles;
 - article summaries;
-- category labels;
-- reading-time information;
-- long-form typography.
+- compact topic numbering;
+- neutral tags;
+- localized publication metadata and article actions.
 
-Article previews may contain:
+Article cards contain:
 
-- date;
-- category;
+- number;
+- publication date and author;
 - title;
+- copete;
+- bajada;
 - summary;
-- reading time;
-- tags.
+- tags;
+- localized Read article link.
 
-Avoid placing every article inside a large card.
-
-Prefer editorial rows or restrained lists.
+Desktop cards reserve consistent title and copete regions so subsequent
+content aligns across the three-column grid. Mobile cards return to natural
+height. Long titles wrap without truncation.
 
 Article pages should provide:
 
@@ -914,7 +920,12 @@ Article pages should provide:
 - headings;
 - code blocks when relevant;
 - references when relevant;
-- navigation back to Endpoint.
+- a localized Back to Endpoint link targeting the portfolio's `#endpoint`;
+- accessible Previous and Next article links naming their destinations.
+
+The initial collection uses circular Previous/Next navigation. Published
+articles must also display the localized Spanish-original and AI-assisted
+translation disclosure near the beginning.
 
 ---
 

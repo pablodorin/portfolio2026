@@ -41,7 +41,8 @@ export const navigationItems = [
     label: 'Endpoint Blog',
     sectionTitle: 'Endpoint Blog',
     branch: 'blue-purple',
-    description: 'The editorial area will be created in its dedicated phase.',
+    description:
+      'Technical articles about software development, enterprise systems, integration, architecture, and responsible AI use.',
   },
   {
     id: 'about',

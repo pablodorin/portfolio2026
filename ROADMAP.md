@@ -484,9 +484,14 @@ Complete the light and dark themes and introduce controlled visual motion.
 
 Implementation status: Implemented.
 
-Phase 4D — Projects: Deferred.
+Phase 4D — Projects Showcase Carousel: Implemented.
 
-Phase 4X — Endpoint Blog: Deferred.
+The placeholder is replaced by a four-position, multilingual carousel with no
+autoplay and circular navigation. All four positions remain explicitly
+undefined. Project implementation, repository links, and live demos remain
+pending.
+
+Phase 4X — Endpoint Blog: Superseded by implemented Phase 11A.
 
 ### Phase 5B.1 — Section Reveal and Microinteractions
 
@@ -569,7 +574,8 @@ Support English, Spanish, and French.
 
 Implementation status: Implemented.
 
-Projects and Endpoint Blog remain deferred.
+Projects remains deferred. Endpoint publishes three articles in nine localized
+static pages through Phase 11A.
 
 ### Phase 6B — Spanish Translation
 
@@ -687,17 +693,24 @@ claiming formal certification.
 See `ACCESSIBILITY_AUDIT.md` for performed checks, results, and remaining
 manual-validation limitations.
 
-Projects and Endpoint Blog remain deferred.
+Projects remains deferred. Endpoint-specific accessibility requires final
+hands-on visual and browser validation after Phase 11A.
 
 ---
 
-## Deferred work — Endpoint blog foundation
+## Phase 11A — Endpoint Blog publication
 
-Implementation status: Deferred.
+Implementation status: Implemented; visual, linguistic, and editorial
+validation pending.
 
 ### Goal
 
 Create the Endpoint editorial section.
+
+Phase 11A publishes three complete articles in Spanish, English, and French
+through nine static pages with localized cards, metadata, `BlogPosting`
+JSON-LD, reciprocal `hreflang`, and circular article navigation. Projects
+remains pending.
 
 ### Identity
 
@@ -707,26 +720,17 @@ Endpoint
 
 Tagline:
 
-Request & Response on the IT Industry
+Request & Response about the IT industry
 
 ### Tasks
 
 - Create the Endpoint index.
-- Create the article metadata model.
-- Store initial articles locally.
-- Create the article page.
-- Create category display.
+- Establish the approved editorial order.
+- Localize titles, copetes, bajadas, article bodies, and supporting copy.
 - Create tag display.
-- Create publication-date display.
-- Create estimated reading-time display.
-- Add navigation back to the portfolio.
-- Display selected recent articles on the main portfolio page.
+- Implement Back, Previous, and Next article navigation.
+- Display the Spanish-original and AI-assisted translation disclosure.
 - Preserve language awareness.
-
-### Initial content format
-
-Use local Markdown or another simple local-content format approved during this
-phase.
 
 Do not add:
 
@@ -735,21 +739,41 @@ Do not add:
 - an administration panel;
 - comments;
 - user accounts;
-- a backend API.
+- a backend API;
+- a client-side router;
+- fabricated metrics or confidential employer material.
 
-### Article metadata
+### Approved initial topic order
 
-Each article should eventually contain:
+1. AI-Augmented Engineering
+2. Code Is No Longer the Bottleneck
+3. Microservices: When They Solve Problems—and When They Multiply Them
 
-- title;
-- summary;
-- publication date;
-- category;
-- tags;
-- reading time;
-- language;
-- slug;
-- article body.
+### Publication contract
+
+Articles are written originally in Spanish. AI-assisted English and French
+translations require Pablo's review and a localized disclosure near the
+beginning of the published article.
+
+Approved disclosures:
+
+- Spanish: `Artículo escrito originalmente en español. Las versiones en inglés
+  y francés fueron traducidas con asistencia de IA y revisadas por el autor.`
+- English: `Originally written in Spanish. The English and French versions
+  were translated with AI assistance and reviewed by the author.`
+- French: `Article rédigé à l’origine en espagnol. Les versions anglaise et
+  française ont été traduites avec l’aide de l’IA et révisées par l’auteur.`
+
+Every published article must have a localized Back to Endpoint link targeting
+the current language's `#endpoint`, plus accessible Previous and Next links
+that name their destinations. The initial order is circular: 1 ← 3 / 1 → 2;
+2 ← 1 / 2 → 3; 3 ← 2 / 3 → 1.
+
+Required Back destinations:
+
+- English: `https://pablodorin.com/#endpoint`
+- Spanish: `https://pablodorin.com/es/#endpoint`
+- French: `https://pablodorin.com/fr/#endpoint`
 
 ### Content integrity
 
@@ -763,26 +787,14 @@ Articles must distinguish between:
 
 Unsupported claims must not be presented as facts.
 
-### URL objective
-
-Target paths:
-
-- `/endpoint`
-- `/es/endpoint`
-- `/fr/endpoint`
-
-Article URLs must remain stable and understandable.
-
 ### Validation
 
 Verify:
 
 - Endpoint index;
-- article navigation;
-- direct article access;
 - language behaviour;
-- responsive typography;
-- code-block formatting;
+- responsive card composition;
+- non-interactive semantics;
 - GitHub Pages compatibility.
 
 Run:
@@ -792,7 +804,8 @@ Run:
 
 ### Deliverable
 
-An Endpoint index and at least one complete article.
+Three complete articles published in Spanish, English, and French through nine
+static article pages. Final human visual and linguistic review remains pending.
 
 ---
 
@@ -832,7 +845,8 @@ English uses `/`, Spanish uses `/es/`, and French uses `/fr/`. Each static
 document has language-specific metadata, a self-referencing canonical, and the
 complete reciprocal `hreflang` set with the English root as `x-default`.
 
-Projects and Endpoint Blog remain deferred.
+Projects remains deferred. Endpoint currently remains a localized shell; no
+article URL has been published.
 
 ### Deferred asset work — Assets, CV, and professional links
 
@@ -1015,7 +1029,7 @@ and HTTPS validation remain pending for a later approved phase.
 - Enable HTTPS.
 - Validate direct navigation.
 - Validate language routes.
-- Validate Endpoint routes.
+- Validate the Endpoint section.
 - Validate the CV download.
 - Validate the final production build.
 
@@ -1038,7 +1052,7 @@ Verify:
 - light and dark themes;
 - English, Spanish, and French;
 - Endpoint index;
-- Endpoint article;
+- Endpoint shell;
 - CV download;
 - LinkedIn;
 - GitHub;
@@ -1077,7 +1091,7 @@ Version 1 is complete only when:
 - AI Workflow is complete;
 - About Me is complete;
 - Endpoint has an index;
-- Endpoint has at least one article;
+- Endpoint publishes its first three articles in Spanish, English, and French;
 - contact links work;
 - CV download works;
 - accessibility basics are satisfied;

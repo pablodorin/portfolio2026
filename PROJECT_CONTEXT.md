@@ -181,8 +181,8 @@ Implemented navigation structure:
 - `/fr/`
 
 The main portfolio language URLs are static and compatible with GitHub Pages.
-Endpoint routes remain deferred and will follow the same root-English,
-language-prefix strategy when implemented.
+Endpoint publishes three complete articles in Spanish, English, and French
+through nine static article URLs. Spanish is the editorial source language.
 
 ## Themes
 
@@ -207,8 +207,11 @@ preference on later visits. The visual direction is French editorial
 minimalism with software-engineering structure, without literal flag
 decoration or neon treatment.
 
-Projects and Endpoint Blog remain deferred and retain their existing
-placeholders.
+The Projects placeholder has been replaced by an accessible four-position
+editorial showcase carousel. All four positions remain explicitly undefined.
+The carousel has no autoplay, uses circular navigation, and exposes no
+repository or demo links. Endpoint Blog publishes three complete articles
+across nine localized static pages.
 
 ## Main navigation
 
@@ -516,9 +519,13 @@ Blog name:
 
 Endpoint
 
+Visible portfolio section heading:
+
+Endpoint Blog
+
 Tagline:
 
-Request & Response on the IT Industry
+Request & Response about the IT industry
 
 Editorial themes:
 
@@ -547,7 +554,36 @@ Each article should eventually contain:
 - slug;
 - article body.
 
-Initial articles must be stored locally.
+The approved initial editorial order is:
+
+1. AI-Augmented Engineering
+2. Code Is No Longer the Bottleneck
+3. Microservices: When They Solve Problems—and When They Multiply Them
+
+The portfolio landing section is localized in English, Spanish, and French.
+The cards link to complete localized articles and display article number,
+publication date, author, title, copete, bajada, tags, and localized action.
+
+Articles are written originally in Spanish. AI-assisted English and French
+translations receive author review and show a localized disclosure near the
+beginning of every published page.
+
+Approved disclosure text:
+
+- Spanish: `Artículo escrito originalmente en español. Las versiones en inglés
+  y francés fueron traducidas con asistencia de IA y revisadas por el autor.`
+- English: `Originally written in Spanish. The English and French versions
+  were translated with AI assistance and reviewed by the author.`
+- French: `Article rédigé à l’origine en espagnol. Les versions anglaise et
+  française ont été traduites avec l’aide de l’IA et révisées par l’auteur.`
+
+Article pages provide Back to Endpoint links targeting `#endpoint`
+for the current language, accessible Previous and Next links that name their
+destinations, and circular navigation across the initial order.
+
+The required Back destinations are `https://pablodorin.com/#endpoint`,
+`https://pablodorin.com/es/#endpoint`, and
+`https://pablodorin.com/fr/#endpoint`.
 
 ### 9. Contact
 
@@ -700,7 +736,7 @@ Version 1 is complete when:
 - the AI Workflow section is included;
 - About Me is included;
 - Endpoint has an index;
-- Endpoint has at least one article;
+- Endpoint publishes its first three articles in Spanish, English, and French;
 - contact links work;
 - the CV can be downloaded;
 - the design is responsive;

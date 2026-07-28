@@ -413,6 +413,44 @@ const es = {
       aiWorkflow: 'Desarrollo de software aumentado por IA',
     },
   },
+  projects: {
+    ...en.projects,
+    title: 'Projects',
+    introduction:
+      'Proyectos de portfolio seleccionados para demostrar habilidades en backend, full-stack, integración, testing y desarrollo aumentado por IA.',
+    items: [
+      {
+        ...en.projects.items[0],
+        title: 'Proyecto 01',
+        type: 'Proyecto de portfolio',
+        status: 'Por definir',
+        purpose:
+          'El primer proyecto de portfolio será definido una vez aprobados su objetivo técnico, su alcance y el valor que deberá demostrar.',
+      },
+      ...en.projects.items.slice(1).map((project, index) => ({
+        ...project,
+        title: `Proyecto 0${index + 2}`,
+        type: 'Proyecto de portfolio',
+        status: 'Por definir',
+        purpose: [
+          'El segundo proyecto de portfolio será definido una vez aprobados su objetivo técnico, su alcance y el valor que deberá demostrar.',
+          'El tercer proyecto de portfolio será definido una vez aprobados su objetivo técnico, su alcance y el valor que deberá demostrar.',
+          'El cuarto proyecto de portfolio será definido una vez aprobados su objetivo técnico, su alcance y el valor que deberá demostrar.',
+        ][index],
+      })),
+    ],
+    labels: {
+      carousel: 'Proyectos de portfolio seleccionados',
+      previous: 'Proyecto anterior',
+      next: 'Proyecto siguiente',
+      indicators: 'Elegir un proyecto',
+      goToProject: 'Ir al proyecto {number}',
+      slidePosition: 'Proyecto {current} de {total}',
+      status: 'Estado',
+      technicalApproach: 'Enfoque técnico',
+      plannedStack: 'Stack planificado',
+    },
+  },
   education: {
     ...en.education,
     title: 'Educación',
@@ -439,6 +477,29 @@ const es = {
       jumpToPrefix: 'Ir a',
       distinctionAccessibleLabel:
         'Programa de Liderazgo para Visitantes Internacionales',
+    },
+  },
+  endpointBlog: {
+    ...en.endpointBlog,
+    label: 'Escritura técnica',
+    tagline: 'Request & Response about the IT industry',
+    introduction:
+      'Endpoint es un blog técnico sobre desarrollo de software, sistemas empresariales, integración, arquitectura y el uso responsable de la IA en los flujos de trabajo de ingeniería.',
+    writtenBy: 'Escrito por Pablo Dorin',
+    tagsLabel: 'Etiquetas del artículo',
+    article: {
+      back: 'Volver a Endpoint',
+      backPath: '/es/#endpoint',
+      previous: 'Artículo anterior',
+      next: 'Artículo siguiente',
+      writtenBy: 'Escrito por Pablo Dorin',
+      date: '28 de julio de 2026',
+      disclosure:
+        'Artículo escrito originalmente en español. Las versiones en inglés y francés fueron traducidas con asistencia de IA y revisadas por el autor.',
+      signatureRole: 'Desarrollador de Software Senior',
+      tagsLabel: 'Etiquetas del artículo',
+      navigationLabel: 'Navegación entre artículos',
+      languageLabel: 'Idioma del artículo',
     },
   },
   aiWorkflow: {

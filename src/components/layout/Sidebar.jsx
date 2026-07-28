@@ -17,7 +17,7 @@ function Sidebar({ activeSectionId, onThemeToggle, theme }) {
 
       <div className="sidebar__secondary-controls">
         <ThemeToggle theme={theme} onToggle={onThemeToggle} />
-        <LanguageSelector />
+        <LanguageSelector activeSectionId={activeSectionId} />
       </div>
     </aside>
   )

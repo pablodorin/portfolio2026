@@ -96,7 +96,7 @@ function MobileHeader({ activeSectionId, onThemeToggle, theme }) {
         onNavigate={handleNavigation}
       >
         <div className="mobile-navigation__language">
-          <LanguageSelector />
+          <LanguageSelector activeSectionId={activeSectionId} />
         </div>
       </GitSectionNavigation>
     </header>

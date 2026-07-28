@@ -4,10 +4,11 @@
 
 This audit covers the current static React portfolio in English, Spanish, and
 French. It includes Home, Experience, Technologies, Education, AI Workflow,
-About Me, Contact, and the current Projects and Endpoint placeholders.
+About Me, Contact, the Projects showcase carousel, and the Endpoint landing.
 
 The audit excludes SEO, deployment, routing, analytics, final Projects content,
-and the Endpoint Blog implementation.
+hands-on browser and screen-reader validation of the newly published Endpoint
+article pages.
 
 ## 2. Target standard
 
@@ -107,6 +108,10 @@ browser/viewport combination.
   a new tab with `noopener noreferrer`, include a localized assistive
   announcement, and retain visible focus without making entire cards
   interactive.
+- The Projects carousel has no autoplay, uses native buttons, exposes a
+  controlled polite announcement, preserves focus, supports circular and
+  optional arrow-key navigation, removes inactive slides from the DOM, and
+  disables its positional transition under reduced motion.
 
 ## 7. Remaining limitations
 
@@ -165,4 +170,6 @@ The calculated text contrast ratios were:
   larger default fonts.
 - Run browser-native accessibility inspection or axe/Lighthouse only if those
   tools become approved and available.
-- Repeat the audit when Projects and Endpoint Blog are implemented.
+- Complete a hands-on reflow, keyboard, and cross-browser review of the
+  Endpoint landing and nine article pages, and repeat the full audit when
+  Projects is implemented.
