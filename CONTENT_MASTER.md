@@ -1095,7 +1095,7 @@ Public contact methods:
 - LinkedIn: https://www.linkedin.com/in/pablo-dorin
 - GitHub: https://github.com/pablodorin
 - Downloadable CV:
-  public/cv/Pablo_Dorin_CV_28_JUL_2026_Senior_Software_Developer.pdf
+  public/cv/Pablo_Dorin_CV.pdf
 
 Do not publish:
 

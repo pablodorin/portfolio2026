@@ -30,7 +30,7 @@ export const contactLinks = [
   {
     id: 'cv',
     label: 'Download CV',
-    href: '/cv/Pablo_Dorin_CV_28_JUL_2026_Senior_Software_Developer.pdf',
-    download: 'Pablo-Dorin-CV.pdf',
+    href: '/cv/Pablo_Dorin_CV.pdf',
+    download: 'Pablo_Dorin_CV.pdf',
   },
 ]
