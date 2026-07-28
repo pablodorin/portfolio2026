@@ -25,7 +25,8 @@ export const educationItems = [
 export const internationalDistinction = {
   id: 'ivlp',
   organization: 'U.S. Department of State',
-  title: 'Selected Participant, International Visitor Leadership Program',
+  participantLabel: 'Selected Participant,',
+  programName: 'International Visitor Leadership Program',
   abbreviation: 'IVLP',
   date: '2017',
   location: 'Washington, DC, United States',

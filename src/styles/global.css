@@ -10,6 +10,7 @@
 @import './contact-section.css';
 @import './theme-toggle.css';
 @import './language-selector.css';
+@import './official-external-link.css';
 @import './motion.css';
 
 body {

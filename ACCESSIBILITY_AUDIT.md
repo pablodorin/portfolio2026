@@ -103,6 +103,10 @@ browser/viewport combination.
 - The existing `aria-current="location"` active-section state was preserved.
 - Every static language document has the correct `html lang` before hydration,
   and the translated skip link remains the first focusable control.
+- Official organisation, institution, and IVLP links use real anchors, open in
+  a new tab with `noopener noreferrer`, include a localized assistive
+  announcement, and retain visible focus without making entire cards
+  interactive.
 
 ## 7. Remaining limitations
 

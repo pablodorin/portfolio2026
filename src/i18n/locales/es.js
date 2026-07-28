@@ -425,8 +425,9 @@ const es = {
     distinction: {
       ...en.education.distinction,
       organization: 'Departamento de Estado de los Estados Unidos',
-      title:
-        'Participante seleccionado, Programa de Liderazgo para Visitantes Internacionales',
+      participantLabel: 'Participante seleccionado,',
+      programName:
+        'Programa de Liderazgo para Visitantes Internacionales',
       location: 'Washington, D. C., Estados Unidos',
     },
     academicStudies: 'Estudios académicos',

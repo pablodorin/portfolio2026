@@ -1,4 +1,6 @@
 import useTranslation from '../../i18n/useTranslation.js'
+import { officialLinks } from '../../content/officialLinks.js'
+import OfficialExternalLink from '../ui/OfficialExternalLink.jsx'
 
 function ExperienceEntry({ experience }) {
   const { messages } = useTranslation()
@@ -17,6 +19,7 @@ function ExperienceEntry({ experience }) {
     role,
     technologies,
   } = experience
+  const officialUrl = officialLinks.organizations[id]
 
   return (
     <article
@@ -32,13 +35,15 @@ function ExperienceEntry({ experience }) {
 
       <div className="experience-entry__body">
         <h3 id={`${id}-company`}>
-          <span className="experience-entry__company-full">{company}</span>
-          <span
-            className="experience-entry__company-mobile"
-            aria-label={company}
-          >
-            {mobileCompany ?? company}
-          </span>
+          <OfficialExternalLink href={officialUrl}>
+            <span className="experience-entry__company-full">{company}</span>
+            <span
+              className="experience-entry__company-mobile"
+              aria-label={company}
+            >
+              {mobileCompany ?? company}
+            </span>
+          </OfficialExternalLink>
         </h3>
         <p className="experience-entry__role">{role}</p>
         <p className="experience-entry__context">{context}</p>

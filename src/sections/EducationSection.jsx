@@ -1,4 +1,6 @@
 import EducationIndex from '../components/education/EducationIndex.jsx'
+import OfficialExternalLink from '../components/ui/OfficialExternalLink.jsx'
+import { officialLinks } from '../content/officialLinks.js'
 import useTranslation from '../i18n/useTranslation.js'
 
 function EducationSection() {
@@ -45,7 +47,13 @@ function EducationSection() {
                 <p className="education-entry__meta">
                   <span className="education-entry__dates">{dates}</span>
                 </p>
-                <h4>{institution}</h4>
+                <h4>
+                  <OfficialExternalLink
+                    href={officialLinks.institutions[id]}
+                  >
+                    {institution}
+                  </OfficialExternalLink>
+                </h4>
                 <p className="education-entry__program">{program}</p>
               </li>
             ))}
@@ -62,12 +70,16 @@ function EducationSection() {
           <p className="education-distinction__eyebrow">
             {distinctionLabel} · {distinction.date}
           </p>
-          <h3 id="education-distinction-title">
-            {distinction.abbreviation}
-          </h3>
           <p className="education-distinction__title">
-            {distinction.title}
+            {distinction.participantLabel}
           </p>
+          <h3 id="education-distinction-title">
+            <OfficialExternalLink
+              href={officialLinks.programmes[distinction.id]}
+            >
+              {distinction.programName} ({distinction.abbreviation})
+            </OfficialExternalLink>
+          </h3>
           <p className="education-distinction__meta">
             <span>{distinction.organization}</span>
             <span aria-hidden="true"> · </span>

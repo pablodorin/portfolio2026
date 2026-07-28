@@ -1077,6 +1077,11 @@ rules live in `global.css`; there is no separate utilities stylesheet.
 
 Component-specific styles should use clearly named files.
 
+Official organisation, institution, and programme names may use the shared
+`official-external-link` treatment. These links remain typographic rather than
+button-like, use a restrained underline and external-link mark, and retain the
+global visible-focus treatment in both themes.
+
 Do not place the entire design in `App.css`.
 
 Do not use inline styles for the primary design system.
