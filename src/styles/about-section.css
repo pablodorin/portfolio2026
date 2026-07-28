@@ -228,4 +228,10 @@
     padding-top: var(--space-3);
   }
 
+  .about-index a {
+    display: flex;
+    min-height: 2.75rem;
+    align-items: center;
+  }
+
 }

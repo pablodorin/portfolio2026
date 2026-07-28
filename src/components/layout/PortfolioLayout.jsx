@@ -6,6 +6,7 @@ import useActiveSection from '../../hooks/useActiveSection.js'
 import useSectionReveal from '../../hooks/useSectionReveal.js'
 import useTheme from '../../hooks/useTheme.js'
 import useTranslation from '../../i18n/useTranslation.js'
+import useDocumentMetadata from '../../seo/useDocumentMetadata.js'
 
 const sectionIds = navigationItems.map(({ id }) => id)
 
@@ -13,6 +14,7 @@ function PortfolioLayout({ children }) {
   const { t } = useTranslation()
   const activeSectionId = useActiveSection(sectionIds)
   const { theme, toggleTheme } = useTheme()
+  useDocumentMetadata()
   useSectionReveal()
 
   return (

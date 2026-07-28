@@ -267,7 +267,7 @@ The hero must present:
 
 Pablo Dorin
 
-Senior Software Engineer
+Senior Software Developer
 
 Java Backend & Full-Stack Development
 
@@ -596,7 +596,8 @@ Implementation status: Pending.
     EN · ES · FR
 
 - Do not use flags.
-- Persist the selected language in local storage.
+- Use the current language URL as the authoritative language source.
+- Keep any selected-language local-storage value advisory only.
 - Keep professional content consistent across languages.
 - Validate layouts with longer translated text.
 
@@ -604,11 +605,11 @@ Implementation status: Pending.
 
 Target language paths:
 
-- `/en`
-- `/es`
-- `/fr`
+- `/`
+- `/es/`
+- `/fr/`
 
-The final routing solution must remain compatible with GitHub Pages.
+The static multi-page solution must remain compatible with GitHub Pages.
 
 ### Content rules
 
@@ -648,7 +649,44 @@ A complete multilingual portfolio in English, Spanish, and French.
 
 ---
 
-## Phase 7 — Endpoint blog foundation
+## Phase 7 — Accessibility and Final Quality Review
+
+Implementation status: Implemented.
+
+### Goal
+
+Audit and correct the completed multilingual portfolio for robust,
+WCAG 2.2 Level AA-oriented accessibility and consistent final quality without
+claiming formal certification.
+
+### Completed scope
+
+- document landmarks and heading hierarchy;
+- keyboard and visible-focus behaviour;
+- skip navigation;
+- mobile-menu focus, Escape, and background isolation;
+- link purpose and external-link behaviour;
+- image and decorative-SVG accessibility;
+- light- and dark-theme contrast review;
+- language and theme controls;
+- active navigation state;
+- reduced-motion and scroll-snap behaviour;
+- responsive reflow, zoom resilience, and touch targets;
+- translated accessibility labels;
+- accessibility audit report.
+
+### Validation
+
+See `ACCESSIBILITY_AUDIT.md` for performed checks, results, and remaining
+manual-validation limitations.
+
+Projects and Endpoint Blog remain deferred.
+
+---
+
+## Deferred work — Endpoint blog foundation
+
+Implementation status: Deferred.
 
 ### Goal
 
@@ -722,7 +760,7 @@ Unsupported claims must not be presented as facts.
 
 Target paths:
 
-- `/en/endpoint`
+- `/endpoint`
 - `/es/endpoint`
 - `/fr/endpoint`
 
@@ -751,7 +789,44 @@ An Endpoint index and at least one complete article.
 
 ---
 
-## Phase 8 — Assets, CV, and professional links
+## Phase 8 — SEO, metadata, and public assets
+
+### Phase 8A — SEO and Metadata Foundation
+
+Implementation status: Implemented and approved.
+
+Completed:
+
+- static English metadata defaults;
+- runtime EN / ES / FR title and description updates;
+- Open Graph and Twitter/X text metadata;
+- one stable canonical homepage;
+- one language-aware `ProfilePage` / `Person` JSON-LD block;
+- public `robots.txt`;
+- single-homepage `sitemap.xml`;
+- favicon integration audit;
+- `SEO_AUDIT.md`.
+
+No social image, route, `hreflang`, deployment, or analytics work was included.
+
+### Phase 8B — Social Preview and LinkedIn Banner
+
+Implementation status: Deferred.
+
+The final social-sharing image and LinkedIn banner remain pending until the
+portfolio visual identity is fully closed.
+
+### Phase 8C — Static Multilingual URLs and hreflang
+
+Implementation status: Implemented.
+
+English uses `/`, Spanish uses `/es/`, and French uses `/fr/`. Each static
+document has language-specific metadata, a self-referencing canonical, and the
+complete reciprocal `hreflang` set with the English root as `x-default`.
+
+Projects and Endpoint Blog remain deferred.
+
+### Deferred asset work — Assets, CV, and professional links
 
 ### Goal
 

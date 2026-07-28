@@ -141,16 +141,6 @@
   list-style: none;
 }
 
-.ai-workflow-section__steps::before {
-  position: absolute;
-  top: var(--space-4);
-  bottom: var(--space-4);
-  left: 0;
-  width: 1px;
-  background: var(--color-border-strong);
-  content: '';
-}
-
 .workflow-step {
   position: relative;
   scroll-margin-top: var(--space-3);

@@ -474,7 +474,7 @@ The mobile menu must:
 The hero must present:
 
 - Pablo Dorin;
-- Senior Software Engineer;
+- Senior Software Developer;
 - Java Backend & Full-Stack Development;
 - Enterprise Applications;
 - System Integration;
@@ -990,6 +990,27 @@ Keyboard users must be able to access:
 - article links;
 - contact actions.
 
+Final accessibility behaviour:
+
+- the skip link is the first focusable control and targets the single main
+  landmark;
+- opening the mobile navigation makes the page content inert while preserving
+  access to the header controls and menu;
+- Escape closes the mobile navigation and returns focus to its menu button;
+- choosing a mobile navigation destination closes the menu and focuses the
+  named destination section;
+- language options are real URL links; the active language has
+  `aria-current="page"` and a visible non-colour marker;
+- the active section link uses `aria-current="location"`;
+- decorative SVG graphics are hidden from assistive technology and cannot
+  receive focus;
+- external profile links announce their new-tab behaviour to assistive
+  technology;
+- reduced-motion mode removes reveals, interface transitions, smooth scrolling,
+  and scroll snapping;
+- sticky editorial headings remain limited to sufficiently wide and tall
+  viewports.
+
 ---
 
 ## Images
@@ -1088,7 +1109,7 @@ Before approving a section, verify:
 
 The portfolio should communicate:
 
-A senior software engineer with substantial enterprise experience, a strong
+A senior software developer with substantial enterprise experience, a strong
 Java backend identity, full-stack capability, disciplined technical judgment,
 and a thoughtful approach to AI-assisted engineering.
 

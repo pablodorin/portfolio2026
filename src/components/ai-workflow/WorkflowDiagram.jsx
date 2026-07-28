@@ -38,6 +38,7 @@ function WorkflowGlyph({ stepId }) {
       className="workflow-diagram__glyph"
       viewBox="0 0 24 24"
       aria-hidden="true"
+      focusable="false"
     >
       {glyphs[stepId]}
     </svg>

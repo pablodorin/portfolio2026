@@ -2,8 +2,8 @@ import { useCallback, useMemo, useState } from 'react'
 import I18nContext from './I18nContext.js'
 import {
   defaultLanguage,
+  getPathLanguage,
   isSupportedLanguage,
-  languageStorageKey,
 } from './languages.js'
 import en from './locales/en.js'
 import es from './locales/es.js'
@@ -35,6 +35,12 @@ function getMessage(messages, key) {
 }
 
 function getInitialLanguage() {
+  const pathLanguage = getPathLanguage(window.location.pathname)
+
+  if (pathLanguage) {
+    return pathLanguage
+  }
+
   const documentLanguage = document.documentElement.lang
 
   return isSupportedLanguage(documentLanguage)
@@ -43,7 +49,7 @@ function getInitialLanguage() {
 }
 
 function I18nProvider({ children }) {
-  const [language, setCurrentLanguage] = useState(getInitialLanguage)
+  const [language] = useState(getInitialLanguage)
   const messages = useMemo(() => {
     if (language === defaultLanguage) {
       return en
@@ -51,21 +57,6 @@ function I18nProvider({ children }) {
 
     return mergeMessages(en, localeOverrides[language] ?? {})
   }, [language])
-
-  const setLanguage = useCallback((nextLanguage) => {
-    const resolvedLanguage = isSupportedLanguage(nextLanguage)
-      ? nextLanguage
-      : defaultLanguage
-
-    try {
-      window.localStorage.setItem(languageStorageKey, resolvedLanguage)
-    } catch {
-      // The selected language still applies for the current session.
-    }
-
-    document.documentElement.lang = resolvedLanguage
-    setCurrentLanguage(resolvedLanguage)
-  }, [])
 
   const translate = useCallback(
     (key) => getMessage(messages, key) ?? getMessage(en, key) ?? '',
@@ -76,10 +67,9 @@ function I18nProvider({ children }) {
     () => ({
       language,
       messages,
-      setLanguage,
       t: translate,
     }),
-    [language, messages, setLanguage, translate],
+    [language, messages, translate],
   )
 
   return (

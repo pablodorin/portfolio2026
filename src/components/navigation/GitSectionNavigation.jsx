@@ -15,7 +15,7 @@ const nodeLanesBySection = {
   'ai-workflow': ['purple'],
   education: ['blue'],
   endpoint: ['purple'],
-  'about-me': ['coral'],
+  about: ['coral'],
   contact: ['merge'],
 }
 
@@ -38,7 +38,7 @@ const activePathsBySection = {
   endpoint: [
     { branch: 'purple', path: 'M32 16C32 30 52 30 52 48V208' },
   ],
-  'about-me': [
+  about: [
     { branch: 'blue', path: branchPaths.blue },
     { branch: 'coral', path: 'M32 16V240' },
   ],

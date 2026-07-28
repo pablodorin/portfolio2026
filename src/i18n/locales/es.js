@@ -18,7 +18,7 @@ const navigationCopy = {
     description: 'Selección de proyectos y trabajo de ingeniería.',
   },
   'ai-workflow': {
-    label: 'Flujo con IA',
+    label: 'AI Workflow',
     description: 'Un enfoque responsable para la ingeniería aumentada por IA.',
   },
   education: {
@@ -29,7 +29,7 @@ const navigationCopy = {
     label: 'Endpoint Blog',
     description: 'Artículos técnicos y notas editoriales.',
   },
-  'about-me': {
+  about: {
     label: 'Sobre mí',
     description: 'Intereses que complementan la práctica profesional.',
   },
@@ -313,7 +313,7 @@ const es = {
   ...en,
   site: {
     ...en.site,
-    role: 'Ingeniero de Software Senior',
+    role: 'Desarrollador de Software Senior',
     skipToContent: 'Saltar al contenido',
     portfolioOverview: 'Resumen del portfolio',
     footer: 'Pablo Dorin — Portfolio profesional',
@@ -356,7 +356,7 @@ const es = {
     subtitle:
       'Aplicaciones Empresariales · Integración de Sistemas · Ingeniería Aumentada por IA',
     introduction:
-      'Ingeniero de software con más de 18 años de experiencia profesional en ingeniería de software empresarial, desarrollo backend Java, integración de sistemas y entrega full-stack en entornos internacionales y críticos para el negocio.',
+      'Desarrollador de Software Senior con más de 18 años de experiencia profesional en ingeniería de software empresarial, desarrollo backend Java, integración de sistemas y entrega full-stack en entornos internacionales y críticos para el negocio.',
     actionsLabel: 'Acciones principales',
     actions: {
       projects: 'Ver proyectos',
@@ -491,6 +491,7 @@ const es = {
       }[link.id],
     })),
     profilesLabel: 'Perfiles profesionales',
+    newTabLabel: '(se abre en una pestaña nueva)',
   },
 }
 

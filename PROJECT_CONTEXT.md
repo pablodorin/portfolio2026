@@ -7,7 +7,7 @@ Pablo Dorin — Professional Portfolio
 ## Purpose
 
 Build a professional portfolio for Pablo Dorin that supports his search for
-Senior Software Engineer, Java Backend, and Full-Stack positions.
+Senior Software Developer, Java Backend, and Full-Stack positions.
 
 The portfolio must communicate:
 
@@ -21,11 +21,15 @@ The portfolio must communicate:
 
 Primary title:
 
-Senior Software Engineer
+Senior Software Developer
 
 Specialization:
 
 Java Backend & Full-Stack Development
+
+Primary SEO specialization:
+
+Senior Java Developer
 
 Professional subtitle:
 
@@ -34,6 +38,11 @@ Enterprise Applications, System Integration & AI-Augmented Engineering
 Experience statement:
 
 18+ years of professional experience.
+
+Developer is the preferred personal professional title. Software engineering
+remains valid terminology for the discipline, practices, methods, and
+processes. Approved employer-assigned Engineer titles remain unchanged as
+historical facts.
 
 Java and Spring Boot are the central professional technologies.
 
@@ -96,6 +105,32 @@ pablodorin.com
 
 The site must work correctly over HTTPS.
 
+## SEO and metadata
+
+Production origin:
+
+https://pablodorin.com
+
+Canonical homepage:
+
+https://pablodorin.com/
+
+Phase 8A and Phase 8C use a lightweight custom metadata architecture:
+
+- language-specific defaults are present in `index.html`, `es/index.html`, and
+  `fr/index.html`;
+- locale-specific values are centralised in `src/seo/seoContent.js`;
+- one React hook updates existing title, description, Open Graph, Twitter/X,
+  and JSON-LD values consistently with the active URL language;
+- every language page has a self-referencing canonical;
+- every language page exposes the same reciprocal `en`, `es`, `fr`, and
+  `x-default` alternate set;
+- one `ProfilePage` JSON-LD block describes Pablo through `mainEntity: Person`;
+- `robots.txt` references a sitemap containing the three canonical pages.
+
+The final social preview image and LinkedIn banner remain deferred pending
+visual-consistency review.
+
 ## Languages
 
 Supported languages:
@@ -114,28 +149,33 @@ Do not use flags as language selectors.
 
 The selected language should persist in local storage.
 
-Phase 6A implementation:
+Current implementation:
 
 - English remains the default language;
-- explicit selection is persisted under `portfolio-language`;
-- the root document `lang` attribute updates to `en`, `es`, or `fr`;
+- `/` is the English document;
+- `/es/` is the Spanish document;
+- `/fr/` is the French document;
+- pathname is authoritative, followed by the static document language and then
+  an English fallback;
+- explicit selection may be recorded under `portfolio-language` as advisory
+  data but never redirects or overrides the URL;
+- every document has the correct static `lang` before React renders;
 - section ids and anchor destinations remain language-independent;
-- language changes do not reload the page or modify the URL;
+- language changes use real links and perform an expected document navigation;
 - the complete Spanish interface and approved portfolio content are available
   through the `es` locale;
 - the complete French interface and approved portfolio content are available
   through the `fr` locale.
 
-Target navigation structure:
+Implemented navigation structure:
 
-- `/en`
-- `/es`
-- `/fr`
-- `/en/endpoint`
-- `/es/endpoint`
-- `/fr/endpoint`
+- `/`
+- `/es/`
+- `/fr/`
 
-The final routing implementation must remain compatible with GitHub Pages.
+The main portfolio language URLs are static and compatible with GitHub Pages.
+Endpoint routes remain deferred and will follow the same root-English,
+language-prefix strategy when implemented.
 
 ## Themes
 
@@ -209,7 +249,7 @@ A hero introduction presenting:
 
 Pablo Dorin
 
-Senior Software Engineer
+Senior Software Developer
 
 Java Backend & Full-Stack Development
 
@@ -588,6 +628,15 @@ Endpoint is a purple node only. Contact is the final coral and purple merge.
 The mobile navigation uses the same Git-history topology inside a compact,
 collapsible, and accessible menu. Labels remain explicit, so the graph is not
 required to understand or operate the links.
+
+Accessibility and final-quality behaviour:
+
+- the page has one main landmark and a translated skip link;
+- mobile-menu background content becomes inert while the menu is open;
+- Escape closes the mobile menu and restores focus to the menu button;
+- mobile navigation moves focus to the selected section;
+- active navigation and selected language expose programmatic states;
+- reduced-motion mode presents static content without scroll snapping.
 
 They must remain secondary to the content.
 

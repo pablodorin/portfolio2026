@@ -44,7 +44,7 @@ export const navigationItems = [
     description: 'The editorial area will be created in its dedicated phase.',
   },
   {
-    id: 'about-me',
+    id: 'about',
     label: 'About Me',
     branch: 'blue-merge',
     description: 'The personal introduction will be developed in a later phase.',

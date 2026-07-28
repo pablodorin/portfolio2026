@@ -1,6 +1,6 @@
 # Pablo Dorin — Professional Portfolio
 
-Professional portfolio of Pablo Dorin, Senior Software Engineer specializing
+Professional portfolio of Pablo Dorin, Senior Software Developer specializing
 in Java Backend and Full-Stack Development.
 
 Professional focus:

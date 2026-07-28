@@ -103,7 +103,7 @@ Do not silently complete missing professional information.
 
 The portfolio must present Pablo as:
 
-Senior Software Engineer
+Senior Software Developer
 
 Specialization:
 
@@ -116,6 +116,11 @@ Enterprise Applications, System Integration & AI-Augmented Engineering
 Experience:
 
 18+ years of professional experience.
+
+Developer is the preferred personal professional title. Software engineering
+remains valid terminology for practices, methods, processes, and disciplines.
+Approved employer-assigned Engineer titles must remain unchanged as historical
+facts.
 
 Do not present Pablo as:
 

@@ -24,7 +24,7 @@ function App() {
           <EducationSection key={section.id} />
         ) : section.id === 'ai-workflow' ? (
           <AIWorkflowSection key={section.id} />
-        ) : section.id === 'about-me' ? (
+        ) : section.id === 'about' ? (
           <AboutSection key={section.id} />
         ) : section.id === 'contact' ? (
           <ContactSection key={section.id} />

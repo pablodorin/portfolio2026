@@ -26,11 +26,15 @@ Buenos Aires, Argentina
 
 Primary professional title:
 
-Senior Software Engineer
+Senior Software Developer
 
 Professional specialization:
 
 Java Backend & Full-Stack Development
+
+Primary SEO specialization:
+
+Senior Java Developer
 
 Professional subtitle:
 
@@ -72,10 +76,15 @@ Do not publish a phone number on the public portfolio.
 
 ## Professional positioning
 
-Pablo Dorin is a Senior Software Engineer with more than eighteen years of
+Pablo Dorin is a Senior Software Developer with more than eighteen years of
 professional experience in enterprise software, backend development, system
 integration, software architecture, technical coordination, and full-stack
 delivery.
+
+Developer is the preferred personal professional title. Software engineering
+remains valid terminology when it describes practices, methods, processes, or
+the discipline. Approved employer-assigned Engineer titles are preserved as
+historical facts.
 
 His primary technical positioning is:
 
@@ -127,7 +136,7 @@ approved facts below.
 
 Approved English summary:
 
-Senior Software Engineer with 18+ years of experience developing and
+Senior Software Developer with 18+ years of experience developing and
 maintaining enterprise applications, with a strong focus on Java backend
 development, system integration, and full-stack delivery.
 
@@ -138,6 +147,39 @@ AI-assisted engineering workflows.
 Uses OpenAI Codex and ChatGPT as engineering tools while retaining full
 responsibility for technical decisions, validation, security judgment, and
 professional outcomes.
+
+---
+
+## Approved future SEO metadata
+
+English title:
+
+Pablo Dorin | Senior Java Developer
+
+English description:
+
+Senior software developer specialising in Java backend development, enterprise
+applications, system integration, and AI-augmented engineering.
+
+Spanish title:
+
+Pablo Dorin | Desarrollador Java Senior
+
+Spanish description:
+
+Desarrollador de software senior especializado en desarrollo backend con Java,
+aplicaciones empresariales, integración de sistemas e ingeniería aumentada por
+IA.
+
+French title:
+
+Pablo Dorin | Développeur Java senior
+
+French description:
+
+Développeur logiciel senior spécialisé en développement backend Java,
+applications d’entreprise, intégration de systèmes et ingénierie augmentée par
+l’IA.
 
 ---
 
@@ -1052,7 +1094,8 @@ Public contact methods:
 - Email: dorin1979@gmail.com
 - LinkedIn: https://www.linkedin.com/in/pablo-dorin
 - GitHub: https://github.com/pablodorin
-- Downloadable CV: public/cv/Pablo_Dorin_CV_24_JUL_2026.pdf
+- Downloadable CV:
+  public/cv/Pablo_Dorin_CV_28_JUL_2026_Senior_Software_Developer.pdf
 
 Do not publish:
 

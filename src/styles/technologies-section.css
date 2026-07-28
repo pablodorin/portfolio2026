@@ -43,7 +43,7 @@
 .technologies-index__mobile-label {
   display: block;
   margin-bottom: var(--space-2);
-  color: var(--color-text-muted);
+  color: var(--color-section-label);
   font-family: var(--font-mono);
   font-size: 0.75rem;
   letter-spacing: 0.08em;

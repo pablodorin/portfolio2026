@@ -17,7 +17,7 @@ import { technologyGroups } from '../../content/technologies.js'
 const en = {
   site: {
     name: 'Pablo Dorin',
-    role: 'Senior Software Engineer',
+    role: 'Senior Software Developer',
     skipToContent: 'Skip to content',
     portfolioOverview: 'Portfolio overview',
     footer: 'Pablo Dorin — Portfolio foundation',
@@ -39,8 +39,8 @@ const en = {
       groupLabel: 'Select language',
       options: {
         en: 'Switch language to English',
-        es: 'Cambiar idioma a español',
-        fr: 'Passer la langue au français',
+        es: 'Switch language to Spanish',
+        fr: 'Switch language to French',
       },
     },
   },
@@ -54,7 +54,7 @@ const en = {
     subtitle:
       'Enterprise Applications · System Integration · AI-Augmented Engineering',
     introduction:
-      'Senior Software Engineer with 18+ years of professional experience delivering enterprise software, Java backend development, system integration, and full-stack solutions across international teams and business-critical environments.',
+      'Senior Software Developer with 18+ years of professional experience delivering enterprise software, Java backend development, system integration, and full-stack solutions across international teams and business-critical environments.',
     actionsLabel: 'Primary actions',
     actions: {
       projects: 'View Projects',
@@ -132,6 +132,7 @@ const en = {
     content: contactContent,
     links: contactLinks,
     profilesLabel: 'Professional profiles',
+    newTabLabel: '(opens in a new tab)',
   },
 }
 

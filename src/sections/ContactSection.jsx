@@ -76,6 +76,12 @@ function ContactSection() {
                 >
                   <BrandIcon brand={id} />
                   {label}
+                  {external && (
+                    <span className="visually-hidden">
+                      {' '}
+                      {messages.contact.newTabLabel}
+                    </span>
+                  )}
                 </a>
               ),
             )}

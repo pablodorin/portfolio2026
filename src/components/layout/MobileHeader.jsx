@@ -24,6 +24,20 @@ function MobileHeader({ activeSectionId, onThemeToggle, theme }) {
     return () => document.removeEventListener('keydown', handleEscape)
   }, [isMenuOpen])
 
+  useEffect(() => {
+    const pageContent = document.querySelector('.portfolio-main')
+
+    if (!pageContent) {
+      return undefined
+    }
+
+    pageContent.inert = isMenuOpen
+
+    return () => {
+      pageContent.inert = false
+    }
+  }, [isMenuOpen])
+
   function handleNavigation(event) {
     event.preventDefault()
 
@@ -37,6 +51,8 @@ function MobileHeader({ activeSectionId, onThemeToggle, theme }) {
         if (section) {
           section.scrollIntoView()
           window.history.pushState(null, '', `#${sectionId}`)
+          section.tabIndex = -1
+          section.focus({ preventScroll: true })
         }
       })
     })

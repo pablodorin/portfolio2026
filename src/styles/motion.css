@@ -72,7 +72,7 @@
 :where(
     .action-link,
     .theme-toggle,
-    .language-selector__button,
+    .language-selector__link,
     .mobile-menu-button,
     .contact-section__primary-action,
     .contact-section__download-action,
@@ -208,7 +208,7 @@
   :where(
       .action-link,
       .theme-toggle,
-      .language-selector__button,
+      .language-selector__link,
       .mobile-menu-button,
       .contact-section__primary-action,
       .contact-section__download-action,

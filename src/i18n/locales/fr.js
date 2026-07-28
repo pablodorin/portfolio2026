@@ -5,10 +5,10 @@ const navigationCopy = {
   experience: ['Expérience', 'Parcours professionnel et contributions sélectionnées.'],
   technologies: ['Technologies', 'Technologies et pratiques d’ingénierie organisées par domaine.'],
   projects: ['Projets', 'Sélection de projets et travaux d’ingénierie.'],
-  'ai-workflow': ['Flux IA', 'Une approche responsable de l’ingénierie augmentée par l’IA.'],
+  'ai-workflow': ['AI Workflow', 'Une approche responsable de l’ingénierie augmentée par l’IA.'],
   education: ['Formation', 'Formation académique et distinction internationale.'],
   endpoint: ['Endpoint Blog', 'Articles techniques et notes éditoriales.'],
-  'about-me': ['À propos', 'Des centres d’intérêt qui complètent la pratique professionnelle.'],
+  about: ['À propos', 'Des centres d’intérêt qui complètent la pratique professionnelle.'],
   contact: ['Contact', 'Moyens d’entamer une conversation professionnelle.'],
 }
 
@@ -271,7 +271,7 @@ const fr = {
   ...en,
   site: {
     ...en.site,
-    role: 'Ingénieur logiciel senior',
+    role: 'Développeur logiciel senior',
     skipToContent: 'Aller au contenu',
     portfolioOverview: 'Présentation du portfolio',
     footer: 'Pablo Dorin — Portfolio professionnel',
@@ -309,11 +309,11 @@ const fr = {
   },
   home: {
     ...en.home,
-    specialization: 'Développement Backend Java et Full-Stack',
+    specialization: 'Développement backend Java et full-stack',
     subtitle:
       'Applications d’entreprise · Intégration de systèmes · Ingénierie augmentée par l’IA',
     introduction:
-      'Ingénieur logiciel senior avec plus de 18 ans d’expérience professionnelle dans la livraison de logiciels d’entreprise, le développement backend Java, l’intégration de systèmes et les solutions full-stack au sein d’équipes internationales et d’environnements critiques.',
+      'Développeur logiciel senior avec plus de 18 ans d’expérience professionnelle dans la livraison de logiciels d’entreprise, le développement backend Java, l’intégration de systèmes et les solutions full-stack au sein d’équipes internationales et d’environnements critiques.',
     actionsLabel: 'Actions principales',
     actions: {
       projects: 'Voir les projets',
@@ -431,7 +431,7 @@ const fr = {
     content: {
       ...en.contact.content,
       label: 'Contact',
-      title: 'Parlons-en.',
+      title: 'Échangeons.',
       introduction:
         'Ouvert aux opportunités liées aux applications d’entreprise, à l’intégration de systèmes et à l’ingénierie augmentée par l’IA.',
       availability:
@@ -447,6 +447,7 @@ const fr = {
       }[link.id],
     })),
     profilesLabel: 'Profils professionnels',
+    newTabLabel: '(s’ouvre dans un nouvel onglet)',
   },
 }
 

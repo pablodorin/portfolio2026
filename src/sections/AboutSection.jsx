@@ -9,7 +9,7 @@ function AboutSection() {
 
   return (
     <section
-      id="about-me"
+      id="about"
       className="about-section"
       aria-labelledby="about-title"
     >
