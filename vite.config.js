@@ -3,10 +3,27 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 const projectRoot = fileURLToPath(new URL('.', import.meta.url))
+const cloudflareBeaconSource =
+  'src="https://static.cloudflareinsights.com/beacon.min.js"'
+
+function preserveCloudflareBeacon() {
+  return {
+    name: 'preserve-cloudflare-web-analytics',
+    transformIndexHtml: {
+      order: 'pre',
+      handler(html) {
+        return html.replace(
+          `<script\n      type="module"\n      ${cloudflareBeaconSource}`,
+          `<script\n      vite-ignore\n      type="module"\n      ${cloudflareBeaconSource}`,
+        )
+      },
+    },
+  }
+}
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), preserveCloudflareBeacon()],
   build: {
     rolldownOptions: {
       input: {

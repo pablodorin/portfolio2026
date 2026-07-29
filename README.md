@@ -126,7 +126,7 @@ and repository cleanup are implemented. The following remain deferred:
 - final social-sharing image;
 - final LinkedIn banner;
 - final GitHub Pages, custom-domain, DNS, and HTTPS validation;
-- analytics and Search Console;
+- production verification of Cloudflare Web Analytics and Search Console;
 - final hands-on cross-browser and linguistic validation.
 
 ## Author
