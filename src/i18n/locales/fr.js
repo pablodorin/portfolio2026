@@ -274,7 +274,13 @@ const fr = {
     role: 'Développeur logiciel senior',
     skipToContent: 'Aller au contenu',
     portfolioOverview: 'Présentation du portfolio',
-    footer: 'Pablo Dorin — Portfolio professionnel',
+    footer: {
+      process:
+        'Construit selon un processus de développement dirigé par une personne et augmenté par l’IA.',
+      credit: 'Conçu, révisé et publié par Pablo Dorin.',
+      copyright: '© 2026 Pablo Dorin. Tous droits réservés.',
+      privacy: 'Confidentialité',
+    },
   },
   controls: {
     mobileMenu: {
@@ -527,6 +533,9 @@ const fr = {
     article: {
       back: 'Retour à Endpoint',
       backPath: '/fr/#endpoint',
+      backToProject: 'Retour au Projet 01',
+      projectPath: '/fr/#projects',
+      returnNavigationLabel: 'Navigation de retour',
       previous: 'Article précédent',
       next: 'Article suivant',
       writtenBy: 'Écrit par Pablo Dorin',
@@ -555,9 +564,6 @@ const fr = {
     conclusionTitle: 'Une ingénierie dirigée par l’humain',
     finalPrinciple:
       'Le résultat n’est pas une génération autonome de logiciels, mais un processus d’ingénierie dirigé par l’humain et soutenu par un outil puissant. L’IA augmente la vitesse et la capacité d’exploration ; le jugement professionnel apporte la direction, la validation et la responsabilité.',
-    portfolioExampleTitle: 'Exemple du portfolio',
-    portfolioExample:
-      'Ce portfolio a été développé selon la même approche : ses objectifs, son contenu, sa direction visuelle, ses contraintes et ses critères d’acceptation ont été définis et validés par moi, tandis que des outils assistés par l’IA ont soutenu l’implémentation, la revue et l’itération.',
   },
   about: {
     ...en.about,

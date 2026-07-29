@@ -1,11 +1,19 @@
 import useTranslation from '../../i18n/useTranslation.js'
 
 function Footer() {
-  const { t } = useTranslation()
+  const { messages } = useTranslation()
+  const footer = messages.site.footer
 
   return (
     <footer className="footer">
-      <p>{t('site.footer')}</p>
+      <div className="footer__process">
+        <p>{footer.process}</p>
+        <p>{footer.credit}</p>
+      </div>
+      <div className="footer__legal">
+        <p>{footer.copyright}</p>
+        <span>{footer.privacy}</span>
+      </div>
     </footer>
   )
 }

@@ -2,7 +2,6 @@ import { aboutAreas } from '../../content/about.js'
 import {
   aiWorkflowFinalPrinciple,
   aiWorkflowIntroduction,
-  aiWorkflowPortfolioExample,
   aiWorkflowSteps,
 } from '../../content/aiWorkflow.js'
 import { contactContent, contactLinks } from '../../content/contact.js'
@@ -21,7 +20,13 @@ const en = {
     role: 'Senior Software Developer',
     skipToContent: 'Skip to content',
     portfolioOverview: 'Portfolio overview',
-    footer: 'Pablo Dorin — Portfolio foundation',
+    footer: {
+      process:
+        'Built through a human-directed, AI-augmented development process.',
+      credit: 'Designed, reviewed and published by Pablo Dorin.',
+      copyright: '© 2026 Pablo Dorin. All rights reserved.',
+      privacy: 'Privacy',
+    },
   },
   controls: {
     mobileMenu: {
@@ -165,6 +170,9 @@ const en = {
     article: {
       back: 'Back to Endpoint',
       backPath: '/#endpoint',
+      backToProject: 'Back to Project 01',
+      projectPath: '/#projects',
+      returnNavigationLabel: 'Return navigation',
       previous: 'Previous article',
       next: 'Next article',
       writtenBy: 'Written by Pablo Dorin',
@@ -184,8 +192,6 @@ const en = {
     stepsLabel: 'AI workflow steps',
     conclusionTitle: 'Human-directed engineering',
     finalPrinciple: aiWorkflowFinalPrinciple,
-    portfolioExampleTitle: 'Portfolio example',
-    portfolioExample: aiWorkflowPortfolioExample,
   },
   about: {
     title: 'About Me',

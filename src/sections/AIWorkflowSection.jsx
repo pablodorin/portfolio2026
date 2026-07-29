@@ -8,8 +8,6 @@ function AIWorkflowSection() {
     conclusionTitle,
     finalPrinciple,
     introduction,
-    portfolioExample,
-    portfolioExampleTitle,
     steps,
     title,
   } = messages.aiWorkflow
@@ -41,16 +39,6 @@ function AIWorkflowSection() {
         <h3>{conclusionTitle}</h3>
         <p>{finalPrinciple}</p>
       </div>
-
-      <aside
-        className="ai-workflow-section__case-note"
-        aria-labelledby="portfolio-example-title"
-        data-reveal
-        data-reveal-delay="1"
-      >
-        <h3 id="portfolio-example-title">{portfolioExampleTitle}</h3>
-        <p>{portfolioExample}</p>
-      </aside>
     </section>
   )
 }

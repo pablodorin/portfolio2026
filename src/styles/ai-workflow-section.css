@@ -193,8 +193,7 @@
   font-weight: 750;
 }
 
-.ai-workflow-section__conclusion,
-.ai-workflow-section__case-note {
+.ai-workflow-section__conclusion {
   max-width: 48rem;
   margin-top: var(--space-12);
 }
@@ -204,32 +203,15 @@
   border-block: 1px solid var(--color-border-strong);
 }
 
-.ai-workflow-section__conclusion h3,
-.ai-workflow-section__case-note h3 {
+.ai-workflow-section__conclusion h3 {
   margin: 0 0 var(--space-2);
   font-size: 1.125rem;
-}
-
-.ai-workflow-section__case-note h3 {
-  color: var(--color-heading-secondary);
 }
 
 .ai-workflow-section__conclusion p {
   color: var(--color-text-primary);
   font-size: 1.0625rem;
   line-height: 1.65;
-}
-
-.ai-workflow-section__case-note {
-  padding: var(--space-5, 1.25rem) var(--space-6);
-  border-left: 0.1875rem solid var(--color-accent-blue);
-  background: var(--color-surface-muted);
-}
-
-.ai-workflow-section__case-note p {
-  color: var(--color-text-secondary);
-  font-size: 0.9375rem;
-  line-height: 1.6;
 }
 
 @media (min-width: 64rem) {
@@ -264,7 +246,7 @@
   .ai-workflow-section {
     display: grid;
     grid-template-columns: minmax(13.5rem, 0.34fr) minmax(0, 0.66fr);
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: auto auto auto;
     column-gap: clamp(var(--space-8), 4vw, var(--space-12));
     align-items: start;
   }
@@ -273,7 +255,7 @@
     position: sticky;
     top: clamp(2rem, 6vh, 4.5rem);
     grid-column: 1;
-    grid-row: 1 / 5;
+    grid-row: 1 / 4;
     align-self: start;
     margin-bottom: 0;
   }
@@ -284,8 +266,7 @@
 
   .workflow-diagram,
   .ai-workflow-section__steps,
-  .ai-workflow-section__conclusion,
-  .ai-workflow-section__case-note {
+  .ai-workflow-section__conclusion {
     grid-column: 2;
     min-width: 0;
   }
@@ -302,9 +283,6 @@
     grid-row: 3;
   }
 
-  .ai-workflow-section__case-note {
-    grid-row: 4;
-  }
 }
 
 @media (max-width: 30rem) {
@@ -355,12 +333,7 @@
     gap: var(--space-2);
   }
 
-  .ai-workflow-section__conclusion,
-  .ai-workflow-section__case-note {
+  .ai-workflow-section__conclusion {
     margin-top: var(--space-8);
-  }
-
-  .ai-workflow-section__case-note {
-    padding: var(--space-4);
   }
 }

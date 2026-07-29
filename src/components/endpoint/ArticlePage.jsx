@@ -1,4 +1,7 @@
-import { getArticleById } from '../../content/articles/index.js'
+import {
+  formatArticleDate,
+  getArticleById,
+} from '../../content/articles/index.js'
 import useTheme from '../../hooks/useTheme.js'
 import useTranslation from '../../i18n/useTranslation.js'
 import ThemeToggle from '../ui/ThemeToggle.jsx'
@@ -7,8 +10,8 @@ function ArticlePage({ article, language, translation }) {
   const { messages } = useTranslation()
   const { theme, toggleTheme } = useTheme()
   const labels = messages.endpointBlog.article
-  const previous = article.draft ? null : getArticleById(article.previousId)
-  const next = article.draft ? null : getArticleById(article.nextId)
+  const previous = getArticleById(article.previousId)
+  const next = getArticleById(article.nextId)
 
   return (
     <div className="article-page">
@@ -36,22 +39,33 @@ function ArticlePage({ article, language, translation }) {
       </header>
       <main id="article-content" className="article-main">
         <article>
-          <a className="article-back-link" href={labels.backPath}>
-            ← {labels.back}
-          </a>
+          <nav
+            className="article-back-navigation"
+            aria-label={labels.returnNavigationLabel}
+          >
+            <a className="article-back-link" href={labels.backPath}>
+              ← {labels.back}
+            </a>
+            {article.id === 'professional-portfolio-2026' ? (
+              <a
+                className="article-back-link article-back-link--project"
+                href={labels.projectPath}
+              >
+                ← {labels.backToProject}
+              </a>
+            ) : null}
+          </nav>
           <header className="article-header">
             <h1>{translation.title}</h1>
-            {article.draft ? null : (
-              <>
-                <p className="article-copete">{translation.copete}</p>
-                <p className="article-bajada">{translation.bajada}</p>
-                <div className="article-meta">
-                  <p>{labels.writtenBy}</p>
-                  <time dateTime={article.datePublished}>{labels.date}</time>
-                </div>
-                <p className="article-disclosure">{labels.disclosure}</p>
-              </>
-            )}
+            <p className="article-copete">{translation.copete}</p>
+            <p className="article-bajada">{translation.bajada}</p>
+            <div className="article-meta">
+              <p>{labels.writtenBy}</p>
+              <time dateTime={article.datePublished}>
+                {formatArticleDate(article.datePublished, language)}
+              </time>
+            </div>
+            <p className="article-disclosure">{labels.disclosure}</p>
           </header>
           <div className="article-body">
             {translation.sections.map(({ heading, paragraphs }) => (
@@ -63,7 +77,7 @@ function ArticlePage({ article, language, translation }) {
               </section>
             ))}
           </div>
-          {article.draft ? null : <footer className="article-footer">
+          <footer className="article-footer">
             <div className="article-signature">
               <strong>Pablo Dorin</strong>
               <span>{labels.signatureRole}</span>
@@ -73,7 +87,10 @@ function ArticlePage({ article, language, translation }) {
                 <li key={tag}>{tag}</li>
               ))}
             </ul>
-            <nav className="article-pagination" aria-label={labels.navigationLabel}>
+            <nav
+              className="article-pagination"
+              aria-label={labels.navigationLabel}
+            >
               <a href={previous.translations[language].path}>
                 <span>{labels.previous}</span>
                 <strong>{previous.translations[language].title}</strong>
@@ -83,7 +100,7 @@ function ArticlePage({ article, language, translation }) {
                 <strong>{next.translations[language].title}</strong>
               </a>
             </nav>
-          </footer>}
+          </footer>
         </article>
       </main>
     </div>

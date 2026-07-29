@@ -316,7 +316,13 @@ const es = {
     role: 'Desarrollador de Software Senior',
     skipToContent: 'Saltar al contenido',
     portfolioOverview: 'Resumen del portfolio',
-    footer: 'Pablo Dorin — Portfolio profesional',
+    footer: {
+      process:
+        'Construido mediante un proceso de desarrollo dirigido por una persona y aumentado por IA.',
+      credit: 'Diseñado, revisado y publicado por Pablo Dorin.',
+      copyright: '© 2026 Pablo Dorin. Todos los derechos reservados.',
+      privacy: 'Privacidad',
+    },
   },
   controls: {
     ...en.controls,
@@ -573,6 +579,9 @@ const es = {
     article: {
       back: 'Volver a Endpoint',
       backPath: '/es/#endpoint',
+      backToProject: 'Volver al Proyecto 01',
+      projectPath: '/es/#projects',
+      returnNavigationLabel: 'Navegación de regreso',
       previous: 'Artículo anterior',
       next: 'Artículo siguiente',
       writtenBy: 'Escrito por Pablo Dorin',
@@ -600,9 +609,6 @@ const es = {
     conclusionTitle: 'Ingeniería dirigida por personas',
     finalPrinciple:
       'El resultado no es una generación autónoma de software, sino un proceso de ingeniería dirigido por personas y respaldado por una herramienta potente. La IA aumenta la velocidad y la capacidad de exploración; el juicio profesional aporta dirección, validación y responsabilidad.',
-    portfolioExampleTitle: 'Ejemplo del portfolio',
-    portfolioExample:
-      'Este portfolio fue desarrollado con el mismo enfoque: sus objetivos, contenido, dirección visual, restricciones y criterios de aceptación fueron definidos y validados por mí, mientras que herramientas asistidas por IA apoyaron la implementación, la revisión y la iteración.',
   },
   about: {
     ...en.about,

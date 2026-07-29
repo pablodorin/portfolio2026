@@ -1,7 +1,7 @@
 import aiAugmentedEngineering from './aiAugmentedEngineering.js'
 import codeBottleneck from './codeBottleneck.js'
 import microservices from './microservices.js'
-import portfolio2026Draft from './portfolio2026Draft.js'
+import portfolio2026Article from './portfolio2026Article.js'
 
 export const articleLanguages = ['en', 'es', 'fr']
 
@@ -15,6 +15,7 @@ const rawArticles = [
   aiAugmentedEngineering,
   codeBottleneck,
   microservices,
+  portfolio2026Article,
 ]
 
 function countWords(value) {
@@ -66,24 +67,6 @@ export const articles = Object.freeze(
   }),
 )
 
-const articleDrafts = Object.freeze([
-  Object.freeze({
-    ...portfolio2026Draft,
-    translations: Object.freeze(
-      Object.fromEntries(
-        articleLanguages.map((language) => [
-          language,
-          createTranslation(
-            portfolio2026Draft,
-            language,
-            portfolio2026Draft.translations[language],
-          ),
-        ]),
-      ),
-    ),
-  }),
-])
-
 export function getArticleById(id) {
   return articles.find((article) => article.id === id) ?? null
 }
@@ -91,7 +74,7 @@ export function getArticleById(id) {
 export function getArticlePage(pathname) {
   const normalized = pathname.endsWith('/') ? pathname : `${pathname}/`
 
-  for (const article of [...articles, ...articleDrafts]) {
+  for (const article of articles) {
     for (const language of articleLanguages) {
       if (article.translations[language].path === normalized) {
         return { article, language, translation: article.translations[language] }
