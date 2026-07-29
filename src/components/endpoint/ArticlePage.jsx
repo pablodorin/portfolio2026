@@ -7,8 +7,8 @@ function ArticlePage({ article, language, translation }) {
   const { messages } = useTranslation()
   const { theme, toggleTheme } = useTheme()
   const labels = messages.endpointBlog.article
-  const previous = getArticleById(article.previousId)
-  const next = getArticleById(article.nextId)
+  const previous = article.draft ? null : getArticleById(article.previousId)
+  const next = article.draft ? null : getArticleById(article.nextId)
 
   return (
     <div className="article-page">
@@ -41,13 +41,17 @@ function ArticlePage({ article, language, translation }) {
           </a>
           <header className="article-header">
             <h1>{translation.title}</h1>
-            <p className="article-copete">{translation.copete}</p>
-            <p className="article-bajada">{translation.bajada}</p>
-            <div className="article-meta">
-              <p>{labels.writtenBy}</p>
-              <time dateTime={article.datePublished}>{labels.date}</time>
-            </div>
-            <p className="article-disclosure">{labels.disclosure}</p>
+            {article.draft ? null : (
+              <>
+                <p className="article-copete">{translation.copete}</p>
+                <p className="article-bajada">{translation.bajada}</p>
+                <div className="article-meta">
+                  <p>{labels.writtenBy}</p>
+                  <time dateTime={article.datePublished}>{labels.date}</time>
+                </div>
+                <p className="article-disclosure">{labels.disclosure}</p>
+              </>
+            )}
           </header>
           <div className="article-body">
             {translation.sections.map(({ heading, paragraphs }) => (
@@ -59,7 +63,7 @@ function ArticlePage({ article, language, translation }) {
               </section>
             ))}
           </div>
-          <footer className="article-footer">
+          {article.draft ? null : <footer className="article-footer">
             <div className="article-signature">
               <strong>Pablo Dorin</strong>
               <span>{labels.signatureRole}</span>
@@ -79,7 +83,7 @@ function ArticlePage({ article, language, translation }) {
                 <strong>{next.translations[language].title}</strong>
               </a>
             </nav>
-          </footer>
+          </footer>}
         </article>
       </main>
     </div>

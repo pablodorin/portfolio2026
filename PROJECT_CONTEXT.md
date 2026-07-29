@@ -208,10 +208,12 @@ minimalism with software-engineering structure, without literal flag
 decoration or neon treatment.
 
 The Projects placeholder has been replaced by an accessible four-position
-editorial showcase carousel. All four positions remain explicitly undefined.
-The carousel has no autoplay, uses circular navigation, and exposes no
-repository or demo links. Endpoint Blog publishes three complete articles
-across nine localized static pages.
+editorial showcase carousel. Professional Portfolio 2026 is the live and
+evolving Project 01, JS1 is the planned Project 02, and Projects 03–04 remain
+explicitly undefined. The carousel has no autoplay, uses circular navigation,
+and exposes verified live-site, repository, and case-study links only for
+Project 01. Endpoint Blog publishes three complete articles across nine
+localized static pages.
 
 ## Main navigation
 
@@ -378,7 +380,19 @@ The main Education section will use only approved information from
 
 ### 4. Projects
 
-Initial projects:
+Current showcase order:
+
+#### Professional Portfolio 2026
+
+A live multilingual professional portfolio, technical blog, and project
+showcase developed through a human-directed, AI-augmented iterative workflow.
+
+Verified destinations:
+
+- live site: `https://pablodorin.com`;
+- repository: `https://github.com/pablodorin/portfolio2026`;
+- productivity case study:
+  `docs/PORTFOLIO_PRODUCTIVITY_CASE_STUDY.md`.
 
 #### JS1 — Job Application Manager
 
@@ -401,6 +415,9 @@ Planned backend stack:
 - Docker.
 
 The frontend implementation will be decided during the project.
+
+Projects 03 and 04 remain undefined until their technical objectives, scope,
+and demonstration value are approved.
 
 #### Java Katas
 
@@ -561,8 +578,11 @@ The approved initial editorial order is:
 3. Microservices: When They Solve Problems—and When They Multiply Them
 
 The portfolio landing section is localized in English, Spanish, and French.
-The cards link to complete localized articles and display article number,
-publication date, author, title, copete, bajada, tags, and localized action.
+The Endpoint carousel displays one complete card at a time with article
+number, publication date, editorial kicker, title, and compact summary. It
+supports circular navigation and reversible chronological ordering. Cards
+link to the complete localized articles. Newest-to-oldest is the default
+ordering.
 
 Articles are written originally in Spanish. AI-assisted English and French
 translations receive author review and show a localized disclosure near the

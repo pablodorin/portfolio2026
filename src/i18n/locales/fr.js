@@ -376,19 +376,76 @@ const fr = {
     items: [
       {
         ...en.projects.items[0],
-        title: 'Projet 01',
-        type: 'Projet de portfolio',
-        status: 'À définir',
+        title: 'Portfolio Professionnel 2026',
+        type: 'Projet de portfolio publié',
+        status: 'Publié et en évolution',
+        statement:
+          'Un portfolio professionnel multilingue, un blog technique et une vitrine de projets, conçus, implémentés et publiés selon un processus de développement augmenté par l’IA et dirigé par une personne.',
         purpose:
-          'Le premier projet de portfolio sera défini après validation de son objectif technique, de son périmètre et de la valeur qu’il devra démontrer.',
+          'Conçu pour présenter mon expérience professionnelle, mes compétences techniques, les articles d’Endpoint et mes projets à travers une identité publique cohérente.',
+        methodology:
+          'Développement itératif dirigé par une personne et augmenté par l’IA',
+        imageAlt:
+          'Page d’accueil du Portfolio Professionnel 2026 avec sa navigation pour ordinateur et sa présentation professionnelle',
+        metrics: en.projects.items[0].metrics.map((metric, index) => ({
+          ...metric,
+          label: [
+            'Développement actif initial',
+            'Sessions initiales',
+            'Période initiale',
+            'Code écrit manuellement par le développeur',
+            'Direction humaine et validation',
+            'Implémentation du code',
+            'Analyse et soutien éditorial',
+            'Git, commit, push et publication',
+            'Langues',
+            'Statut',
+          ][index],
+          value: [
+            '13 heures',
+            '2',
+            '27–28 juillet 2026',
+            '0 ligne',
+            'Pablo Dorin',
+            'OpenAI Codex',
+            'ChatGPT',
+            'Pablo Dorin',
+            'Anglais, espagnol et français',
+            'Publié et en évolution',
+          ][index],
+        })),
+        actions: en.projects.items[0].actions.map((action, index) => ({
+          ...action,
+          label: [
+            'Voir le site publié',
+            'Voir le dépôt',
+            'Voir l’étude de cas',
+            'Voir l’article Endpoint',
+          ][index],
+          href:
+            action.id === 'endpoint-article'
+              ? '/fr/endpoint/portfolio-professionnel-2026/'
+              : action.href,
+        })),
       },
-      ...en.projects.items.slice(1).map((project, index) => ({
+      {
+        ...en.projects.items[1],
+        title: 'JS1 : Gestionnaire de candidatures',
+        type: 'Projet de portfolio',
+        status: 'Planifié',
+        purpose:
+          'Une application full-stack pour organiser les candidatures, les entreprises, les postes, les entretiens, les statuts et les actions de suivi.',
+        technicalApproach:
+          'Conçue comme une application de style entreprise au périmètre maîtrisé, avec un backend Java, une persistance relationnelle, une API REST, des tests, une conteneurisation et une interface web simple.',
+        actionNote:
+          'Le dépôt et la démo seront ajoutés lorsque le projet sera implémenté.',
+      },
+      ...en.projects.items.slice(2).map((project, index) => ({
         ...project,
-        title: `Projet 0${index + 2}`,
+        title: `Projet 0${index + 3}`,
         type: 'Projet de portfolio',
         status: 'À définir',
         purpose: [
-          'Le deuxième projet de portfolio sera défini après validation de son objectif technique, de son périmètre et de la valeur qu’il devra démontrer.',
           'Le troisième projet de portfolio sera défini après validation de son objectif technique, de son périmètre et de la valeur qu’il devra démontrer.',
           'Le quatrième projet de portfolio sera défini après validation de son objectif technique, de son périmètre et de la valeur qu’il devra démontrer.',
         ][index],
@@ -402,8 +459,23 @@ const fr = {
       goToProject: 'Aller au projet {number}',
       slidePosition: 'Projet {current} sur {total}',
       status: 'Statut',
+      purpose: 'Objectif',
+      methodology: 'Méthodologie de développement',
+      metrics: 'Aperçu de la productivité initiale',
+      verifiedStack: 'Stack vérifié',
+      actions: 'Liens du projet',
+      authorship:
+        'J’ai conservé la qualité d’auteur et le contrôle à travers la direction du produit, les exigences, le contenu, les décisions de design, les critères d’acceptation, l’identification des défauts, la validation et la publication.',
       technicalApproach: 'Approche technique',
       plannedStack: 'Stack prévu',
+      detailCarousel: 'Détails du Projet 01',
+      previousDetail: 'Détail précédent du projet',
+      nextDetail: 'Détail suivant du projet',
+      detailIndicators: 'Choisir un détail du Projet 01',
+      projectOverview: 'Présentation du projet',
+      projectMethod: 'Objectif, méthodologie et qualité d’auteur',
+      sitePreview: 'Aperçu du site publié',
+      projectMetrics: 'Métriques du projet',
     },
   },
   education: {
@@ -439,6 +511,17 @@ const fr = {
     tagline: 'Request & Response about the IT industry',
     introduction:
       'Endpoint est un blog technique consacré au développement logiciel, aux systèmes d’entreprise, à l’intégration, à l’architecture et à l’utilisation responsable de l’IA dans les processus d’ingénierie.',
+    carousel: {
+      label: 'Articles Endpoint',
+      sortLabel: 'Ordre des articles',
+      oldestFirst: 'Du plus ancien au plus récent',
+      newestFirst: 'Du plus récent au plus ancien',
+      previous: 'Article précédent',
+      next: 'Article suivant',
+      indicators: 'Choisir un article Endpoint',
+      goTo: 'Aller à l’article {number}',
+      technologiesLabel: 'Technologies et thèmes de l’article',
+    },
     writtenBy: 'Écrit par Pablo Dorin',
     tagsLabel: 'Étiquettes de l’article',
     article: {

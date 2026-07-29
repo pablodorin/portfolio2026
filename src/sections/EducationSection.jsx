@@ -90,6 +90,9 @@ function EducationSection() {
             <span aria-hidden="true"> · </span>
             <span>{distinction.location}</span>
           </p>
+          <p className="education-distinction__participant">
+            SELECTED PARTICIPANT
+          </p>
         </aside>
       </div>
     </section>

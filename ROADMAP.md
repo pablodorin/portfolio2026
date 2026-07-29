@@ -406,11 +406,13 @@ Use only the approved information in `CONTENT_MASTER.md`:
 
 Initial projects:
 
+- Professional Portfolio 2026;
 - JS1 — Job Application Manager;
-- Java Katas.
+- Projects 03 and 04 remain undefined.
 
 Show project status accurately.
 
+Do not describe Professional Portfolio 2026 as client work.
 Do not describe JS1 as completed.
 
 Do not invent screenshots, users, production results, or performance metrics.
@@ -487,9 +489,10 @@ Implementation status: Implemented.
 Phase 4D — Projects Showcase Carousel: Implemented.
 
 The placeholder is replaced by a four-position, multilingual carousel with no
-autoplay and circular navigation. All four positions remain explicitly
-undefined. Project implementation, repository links, and live demos remain
-pending.
+autoplay and circular navigation. Professional Portfolio 2026 is presented as
+the live and evolving Project 01 with verified live-site, repository, and case
+study links. JS1 is the planned Project 02. Projects 03 and 04 remain
+explicitly undefined.
 
 Phase 4X — Endpoint Blog: Superseded by implemented Phase 11A.
 
@@ -574,8 +577,9 @@ Support English, Spanish, and French.
 
 Implementation status: Implemented.
 
-Projects remains deferred. Endpoint publishes three articles in nine localized
-static pages through Phase 11A.
+Projects now presents the live portfolio as Project 01, planned JS1 as Project
+02, and two undefined future slots. Endpoint publishes three articles in nine
+localized static pages through Phase 11A.
 
 ### Phase 6B — Spanish Translation
 
@@ -693,8 +697,9 @@ claiming formal certification.
 See `ACCESSIBILITY_AUDIT.md` for performed checks, results, and remaining
 manual-validation limitations.
 
-Projects remains deferred. Endpoint-specific accessibility requires final
-hands-on visual and browser validation after Phase 11A.
+Projects now uses an accessible four-position carousel. Endpoint-specific
+accessibility requires final hands-on visual and browser validation after
+Phase 11A.
 
 ---
 
@@ -845,7 +850,8 @@ English uses `/`, Spanish uses `/es/`, and French uses `/fr/`. Each static
 document has language-specific metadata, a self-referencing canonical, and the
 complete reciprocal `hreflang` set with the English root as `x-default`.
 
-Projects remains deferred. Endpoint currently remains a localized shell; no
+Projects now presents the live portfolio case study, planned JS1, and two
+undefined future slots. Endpoint currently remains a localized shell; no
 article URL has been published.
 
 ### Deferred asset work — Assets, CV, and professional links

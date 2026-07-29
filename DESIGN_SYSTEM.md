@@ -757,9 +757,21 @@ Do not rely on logos alone to communicate a technology.
 Projects should be presented as case studies rather than simple image cards.
 
 The implemented showcase uses one large editorial panel, four accessible
-position controls, circular Previous/Next navigation, and no autoplay. All
-four positions are reserved without invented content. Project titles use the
+position controls, circular Previous/Next navigation, and no autoplay.
+Professional Portfolio 2026 uses a denser case-study layout for verified
+purpose, methodology, stack, initial metrics, a real home-page capture, and
+real links. Its content is divided into four accessible nested detail slides so
+that every detail remains contained without internal scrolling at supported
+desktop and mobile viewport sizes. The nested carousel has no autoplay,
+supports circular button and arrow-key navigation, and remains visually
+distinct from the four-project carousel. JS1 remains a planned project, while
+positions 03–04 are reserved without invented content. Project titles use the
 red editorial accent, while structural numbering and controls use blue.
+
+On narrow mobile screens, Projects uses natural page height instead of
+compressing every project into one viewport. Content remains fully readable,
+horizontal overflow stays disabled, and both carousel control sets follow the
+content in normal document flow.
 
 Each project may contain:
 
@@ -897,17 +909,17 @@ The Endpoint landing has a restrained editorial identity through:
 Article cards contain:
 
 - number;
-- publication date and author;
+- publication date;
+- editorial kicker;
 - title;
-- copete;
-- bajada;
-- summary;
-- tags;
-- localized Read article link.
+- compact card summary.
 
-Desktop cards reserve consistent title and copete regions so subsequent
-content aligns across the three-column grid. Mobile cards return to natural
-height. Long titles wrap without truncation.
+The Endpoint landing presents one complete card at a time in an accessible
+three-position carousel with no autoplay, circular navigation, keyboard
+support, and visible indicators. Visitors can order articles from newest to
+oldest—the default—or oldest to newest. Equal publication dates use the
+approved editorial order as a deterministic tie-breaker. Long titles wrap
+without truncation.
 
 Article pages should provide:
 

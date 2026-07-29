@@ -105,12 +105,19 @@
 
 .education-distinction {
   position: relative;
+  display: grid;
+  justify-items: center;
   align-self: start;
   padding: var(--space-8);
   overflow: hidden;
   border: 1px solid var(--color-border-strong);
   border-radius: 0.5rem;
   background: var(--color-surface-muted);
+  text-align: center;
+}
+
+.education-distinction :is(.institution-identity, .institution-logo) {
+  justify-content: center;
 }
 
 .education-distinction::before {
@@ -145,6 +152,14 @@
   ) {
   color: var(--color-text-secondary);
   font-size: 0.9375rem;
+}
+
+.education-distinction > p.education-distinction__participant {
+  margin-top: var(--space-2);
+  color: var(--color-heading-secondary);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
 }
 
 @media (min-width: 48rem) {

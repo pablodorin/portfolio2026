@@ -892,6 +892,40 @@ Do not claim:
 
 # Projects
 
+## Professional Portfolio 2026
+
+Project name:
+
+Professional Portfolio 2026
+
+Status:
+
+Live and under continuous development
+
+Repository:
+
+https://github.com/pablodorin/portfolio2026
+
+Live site:
+
+https://pablodorin.com
+
+Initial development:
+
+- start date: July 27, 2026;
+- initial period: July 27–28, 2026;
+- active working time: 13 hours;
+- working sessions: July 27, 13:00–19:00 and July 28, 14:00–21:00;
+- Pablo wrote no code manually;
+- Pablo defined and validated objectives, requirements, content, design,
+  acceptance criteria, corrections, Git operations, and publication;
+- ChatGPT supported analysis and editorial collaboration;
+- OpenAI Codex inspected and modified the repository and implemented the code.
+
+Exact token usage is unavailable and must not be displayed or estimated.
+
+---
+
 ## JS1 — Job Application Manager
 
 Project name:
@@ -936,11 +970,11 @@ Do not claim production usage.
 Do not invent metrics, users, employers, integrations, or deployment results.
 
 The portfolio Projects section presents a four-position editorial showcase.
-All four visible positions remain undefined until their objectives, scope, and
-demonstration value are approved for publication. Existing project source
-material is not assigned to a showcase position at this stage. The showcase
-does not claim client delivery, commercial adoption, production use,
-repositories, demos, or project metrics.
+Professional Portfolio 2026 occupies Project 01. JS1 occupies Project 02 and
+remains planned. Projects 03–04 remain undefined until their objectives,
+scope, and demonstration value are approved. Only verified destinations and
+metrics may be shown; Project 01 is a portfolio case study and is not presented
+as client work.
 
 ---
 

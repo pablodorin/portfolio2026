@@ -73,6 +73,10 @@ html {
   scroll-margin-block: calc(var(--mobile-header-height) + var(--space-3));
 }
 
+button {
+  border-radius: 0.25rem;
+}
+
 .sidebar {
   display: none;
 }

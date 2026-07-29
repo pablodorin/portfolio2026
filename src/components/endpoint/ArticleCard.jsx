@@ -3,15 +3,15 @@ import {
 } from '../../content/articles/index.js'
 import useTranslation from '../../i18n/useTranslation.js'
 
-function ArticleCard({ article, index }) {
-  const { language } = useTranslation()
+function ArticleCard({ article, index, reveal = true }) {
+  const { language, messages } = useTranslation()
   const translation = article.translations[language]
 
   return (
     <article
       className="endpoint-card"
-      data-reveal
-      data-reveal-delay={String((index % 3) + 1)}
+      data-reveal={reveal ? '' : undefined}
+      data-reveal-delay={reveal ? String((index % 3) + 1) : undefined}
     >
       <a
         className="endpoint-card__link"
@@ -27,6 +27,14 @@ function ArticleCard({ article, index }) {
         <p className="endpoint-card__kicker">{translation.kicker}</p>
         <h3>{translation.title}</h3>
         <p className="endpoint-card__copete">{translation.cardCopete}</p>
+        <ul
+          className="endpoint-tag-list endpoint-card__technologies"
+          aria-label={messages.endpointBlog.carousel.technologiesLabel}
+        >
+          {article.tags.map((technology) => (
+            <li key={technology}>{technology}</li>
+          ))}
+        </ul>
       </a>
     </article>
   )
