@@ -144,7 +144,15 @@
 
 @media (min-width: 64rem) {
   .endpoint-section {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    align-content: start;
+    min-height: 100svh;
     padding-block: var(--space-4) var(--space-6);
+  }
+
+  .endpoint-section h2 {
+    font-size: clamp(4.25rem, 9vw, 7.5rem);
   }
 
   .endpoint-section__header {
@@ -154,7 +162,13 @@
 
   .endpoint-section__articles {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    min-height: 0;
     gap: var(--space-3);
+  }
+
+  .endpoint-card {
+    height: 100%;
   }
 
   .endpoint-card__link {
@@ -196,7 +210,7 @@
   }
 
   .endpoint-section h2 {
-    font-size: clamp(3.375rem, 8vh, 5.5rem);
+    font-size: clamp(4rem, 10vh, 6rem);
   }
 
   .endpoint-card__link {
