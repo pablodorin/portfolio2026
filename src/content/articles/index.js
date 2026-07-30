@@ -2,6 +2,7 @@ import aiAugmentedEngineering from './aiAugmentedEngineering.js'
 import codeBottleneck from './codeBottleneck.js'
 import microservices from './microservices.js'
 import portfolio2026Article from './portfolio2026Article.js'
+import whoReadsPortfolio from './whoReadsPortfolio.js'
 
 export const articleLanguages = ['en', 'es', 'fr']
 
@@ -16,6 +17,7 @@ const rawArticles = [
   codeBottleneck,
   microservices,
   portfolio2026Article,
+  whoReadsPortfolio,
 ]
 
 function countWords(value) {
