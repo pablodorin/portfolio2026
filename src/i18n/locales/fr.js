@@ -531,6 +531,7 @@ const fr = {
     writtenBy: 'Écrit par Pablo Dorin',
     tagsLabel: 'Étiquettes de l’article',
     article: {
+      articleNumber: 'Article',
       back: 'Retour à Endpoint',
       backPath: '/fr/#endpoint',
       backToProject: 'Retour au Projet 01',

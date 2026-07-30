@@ -56,6 +56,9 @@ function ArticlePage({ article, language, translation }) {
             ) : null}
           </nav>
           <header className="article-header">
+            <p className="article-number">
+              {labels.articleNumber} {article.number}
+            </p>
             <h1>{translation.title}</h1>
             <p className="article-copete">{translation.copete}</p>
             <p className="article-bajada">{translation.bajada}</p>

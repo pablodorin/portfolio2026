@@ -168,6 +168,7 @@ const en = {
     writtenBy: 'Written by Pablo Dorin',
     tagsLabel: 'Article tags',
     article: {
+      articleNumber: 'Article',
       back: 'Back to Endpoint',
       backPath: '/#endpoint',
       backToProject: 'Back to Project 01',
