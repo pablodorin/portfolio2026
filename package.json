@@ -4,8 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "generate:endpoint": "node scripts/generate-endpoint.mjs",
+    "predev": "npm run generate:endpoint",
     "dev": "vite",
+    "prebuild": "npm run generate:endpoint",
     "build": "vite build",
+    "prelint": "npm run generate:endpoint",
     "lint": "eslint .",
     "preview": "vite preview"
   },

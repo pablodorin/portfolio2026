@@ -1,4 +1,6 @@
 import { fileURLToPath } from 'node:url'
+import { readdirSync } from 'node:fs'
+import path from 'node:path'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
@@ -21,6 +23,19 @@ function preserveCloudflareBeacon() {
   }
 }
 
+function endpointInputs(directory, prefix) {
+  const entries = readdirSync(directory, { withFileTypes: true })
+
+  return Object.fromEntries(
+    entries
+      .filter((entry) => entry.isDirectory())
+      .map((entry) => [
+        `${prefix}${entry.name.replaceAll('-', '_')}`,
+        path.join(directory, entry.name, 'index.html'),
+      ]),
+  )
+}
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), preserveCloudflareBeacon()],
@@ -30,21 +45,9 @@ export default defineConfig({
         en: `${projectRoot}index.html`,
         es: `${projectRoot}es/index.html`,
         fr: `${projectRoot}fr/index.html`,
-        endpointEnAi: `${projectRoot}endpoint/ai-augmented-engineering/index.html`,
-        endpointEnBottleneck: `${projectRoot}endpoint/code-is-no-longer-the-bottleneck/index.html`,
-        endpointEnMicroservices: `${projectRoot}endpoint/microservices-when-they-solve-problems/index.html`,
-        endpointEnPortfolio: `${projectRoot}endpoint/professional-portfolio-2026/index.html`,
-        endpointEnWhoReads: `${projectRoot}endpoint/who-reads-a-portfolio/index.html`,
-        endpointEsAi: `${projectRoot}es/endpoint/ingenieria-aumentada-por-ia/index.html`,
-        endpointEsBottleneck: `${projectRoot}es/endpoint/el-codigo-ya-no-es-el-cuello-de-botella/index.html`,
-        endpointEsMicroservices: `${projectRoot}es/endpoint/microservicios-cuando-resuelven-problemas/index.html`,
-        endpointEsPortfolio: `${projectRoot}es/endpoint/portfolio-profesional-2026/index.html`,
-        endpointEsWhoReads: `${projectRoot}es/endpoint/quien-lee-un-portfolio/index.html`,
-        endpointFrAi: `${projectRoot}fr/endpoint/ingenierie-augmentee-par-ia/index.html`,
-        endpointFrBottleneck: `${projectRoot}fr/endpoint/le-code-n-est-plus-le-goulot/index.html`,
-        endpointFrMicroservices: `${projectRoot}fr/endpoint/microservices-quand-ils-resolvent-les-problemes/index.html`,
-        endpointFrPortfolio: `${projectRoot}fr/endpoint/portfolio-professionnel-2026/index.html`,
-        endpointFrWhoReads: `${projectRoot}fr/endpoint/qui-lit-un-portfolio/index.html`,
+        ...endpointInputs(`${projectRoot}endpoint`, 'endpoint_en_'),
+        ...endpointInputs(`${projectRoot}es/endpoint`, 'endpoint_es_'),
+        ...endpointInputs(`${projectRoot}fr/endpoint`, 'endpoint_fr_'),
       },
     },
   },

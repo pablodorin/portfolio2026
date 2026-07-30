@@ -13,6 +13,13 @@ dist-ssr
 *.local
 coverage/
 
+# Endpoint build artifacts
+/src/content/articles/generatedArticles.js
+/endpoint/
+/es/endpoint/
+/fr/endpoint/
+/public/sitemap.xml
+
 # Environment files
 .env
 .env.*

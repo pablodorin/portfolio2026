@@ -16,8 +16,8 @@ applications, system integration, and AI-augmented engineering.
 - Professional Experience, Technologies, Projects, AI Workflow, Education,
   Endpoint Blog, About Me, and Contact sections.
 - Four-position accessible Projects carousel with no autoplay.
-- Three Endpoint articles published in three languages through nine static
-  article pages.
+- Five Endpoint articles published in three languages through fifteen generated
+  static article pages.
 - Downloadable English CV and verified professional links.
 - Local institution assets, responsive layouts, and reduced-motion support.
 - Localized metadata, canonical and reciprocal `hreflang` links, Open Graph,
@@ -42,18 +42,29 @@ a backend.
 
 ## Architecture
 
-The project is a static React multi-page application. Vite builds twelve HTML
-entry documents:
+The project is a static React multi-page application. Vite builds:
 
 - three portfolio pages at `/`, `/es/`, and `/fr/`;
-- three English Endpoint articles;
-- three Spanish Endpoint articles;
-- three French Endpoint articles.
+- one generated static page for every Endpoint article and language.
 
 The URL determines the active language. Shared React components render the
 portfolio and article interfaces, while language-specific static documents
 provide correct metadata and document language before React loads. Endpoint
-articles are stored as local content modules.
+articles are stored as Markdown under `src/content/endpoint/<year>/<article>/`.
+The build validates the three required translations and generates the React
+article registry, route HTML, metadata, circular navigation, and sitemap.
+
+## Publishing an Endpoint article
+
+Create one directory under the publication year and add `es.md`, `en.md`, and
+`fr.md`. Each file contains JSON-valued frontmatter followed by level-two
+Markdown headings and paragraphs. Use an existing article as the editorial
+template.
+
+Run `npm run generate:endpoint` to validate the content and inspect the
+generated routes. The same generation runs automatically before development,
+lint, and production builds. Generated HTML, the sitemap, and the React article
+registry are build artifacts and must not be edited or committed.
 
 ## AI-augmented development model
 
