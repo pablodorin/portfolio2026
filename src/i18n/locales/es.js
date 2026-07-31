@@ -585,11 +585,9 @@ const es = {
       returnNavigationLabel: 'Navegación de regreso',
       previous: 'Artículo anterior',
       next: 'Artículo siguiente',
-      writtenBy: 'Escrito por Pablo Dorin',
       date: '28 de julio de 2026',
       disclosure:
         'Artículo escrito originalmente en español. Las versiones en inglés y francés fueron traducidas con asistencia de IA y revisadas por el autor.',
-      signatureRole: 'Desarrollador de Software Senior',
       tagsLabel: 'Etiquetas del artículo',
       navigationLabel: 'Navegación entre artículos',
       languageLabel: 'Idioma del artículo',

@@ -176,11 +176,9 @@ const en = {
       returnNavigationLabel: 'Return navigation',
       previous: 'Previous article',
       next: 'Next article',
-      writtenBy: 'Written by Pablo Dorin',
       date: 'July 28, 2026',
       disclosure:
         'Originally written in Spanish. The English and French versions were translated with AI assistance and reviewed by the author.',
-      signatureRole: 'Senior Software Developer',
       tagsLabel: 'Article tags',
       navigationLabel: 'Article navigation',
       languageLabel: 'Article language',

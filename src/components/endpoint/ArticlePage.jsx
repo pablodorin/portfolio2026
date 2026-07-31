@@ -62,12 +62,9 @@ function ArticlePage({ article, language, translation }) {
             <h1>{translation.title}</h1>
             <p className="article-copete">{translation.copete}</p>
             <p className="article-bajada">{translation.bajada}</p>
-            <div className="article-meta">
-              <p>{labels.writtenBy}</p>
-              <time dateTime={article.datePublished}>
-                {formatArticleDate(article.datePublished, language)}
-              </time>
-            </div>
+            <time className="article-date" dateTime={article.datePublished}>
+              {formatArticleDate(article.datePublished, language)}
+            </time>
             <p className="article-disclosure">{labels.disclosure}</p>
           </header>
           <div className="article-body">
@@ -81,10 +78,6 @@ function ArticlePage({ article, language, translation }) {
             ))}
           </div>
           <footer className="article-footer">
-            <div className="article-signature">
-              <strong>Pablo Dorin</strong>
-              <span>{labels.signatureRole}</span>
-            </div>
             <ul className="endpoint-tag-list" aria-label={labels.tagsLabel}>
               {article.tags.map((tag) => (
                 <li key={tag}>{tag}</li>
@@ -103,6 +96,9 @@ function ArticlePage({ article, language, translation }) {
                 <strong>{next.translations[language].title}</strong>
               </a>
             </nav>
+            <a className="article-footer-back" href={labels.backPath}>
+              ← {labels.back}
+            </a>
           </footer>
         </article>
       </main>
