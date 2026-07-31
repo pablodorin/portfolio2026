@@ -103,26 +103,71 @@
   gap: var(--space-2) var(--space-6);
 }
 
-.contact-section__supporting-actions a {
+.contact-section__social-link {
   display: inline-flex;
-  min-height: 2.75rem;
+  min-width: 10rem;
+  min-height: 3.75rem;
   align-items: center;
   gap: var(--space-2);
-  padding-block: var(--space-2);
-  border-bottom: 1px solid var(--color-border-strong);
-  color: var(--color-text-primary);
-  font-weight: 650;
+  justify-content: center;
+  padding: var(--space-3) var(--space-6);
+  border: 1px solid var(--social-border);
+  border-radius: 0.25rem;
+  color: var(--social-foreground);
+  background: var(--social-background);
+  font-size: 1.05rem;
+  font-weight: 700;
   text-decoration: none;
 }
 
-.contact-section__supporting-actions a:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent-hover);
+.contact-section__social-link:hover {
+  border-color: var(--social-hover);
+  color: var(--social-foreground);
+  background: var(--social-hover);
+}
+
+.contact-section__social-link--linkedin {
+  --social-background: #0a66c2;
+  --social-border: #0a66c2;
+  --social-foreground: #ffffff;
+  --social-hover: #004182;
+}
+
+.contact-section__social-link--github {
+  --social-background: #24292f;
+  --social-border: #24292f;
+  --social-foreground: #ffffff;
+  --social-hover: #0d1117;
+}
+
+[data-theme='dark'] .contact-section__social-link--github {
+  --social-background: #f0f6fc;
+  --social-border: #f0f6fc;
+  --social-foreground: #0d1117;
+  --social-hover: #ffffff;
+}
+
+.contact-section__linkedin-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.08em;
+  font-size: 1.15em;
+  letter-spacing: -0.025em;
+}
+
+.contact-section__linkedin-wordmark span:last-child {
+  padding: 0.02em 0.14em 0.08em;
+  border-radius: 0.1em;
+  color: #0a66c2;
+  background: #ffffff;
+  font-size: 0.88em;
+  line-height: 1;
+  letter-spacing: -0.05em;
 }
 
 .contact-section__supporting-actions svg {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
   flex: 0 0 auto;
   fill: currentColor;
 }

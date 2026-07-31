@@ -70,12 +70,28 @@ function ContactSection() {
               ({ external, href, id, label }) => (
                 <a
                   key={id}
+                  className={`contact-section__social-link contact-section__social-link--${id}`}
                   href={href}
                   target={external ? '_blank' : undefined}
                   rel={external ? 'noopener noreferrer' : undefined}
                 >
-                  <BrandIcon brand={id} />
-                  {label}
+                  {id === 'linkedin' ? (
+                    <>
+                      <span
+                        className="contact-section__linkedin-wordmark"
+                        aria-hidden="true"
+                      >
+                        <span>Linked</span>
+                        <span>in</span>
+                      </span>
+                      <span className="visually-hidden">{label}</span>
+                    </>
+                  ) : (
+                    <>
+                      <BrandIcon brand={id} />
+                      <span>{label}</span>
+                    </>
+                  )}
                   {external && (
                     <span className="visually-hidden">
                       {' '}
