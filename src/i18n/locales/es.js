@@ -629,7 +629,7 @@ const es = {
       introduction:
         'Abierto a oportunidades, trabajo en software empresarial y conversaciones sobre integración de sistemas e ingeniería aumentada por IA.',
       availability:
-        'Con base en Buenos Aires, disponible para trabajo remoto e internacional. El correo electrónico es la mejor manera de iniciar una conversación.',
+        'Con base en Buenos Aires, disponible para trabajar presencialmente a nivel local o remoto internacional. El correo electrónico es la mejor manera de iniciar una conversación.',
     },
     links: en.contact.links.map((link) => ({
       ...link,

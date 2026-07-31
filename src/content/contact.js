@@ -4,7 +4,7 @@ export const contactContent = {
   introduction:
     'I am open to opportunities involving enterprise applications, system integration, and AI-augmented engineering.',
   availability:
-    'Based in Buenos Aires, Argentina, I am available for remote collaboration and international projects. For professional enquiries, email is the best way to reach me.',
+    'Based in Buenos Aires, Argentina, I am available for local on-site work or international remote work. For professional enquiries, email is the best way to reach me.',
 }
 
 export const contactLinks = [

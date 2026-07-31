@@ -585,7 +585,7 @@ const fr = {
       introduction:
         'Ouvert aux opportunités liées aux applications d’entreprise, à l’intégration de systèmes et à l’ingénierie augmentée par l’IA.',
       availability:
-        'Basé à Buenos Aires, en Argentine, je suis disponible pour des collaborations à distance et des projets internationaux. Pour toute demande professionnelle, le courriel est le meilleur moyen de me contacter.',
+        'Basé à Buenos Aires, en Argentine, je suis disponible pour un travail local en présentiel ou un travail à distance à l’international. Pour toute demande professionnelle, le courriel est le meilleur moyen de me contacter.',
     },
     links: en.contact.links.map((link) => ({
       ...link,
