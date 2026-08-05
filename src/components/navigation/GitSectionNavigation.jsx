@@ -1,51 +1,118 @@
 import { navigationItems } from '../../content/navigation.js'
 import useTranslation from '../../i18n/useTranslation.js'
 
+const purpleToLanguagesPath = 'M12 16C12 30 32 30 32 48V80'
+const redToEndpointPath = 'M32 80C32 94 52 94 52 112V208C52 228 32 220 32 240'
+
 const branchPaths = {
-  blue: 'M32 16C32 30 12 30 12 48V208C12 228 32 220 32 240',
-  coral: 'M32 16V272',
-  purple: 'M32 16C32 30 52 30 52 48V248C52 262 32 258 32 272',
+  blue: 'M12 16V304',
+  purple: `${purpleToLanguagesPath}V240C32 260 12 252 12 272`,
+  coral: redToEndpointPath,
 }
 
 const nodeLanesBySection = {
-  home: ['origin'],
+  home: ['blue'],
   experience: ['coral'],
-  technologies: ['blue'],
+  technologies: ['coral'],
   projects: ['coral'],
-  'ai-workflow': ['purple'],
-  education: ['blue'],
+  'ai-workflow': ['coral'],
+  education: ['purple'],
+  languages: ['purple'],
   endpoint: ['purple'],
-  about: ['coral'],
-  contact: ['merge'],
+  about: ['blue'],
+  contact: ['blue'],
 }
 
 const activePathsBySection = {
   experience: [
-    { branch: 'coral', path: 'M32 16V48' },
+    { branch: 'purple', path: purpleToLanguagesPath },
+    { branch: 'coral', path: 'M32 80C32 94 52 94 52 112' },
   ],
   technologies: [
-    { branch: 'blue', path: 'M32 16C32 30 12 30 12 48V80' },
+    { branch: 'purple', path: purpleToLanguagesPath },
+    { branch: 'coral', path: 'M32 80C32 94 52 94 52 112V144' },
   ],
   projects: [
-    { branch: 'coral', path: 'M32 16V112' },
+    { branch: 'purple', path: purpleToLanguagesPath },
+    { branch: 'coral', path: 'M32 80C32 94 52 94 52 112V176' },
   ],
   'ai-workflow': [
-    { branch: 'purple', path: 'M32 16C32 30 52 30 52 48V144' },
+    { branch: 'purple', path: purpleToLanguagesPath },
+    { branch: 'coral', path: 'M32 80C32 94 52 94 52 112V208' },
   ],
   education: [
-    { branch: 'blue', path: 'M32 16C32 30 12 30 12 48V176' },
+    { branch: 'purple', path: 'M12 16C12 30 32 30 32 48' },
+  ],
+  languages: [
+    { branch: 'purple', path: purpleToLanguagesPath },
   ],
   endpoint: [
-    { branch: 'purple', path: 'M32 16C32 30 52 30 52 48V208' },
+    { branch: 'purple', path: `${purpleToLanguagesPath}V240` },
+    { branch: 'coral', path: redToEndpointPath },
   ],
   about: [
-    { branch: 'blue', path: branchPaths.blue },
-    { branch: 'coral', path: 'M32 16V240' },
+    { branch: 'blue', path: 'M12 16V272' },
+    { branch: 'purple', path: branchPaths.purple },
+    { branch: 'coral', path: redToEndpointPath },
   ],
   contact: [
-    { branch: 'coral', path: branchPaths.coral },
+    { branch: 'blue', path: branchPaths.blue },
     { branch: 'purple', path: branchPaths.purple },
+    { branch: 'coral', path: redToEndpointPath },
   ],
+}
+
+const activeNodeIdsBySection = {
+  home: ['home'],
+  education: ['home', 'education'],
+  languages: ['home', 'education', 'languages'],
+  experience: ['home', 'education', 'languages', 'experience'],
+  technologies: [
+    'home',
+    'education',
+    'languages',
+    'experience',
+    'technologies',
+  ],
+  projects: [
+    'home',
+    'education',
+    'languages',
+    'experience',
+    'technologies',
+    'projects',
+  ],
+  'ai-workflow': [
+    'home',
+    'education',
+    'languages',
+    'experience',
+    'technologies',
+    'projects',
+    'ai-workflow',
+  ],
+  endpoint: [
+    'home',
+    'education',
+    'languages',
+    'experience',
+    'technologies',
+    'projects',
+    'ai-workflow',
+    'endpoint',
+  ],
+  about: [
+    'home',
+    'education',
+    'languages',
+    'experience',
+    'technologies',
+    'projects',
+    'ai-workflow',
+    'endpoint',
+    'about',
+  ],
+  contact: navigationItems.map(({ id }) => id),
 }
 
 function GitSectionNavigation({
@@ -58,6 +125,7 @@ function GitSectionNavigation({
 }) {
   const { messages, t } = useTranslation()
   const activePaths = activePathsBySection[activeSectionId] ?? []
+  const activeNodeIds = new Set(activeNodeIdsBySection[activeSectionId] ?? [])
   const translatedItems = messages.navigation.items
 
   return (
@@ -70,7 +138,7 @@ function GitSectionNavigation({
       <div className="git-navigation__map">
         <svg
           className="git-navigation__graph"
-          viewBox="0 0 64 288"
+          viewBox="0 0 64 320"
           preserveAspectRatio="none"
           aria-hidden="true"
           focusable="false"
@@ -101,7 +169,9 @@ function GitSectionNavigation({
           {navigationItems.map(({ id }, index) => (
             <li key={id}>
               <a
-                className="git-navigation__link"
+                className={`git-navigation__link${
+                  activeNodeIds.has(id) ? ' git-navigation__link--history' : ''
+                }`}
                 href={`#${id}`}
                 aria-current={activeSectionId === id ? 'location' : undefined}
                 onClick={onNavigate}

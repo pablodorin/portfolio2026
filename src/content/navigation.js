@@ -2,8 +2,20 @@ export const navigationItems = [
   {
     id: 'home',
     label: 'Home',
-    branch: 'origin',
+    branch: 'blue',
     description: 'The portfolio introduction will be developed in a later phase.',
+  },
+  {
+    id: 'education',
+    label: 'Education',
+    branch: 'purple',
+    description: 'Approved education content is presented in this section.',
+  },
+  {
+    id: 'languages',
+    label: 'Languages',
+    branch: 'purple',
+    description: 'Languages used in professional and cultural contexts.',
   },
   {
     id: 'experience',
@@ -15,7 +27,7 @@ export const navigationItems = [
   {
     id: 'technologies',
     label: 'Technologies',
-    branch: 'blue',
+    branch: 'coral',
     description: 'The technology overview is reserved for a later content phase.',
   },
   {
@@ -27,33 +39,27 @@ export const navigationItems = [
   {
     id: 'ai-workflow',
     label: 'AI Workflow',
-    branch: 'purple',
+    branch: 'coral',
     description: 'This placeholder marks the future engineering workflow section.',
-  },
-  {
-    id: 'education',
-    label: 'Education',
-    branch: 'blue',
-    description: 'Approved education content is presented in this section.',
   },
   {
     id: 'endpoint',
     label: 'Endpoint Blog',
     sectionTitle: 'Endpoint Blog',
-    branch: 'blue-purple',
+    branch: 'purple',
     description:
       'Technical articles about software development, enterprise systems, integration, architecture, and responsible AI use.',
   },
   {
     id: 'about',
     label: 'About Me',
-    branch: 'blue-merge',
+    branch: 'blue',
     description: 'The personal introduction will be developed in a later phase.',
   },
   {
     id: 'contact',
     label: 'Contact',
-    branch: 'merge',
+    branch: 'blue',
     description: 'Approved professional contact options will be added later.',
   },
 ]

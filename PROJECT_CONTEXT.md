@@ -223,14 +223,15 @@ localized static pages.
 Desktop navigation:
 
 1. Home
-2. Experience
-3. Technologies
-4. Projects
-5. AI Workflow
-6. Education
-7. Endpoint
-8. About Me
-9. Contact
+2. Education
+3. Languages
+4. Experience
+5. Technologies
+6. Projects
+7. AI Workflow
+8. Endpoint
+9. About Me
+10. Contact
 
 Desktop behaviour:
 
@@ -279,7 +280,7 @@ Primary actions:
 The hero should use a clean editorial background without Git-history
 decoration.
 
-### 2. Experience
+### 4. Experience
 
 Professional experience presented chronologically.
 
@@ -314,7 +315,7 @@ It should emphasize:
 - performance;
 - professional context.
 
-### 3. Technologies
+### 5. Technologies
 
 Technologies must be grouped by professional relevance.
 
@@ -366,7 +367,7 @@ Do not use:
 - star ratings;
 - beginner/intermediate/expert labels.
 
-### 6. Education
+### 2. Education
 
 The main Education section will use only approved information from
 `CONTENT_MASTER.md`:
@@ -381,7 +382,7 @@ The main Education section will use only approved information from
 - Metropolitan University for Education and Work (UMET) — Economics,
   2017–2018; degree not completed.
 
-### 4. Projects
+### 6. Projects
 
 Current showcase order:
 
@@ -445,7 +446,7 @@ Each project should eventually present:
 - current status;
 - AI usage when relevant.
 
-### 5. AI Workflow
+### 7. AI Workflow
 
 This is a central section of the portfolio.
 
@@ -484,7 +485,19 @@ Do not present AI tools as programming languages or frameworks.
 
 Do not present Pablo as an AI Engineer.
 
-### 8. About Me
+### 3. Languages
+
+The standalone Languages section presents current human-language proficiency:
+
+- Spanish: native;
+- English: full professional proficiency and suitable for fluent work in
+  English-speaking professional teams;
+- French: limited working proficiency and actively improving through continued
+  study and practice.
+
+Do not use percentages, progress bars, or unsupported fluency claims.
+
+### 9. About Me
 
 This section should humanize the professional profile without becoming a
 complete autobiography.
@@ -502,12 +515,6 @@ Possible connections:
 - patience;
 - self-control;
 - continuous improvement.
-
-#### Languages and culture
-
-- Spanish: native;
-- English: full professional proficiency;
-- French: limited working proficiency and actively improving.
 
 #### Psychology and human behaviour
 
@@ -533,7 +540,7 @@ Possible connections:
 
 Do not include private, financial, medical, or sensitive information.
 
-### 7. Endpoint
+### 8. Endpoint
 
 Blog name:
 
@@ -608,7 +615,7 @@ The required Back destinations are `https://pablodorin.com/#endpoint`,
 `https://pablodorin.com/es/#endpoint`, and
 `https://pablodorin.com/fr/#endpoint`.
 
-### 9. Contact
+### 10. Contact
 
 The contact section may include:
 
@@ -681,15 +688,20 @@ They represent:
 Their primary use is an accessible desktop navigation graph that connects
 portfolio sections through branching and merging paths.
 
-The graph begins at Home and uses three colored paths:
+The graph uses three connected paths:
 
-- blue: nodes at Technologies and Education, converging with the coral path at
-  About Me;
-- coral: nodes at Experience and Projects, converging at Contact;
-- purple: nodes at AI Workflow and Endpoint, converging at Contact;
-- About Me: a coral node at the blue-to-coral convergence.
+- blue is the straight main path on the left, representing personal identity,
+  with nodes at Home, About Me, and Contact;
+- purple is the central path, representing education and expression, with
+  nodes at Education, Languages, and Endpoint;
+- coral is the work path on the right. It branches from Languages, passes
+  through Experience, Technologies, Projects, and AI Workflow, and merges into
+  purple at Endpoint;
+- purple merges into the blue main path at About Me.
 
-Endpoint is a purple node only. Contact is the final coral and purple merge.
+Selecting a node highlights every path segment and prior node that contributes
+to it. Endpoint therefore includes Home, Education, Languages, and the complete
+work branch. About Me and Contact include the complete history of all paths.
 
 The mobile navigation uses the same Git-history topology inside a compact,
 collapsible, and accessible menu. Labels remain explicit, so the graph is not

@@ -7,6 +7,7 @@ import EducationSection from '../sections/EducationSection.jsx'
 import EndpointSection from '../sections/EndpointSection.jsx'
 import ExperienceSection from '../sections/ExperienceSection.jsx'
 import HomeSection from '../sections/HomeSection.jsx'
+import LanguagesSection from '../sections/LanguagesSection.jsx'
 import ProjectsSection from '../sections/ProjectsSection.jsx'
 import SectionPlaceholder from '../sections/SectionPlaceholder.jsx'
 import TechnologiesSection from '../sections/TechnologiesSection.jsx'
@@ -18,14 +19,17 @@ function App() {
   return (
     <PortfolioLayout>
       <HomeSection />
-      <ExperienceSection />
-      {navigationItems.slice(2).map((section) =>
-        section.id === 'technologies' ? (
+      {navigationItems.slice(1).map((section) =>
+        section.id === 'experience' ? (
+          <ExperienceSection key={section.id} />
+        ) : section.id === 'technologies' ? (
           <TechnologiesSection key={section.id} />
         ) : section.id === 'projects' ? (
           <ProjectsSection key={section.id} />
         ) : section.id === 'education' ? (
           <EducationSection key={section.id} />
+        ) : section.id === 'languages' ? (
+          <LanguagesSection key={section.id} />
         ) : section.id === 'endpoint' ? (
           <EndpointSection key={section.id} />
         ) : section.id === 'ai-workflow' ? (

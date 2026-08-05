@@ -86,6 +86,12 @@ const en = {
       selectedContributionsSummary: 'Selected contributions.',
       summary: 'Summary.',
       technologiesLabel: 'Technologies and practices',
+      workingLanguages: 'Working languages',
+      languageNames: {
+        es: 'Spanish',
+        en: 'English',
+        fr: 'French',
+      },
     },
   },
   technologies: {
@@ -148,6 +154,24 @@ const en = {
       distinctionAccessibleLabel:
         'International Visitor Leadership Program',
     },
+  },
+  languages: {
+    title: 'Languages',
+    introduction:
+      'Languages used across professional collaboration, international work, and continued cultural learning.',
+    items: [
+      { language: 'Spanish', level: 'Native' },
+      {
+        language: 'English',
+        level: 'Full professional proficiency',
+        detail: 'Fluent collaboration in English-speaking professional teams.',
+      },
+      {
+        language: 'French',
+        level: 'Limited working proficiency',
+        detail: 'Actively improving through continued study and practice.',
+      },
+    ],
   },
   endpointBlog: {
     label: 'Technical writing',

@@ -7,6 +7,7 @@ export const experienceItems = [
     dates: 'August 2025 – January 2026',
     location: 'Madrid, Spain',
     context: 'International financial-services environment',
+    workingLanguages: ['en', 'es', 'fr'],
     description:
       'Contributed to a greenfield insurance platform in an English-speaking international engineering environment, collaborating with teams across Spain, France, and Germany.',
     contributions: [
@@ -33,6 +34,7 @@ export const experienceItems = [
     location: 'Buenos Aires, Argentina',
     context:
       'Enterprise technology services, architecture, coordination, support, and process improvement',
+    workingLanguages: ['es', 'en'],
     description:
       'Focused primarily on software architecture and technical coordination rather than daily Java application development, working with project managers, technical teams, and internal stakeholders.',
     contributions: [
@@ -60,6 +62,7 @@ export const experienceItems = [
     dates: 'March 2023 – September 2023',
     location: 'La Plata, Buenos Aires Province, Argentina',
     context: 'Public-sector electronic document-management platform',
+    workingLanguages: ['es'],
     description:
       'During a consulting engagement alongside the Kyndryl role, contributed analysis and diagnostic work for the GDEBA electronic document-management platform, including integrations with national and provincial government systems.',
     contributions: [
@@ -85,6 +88,7 @@ export const experienceItems = [
     dates: 'March 2021 – June 2022',
     location: 'Buenos Aires, Argentina',
     context: 'E-commerce and internal management applications',
+    workingLanguages: ['es'],
     description:
       'Alongside the IBM and later Kyndryl roles, worked primarily on PHP and MySQL backend development for proprietary e-commerce and internal management applications.',
     contributions: [
@@ -111,6 +115,7 @@ export const experienceItems = [
     location: 'Buenos Aires, Argentina',
     context:
       'Career progression from software packaging to Java engineering and software architecture',
+    workingLanguages: ['es', 'en'],
     description:
       'Responsibilities evolved across the fourteen-year period, beginning with software-packaging coordination and architecture before transitioning into Java development, senior software engineering, and software architecture.',
     contributions: [

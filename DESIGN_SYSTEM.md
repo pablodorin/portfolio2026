@@ -425,14 +425,15 @@ The desktop navigation should feel like a professional index.
 Suggested format:
 
 - 01 — Home
-- 02 — Experience
-- 03 — Technologies
-- 04 — Projects
-- 05 — AI Workflow
-- 06 — Education
-- 07 — Endpoint
-- 08 — About Me
-- 09 — Contact
+- 02 — Education
+- 03 — Languages
+- 04 — Experience
+- 05 — Technologies
+- 06 — Projects
+- 07 — AI Workflow
+- 08 — Endpoint
+- 09 — About Me
+- 10 — Contact
 
 The active item should use:
 
@@ -512,15 +513,18 @@ Primary location:
 
 - an accessible desktop navigation graph connecting the portfolio sections.
 
-The desktop graph uses three colored paths after the Home commit:
+The desktop graph uses three connected paths:
 
-- blue: Technologies and Education, converging with coral at About Me;
-- coral: Experience and Projects, converging at Contact;
-- purple: AI Workflow and Endpoint, converging at Contact;
-- About Me: a coral node at the blue-to-coral convergence.
+- blue is the straight main path on the left through Home, About Me, and
+  Contact;
+- purple is the central path through Education, Languages, and Endpoint;
+- coral is the work path on the right, branching from Languages, passing
+  through Experience, Technologies, Projects, and AI Workflow, and merging at
+  Endpoint;
+- purple merges into the blue main path at About Me.
 
-Endpoint carries only a purple node. Contact is the final coral and purple
-merge.
+The active history includes every path segment and node that contributes to the
+selected commit. Parallel commits that do not lead to that commit remain muted.
 
 The Home hero should retain a clean editorial background. Mobile navigation
 may reuse the Git-history topology inside its accessible collapsible panel.

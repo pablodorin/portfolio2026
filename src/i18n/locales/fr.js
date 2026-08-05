@@ -7,6 +7,7 @@ const navigationCopy = {
   projects: ['Projets', 'Sélection de projets et travaux d’ingénierie.'],
   'ai-workflow': ['AI Workflow', 'Une approche responsable de l’ingénierie augmentée par l’IA.'],
   education: ['Formation', 'Formation académique et distinction internationale.'],
+  languages: ['Langues', 'Langues utilisées dans des contextes professionnels et culturels.'],
   endpoint: ['Endpoint Blog', 'Articles techniques et notes éditoriales.'],
   about: ['À propos', 'Des centres d’intérêt qui complètent la pratique professionnelle.'],
   contact: ['Contact', 'Moyens d’entamer une conversation professionnelle.'],
@@ -349,6 +350,12 @@ const fr = {
       selectedContributionsSummary: 'Contributions sélectionnées.',
       summary: 'Résumé.',
       technologiesLabel: 'Technologies et pratiques',
+      workingLanguages: 'Langues de travail',
+      languageNames: {
+        es: 'Espagnol',
+        en: 'Anglais',
+        fr: 'Français',
+      },
     },
   },
   technologies: {
@@ -510,6 +517,24 @@ const fr = {
       distinctionAccessibleLabel:
         'Programme de leadership pour les visiteurs internationaux',
     },
+  },
+  languages: {
+    title: 'Langues',
+    introduction:
+      'Langues utilisées dans la collaboration professionnelle, le travail international et l’apprentissage culturel continu.',
+    items: [
+      { language: 'Espagnol', level: 'Langue maternelle' },
+      {
+        language: 'Anglais',
+        level: 'Compétence professionnelle complète',
+        detail: 'Collaboration fluide au sein d’équipes professionnelles anglophones.',
+      },
+      {
+        language: 'Français',
+        level: 'Compétence professionnelle limitée',
+        detail: 'En progrès grâce à une étude et une pratique continues.',
+      },
+    ],
   },
   endpointBlog: {
     ...en.endpointBlog,

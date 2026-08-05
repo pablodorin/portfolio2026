@@ -25,6 +25,10 @@ const navigationCopy = {
     label: 'Educación',
     description: 'Formación académica y distinción internacional.',
   },
+  languages: {
+    label: 'Idiomas',
+    description: 'Idiomas utilizados en contextos profesionales y culturales.',
+  },
   endpoint: {
     label: 'Endpoint Blog',
     description: 'Artículos técnicos y notas editoriales.',
@@ -394,6 +398,12 @@ const es = {
       selectedContributionsSummary: 'Contribuciones seleccionadas.',
       summary: 'Resumen.',
       technologiesLabel: 'Tecnologías y prácticas',
+      workingLanguages: 'Idiomas de trabajo',
+      languageNames: {
+        es: 'Español',
+        en: 'Inglés',
+        fr: 'Francés',
+      },
     },
   },
   technologies: {
@@ -556,6 +566,24 @@ const es = {
       distinctionAccessibleLabel:
         'Programa de Liderazgo para Visitantes Internacionales',
     },
+  },
+  languages: {
+    title: 'Idiomas',
+    introduction:
+      'Idiomas utilizados en la colaboración profesional, el trabajo internacional y el aprendizaje cultural continuo.',
+    items: [
+      { language: 'Español', level: 'Nativo' },
+      {
+        language: 'Inglés',
+        level: 'Competencia profesional completa',
+        detail: 'Trabajo fluido en equipos profesionales angloparlantes.',
+      },
+      {
+        language: 'Francés',
+        level: 'Competencia laboral limitada',
+        detail: 'En perfeccionamiento mediante estudio y práctica continuos.',
+      },
+    ],
   },
   endpointBlog: {
     ...en.endpointBlog,

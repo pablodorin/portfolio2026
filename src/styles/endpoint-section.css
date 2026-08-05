@@ -295,23 +295,128 @@
 
 }
 
-@media (max-width: 30rem) {
-  .endpoint-carousel__controls button span:not([aria-hidden='true']) {
-    position: absolute;
-    width: 1px;
-    height: 1px;
+@media (max-width: 63.99rem) {
+  .endpoint-section {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    height: calc(100svh - var(--mobile-header-height) - 1px);
+    min-height: calc(100svh - var(--mobile-header-height) - 1px);
+    padding-block: var(--space-1);
     overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
+  }
+
+  .endpoint-section__header {
+    gap: 0.125rem;
+    margin-bottom: var(--space-1);
+  }
+
+  .endpoint-section__label {
+    font-size: 0.5rem;
+  }
+
+  .endpoint-section h2 {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+    line-height: 1;
+  }
+
+  .endpoint-section__tagline {
+    font-size: 0.6875rem;
+    line-height: 1.1;
+  }
+
+  .endpoint-section__introduction {
+    margin-top: 0;
+    font-size: 0.5625rem;
+    line-height: 1.15;
+  }
+
+  .endpoint-carousel {
+    gap: 0.125rem;
   }
 
   .endpoint-carousel__toolbar {
-    justify-content: stretch;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    gap: var(--space-1);
+  }
+
+  .endpoint-carousel__toolbar label {
+    font-size: 0.5625rem;
   }
 
   .endpoint-carousel__toolbar select {
-    flex: 1;
-    min-width: 0;
+    min-height: 1.5rem;
+    padding: 0 var(--space-1);
+    font-size: 0.5625rem;
+  }
+
+  .endpoint-card__link {
+    grid-template-rows: repeat(5, auto);
+    align-content: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .endpoint-card__meta {
+    font-size: 0.75rem;
+  }
+
+  .endpoint-card__kicker {
+    font-size: 0.75rem;
+    line-height: 1.25;
+  }
+
+  .endpoint-card h3 {
+    font-size: 1.3rem;
+    line-height: 1.15;
+  }
+
+  .endpoint-card__copete {
+    overflow: visible;
+    font-size: 0.9rem;
+    line-height: 1.35;
+  }
+
+  .endpoint-card__technologies {
+    display: flex;
+    gap: 0.125rem;
+  }
+
+  .endpoint-card__technologies li {
+    padding: 0.1875rem 0.4375rem;
+    font-size: 0.65rem;
+    line-height: 1.25;
+  }
+
+  .endpoint-carousel__controls button,
+  .endpoint-carousel__indicators button {
+    min-height: 1.5rem;
+  }
+
+  .endpoint-carousel__controls button {
+    justify-content: center;
+    gap: var(--space-1);
+    padding: 0 var(--space-1);
+    font-size: 0.5rem;
+  }
+
+  .endpoint-carousel__controls button:last-child {
+    justify-content: center;
+  }
+
+  .endpoint-carousel__controls p {
+    min-width: 2.5rem;
+    font-size: 0.5625rem;
+  }
+
+  .endpoint-carousel__indicators {
+    gap: 0.125rem;
+  }
+
+  .endpoint-carousel__indicators button {
+    min-width: 1.5rem;
+    padding: 0;
+    font-size: 0.5rem;
   }
 }
 

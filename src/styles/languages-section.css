@@ -1,0 +1,118 @@
+.languages-section {
+  display: grid;
+  align-content: center;
+  gap: clamp(var(--space-8), 7vw, var(--space-16));
+  min-height: calc(
+    100svh - var(--mobile-header-height) - 1px - var(--space-3)
+  );
+  padding-block: clamp(var(--space-8), 7vw, var(--space-16));
+  border-bottom: 1px solid var(--color-border);
+}
+
+.languages-section__header {
+  display: grid;
+  gap: var(--space-3);
+  max-width: 46rem;
+}
+
+.languages-section h2 {
+  font-size: clamp(2.25rem, 8vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.languages-section__header p {
+  max-width: 62ch;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.languages-list {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.language-entry {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  border-top: 0.1875rem solid var(--color-git-blue);
+  background: var(--color-surface-muted);
+}
+
+.language-entry dt {
+  color: var(--color-heading-primary);
+  font-size: clamp(1.35rem, 4vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.language-entry dd {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.language-entry dd strong {
+  color: var(--color-heading-secondary);
+  font-weight: 650;
+}
+
+@media (min-width: 48rem) {
+  .languages-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64rem) {
+  .languages-section {
+    min-height: 100svh;
+  }
+}
+
+@media (max-width: 30rem) {
+  .languages-section {
+    align-content: center;
+    gap: var(--space-3);
+    height: calc(100svh - var(--mobile-header-height) - 1px);
+    min-height: calc(100svh - var(--mobile-header-height) - 1px);
+    padding-block: var(--space-3);
+  }
+
+  .languages-section h2 {
+    font-size: clamp(2rem, 10vw, 2.5rem);
+  }
+
+  .languages-section__header {
+    gap: 0;
+  }
+
+  .languages-section__header p {
+    display: none;
+  }
+
+  .languages-list {
+    grid-template-rows: repeat(3, 5.5rem);
+    gap: var(--space-3);
+  }
+
+  .language-entry {
+    grid-template-columns: minmax(4.75rem, 0.65fr) minmax(0, 1.35fr);
+    align-items: center;
+    gap: var(--space-2);
+    height: 100%;
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .language-entry dt {
+    font-size: 1rem;
+  }
+
+  .language-entry dd {
+    gap: 0;
+    font-size: 0.75rem;
+    line-height: 1.25;
+  }
+}

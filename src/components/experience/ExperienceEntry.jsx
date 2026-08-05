@@ -19,6 +19,7 @@ function ExperienceEntry({ experience }) {
     mobileSummary,
     role,
     technologies,
+    workingLanguages,
   } = experience
   const officialUrl = officialLinks.organizations[id]
 
@@ -49,6 +50,16 @@ function ExperienceEntry({ experience }) {
         </h3>
         <p className="experience-entry__role">{role}</p>
         <p className="experience-entry__context">{context}</p>
+        {workingLanguages?.length > 0 && (
+          <div className="experience-entry__languages">
+            <p>{labels.workingLanguages}</p>
+            <ul aria-label={labels.workingLanguages}>
+              {workingLanguages.map((language) => (
+                <li key={language}>{labels.languageNames[language]}</li>
+              ))}
+            </ul>
+          </div>
+        )}
         <p className="experience-entry__description">{description}</p>
 
         {mobileSummary && (

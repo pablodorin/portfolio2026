@@ -236,6 +236,10 @@ Location:
 
 Madrid, Spain
 
+Working languages:
+
+English, Spanish, and French
+
 Professional context:
 
 International financial-services environment.
@@ -302,6 +306,10 @@ September 2021 – May 2025
 Location:
 
 Buenos Aires, Argentina
+
+Working languages:
+
+Spanish and English
 
 Professional context:
 
@@ -378,6 +386,10 @@ Location:
 
 La Plata, Buenos Aires Province, Argentina
 
+Working language:
+
+Spanish
+
 Employment context:
 
 Concurrent consulting engagement alongside Kyndryl.
@@ -445,6 +457,10 @@ Location:
 
 Buenos Aires, Argentina
 
+Working language:
+
+Spanish
+
 Employment context:
 
 Concurrent role alongside IBM and later Kyndryl.
@@ -507,6 +523,10 @@ December 2007 – August 2021
 Location:
 
 Buenos Aires, Argentina
+
+Working languages:
+
+Spanish and English
 
 Professional progression:
 
