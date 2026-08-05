@@ -16,7 +16,7 @@ applications, system integration, and AI-augmented engineering.
 - Professional Experience, Technologies, Projects, AI Workflow, Education,
   Endpoint Blog, About Me, and Contact sections.
 - Four-position accessible Projects carousel with no autoplay.
-- Five Endpoint articles published in three languages through fifteen generated
+- Six Endpoint articles published in three languages through eighteen generated
   static article pages.
 - Downloadable English CV and verified professional links.
 - Local institution assets, responsive layouts, and reduced-motion support.

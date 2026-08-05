@@ -338,6 +338,7 @@ for (const [id, translations] of groups) {
           title: translation.title,
           copete: translation.copete,
           bajada: translation.bajada,
+          disclosure: translation.disclosure,
           sections: translation.sections,
           language,
           path: routePath,

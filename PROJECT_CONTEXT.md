@@ -181,10 +181,11 @@ Implemented navigation structure:
 - `/fr/`
 
 The main portfolio language URLs are static and compatible with GitHub Pages.
-Endpoint publishes five complete articles in Spanish, English, and French
-through fifteen generated static article URLs. Spanish is the editorial source
-language. Markdown sources are grouped by publication year and article; the
-build generates route documents, metadata, navigation, and the sitemap.
+Endpoint publishes six complete articles in Spanish, English, and French
+through eighteen generated static article URLs. Spanish is the usual editorial
+source language; article 06 was written originally in English. Markdown sources
+are grouped by publication year and article; the build generates route
+documents, metadata, navigation, and the sitemap.
 
 ## Themes
 
@@ -214,7 +215,7 @@ editorial showcase carousel. Professional Portfolio 2026 is the live and
 evolving Project 01, JS1 is the planned Project 02, and Projects 03–04 remain
 explicitly undefined. The carousel has no autoplay, uses circular navigation,
 and exposes verified live-site, repository, and case-study links only for
-Project 01. Endpoint Blog publishes five complete articles across fifteen
+Project 01. Endpoint Blog publishes six complete articles across eighteen
 localized static pages.
 
 ## Main navigation

@@ -6,6 +6,38 @@ import useTheme from '../../hooks/useTheme.js'
 import useTranslation from '../../i18n/useTranslation.js'
 import ThemeToggle from '../ui/ThemeToggle.jsx'
 
+function renderInlineMarkdown(text) {
+  const pattern = /(\[([^\]]+)\]\((https?:\/\/[^)]+)\)|\*\*([^*]+)\*\*|\*([^*]+)\*)/gu
+  const content = []
+  let lastIndex = 0
+
+  for (const match of text.matchAll(pattern)) {
+    if (match.index > lastIndex) {
+      content.push(text.slice(lastIndex, match.index))
+    }
+
+    if (match[2] && match[3]) {
+      content.push(
+        <a key={`${match.index}-${match[3]}`} href={match[3]}>
+          {match[2]}
+        </a>,
+      )
+    } else if (match[4]) {
+      content.push(<strong key={match.index}>{match[4]}</strong>)
+    } else if (match[5]) {
+      content.push(<em key={match.index}>{match[5]}</em>)
+    }
+
+    lastIndex = match.index + match[0].length
+  }
+
+  if (lastIndex < text.length) {
+    content.push(text.slice(lastIndex))
+  }
+
+  return content
+}
+
 function ArticlePage({ article, language, translation }) {
   const { messages } = useTranslation()
   const { theme, toggleTheme } = useTheme()
@@ -65,14 +97,16 @@ function ArticlePage({ article, language, translation }) {
             <time className="article-date" dateTime={article.datePublished}>
               {formatArticleDate(article.datePublished, language)}
             </time>
-            <p className="article-disclosure">{labels.disclosure}</p>
+            <p className="article-disclosure">
+              {translation.disclosure ?? labels.disclosure}
+            </p>
           </header>
           <div className="article-body">
             {translation.sections.map(({ heading, paragraphs }) => (
               <section key={heading}>
                 <h2>{heading}</h2>
                 {paragraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+                  <p key={paragraph}>{renderInlineMarkdown(paragraph)}</p>
                 ))}
               </section>
             ))}
