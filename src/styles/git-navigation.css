@@ -170,7 +170,7 @@
 }
 
 .mobile-navigation.git-navigation {
-  --git-graph-width: clamp(7rem, 36vw, 9rem);
+  --git-graph-width: clamp(4.2rem, 21.6vw, 5.4rem);
   --git-nav-row-height: 3rem;
 
   display: grid;
@@ -180,7 +180,9 @@
 }
 
 .mobile-navigation .git-navigation__map {
+  width: min(calc(100% - var(--space-8)), 20rem);
   min-height: 0;
+  margin-inline: auto;
 }
 
 .mobile-navigation .git-navigation__list {
