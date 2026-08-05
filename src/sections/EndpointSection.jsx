@@ -9,7 +9,9 @@ function EndpointSection() {
   const [sortDirection, setSortDirection] = useState('newest')
   const [activeIndex, setActiveIndex] = useState(0)
 
-  const orderedArticles = [...articles].sort((articleA, articleB) => {
+  const orderedArticles = articles
+    .filter((article) => article.translations[language])
+    .sort((articleA, articleB) => {
     const dateComparison = articleA.datePublished.localeCompare(
       articleB.datePublished,
     )
@@ -17,7 +19,7 @@ function EndpointSection() {
     const comparison = dateComparison || orderComparison
 
     return sortDirection === 'oldest' ? comparison : -comparison
-  })
+    })
   const activeArticle = orderedArticles[activeIndex]
 
   function selectArticle(index) {

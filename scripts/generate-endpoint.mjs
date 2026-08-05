@@ -70,6 +70,84 @@ function parseFrontmatter(source, filePath) {
   return { metadata, body: match[2].trim() }
 }
 
+function editorialValue(source, pattern, field, filePath) {
+  const match = source.match(pattern)
+  if (!match) {
+    fail(`${filePath} is missing editorial field "${field}"`)
+  }
+  return match[1].trim()
+}
+
+function parseEditorialPackage(source, filePath) {
+  const article = source.match(
+    /<!-- ARTICLE_START -->([\s\S]*?)<!-- ARTICLE_END -->/u,
+  )
+  const body = article?.[1].split('<!-- CUERPO -->')[1]?.trim()
+  if (!body) {
+    fail(`${filePath} has no publishable ARTICLE_START/ARTICLE_END body`)
+  }
+
+  const tagsLine = source.match(/^- Etiquetas: (.+)$/mu)?.[1]
+  const tags = tagsLine
+    ? [...tagsLine.matchAll(/`([^`]+)`/gu)].map((match) => match[1])
+    : []
+  if (tags.length === 0) {
+    fail(`${filePath} is missing editorial field "tags"`)
+  }
+
+  return {
+    metadata: {
+      id: editorialValue(source, /^- ID: `([^`]+)`$/mu, 'id', filePath),
+      number: editorialValue(source, /^- N.mero: `([^`]+)`$/mu, 'number', filePath)
+        .toString()
+        .padStart(2, '0'),
+      datePublished: editorialValue(
+        source,
+        /^- Fecha: `([^`]+)`$/mu,
+        'datePublished',
+        filePath,
+      ),
+      tags,
+      language: editorialValue(
+        source,
+        /^- Idioma original: `([^`]+)`$/mu,
+        'language',
+        filePath,
+      ),
+      slug: editorialValue(source, /^- \*Slug\*: `([^`]+)`$/mu, 'slug', filePath),
+      kicker: editorialValue(
+        source,
+        /^- L.nea tem.tica: `([^`]+)`$/mu,
+        'kicker',
+        filePath,
+      ),
+      cardCopete: editorialValue(
+        source,
+        /^- Extracto de portada: `([^`]+)`$/mu,
+        'cardCopete',
+        filePath,
+      ),
+      title: editorialValue(source, /^- T.tulo: `([^`]+)`$/mu, 'title', filePath),
+      bajada: editorialValue(source, /^- Bajada: `([^`]+)`$/mu, 'bajada', filePath),
+      copete: editorialValue(source, /^- Copete: `([^`]+)`$/mu, 'copete', filePath),
+      disclosure: editorialValue(
+        source,
+        /^- Nota de idioma: `([^`]+)`$/mu,
+        'disclosure',
+        filePath,
+      ),
+      seoDescription: editorialValue(
+        source,
+        /^- Descripci.n SEO: `([^`]+)`$/mu,
+        'seoDescription',
+        filePath,
+      ),
+      richContent: true,
+    },
+    body: body.replaceAll('â€”', '-').replaceAll('—', '-'),
+  }
+}
+
 function parseSections(body, filePath) {
   const sections = []
   let current = null
@@ -96,6 +174,73 @@ function parseSections(body, filePath) {
   return sections
 }
 
+function parseRichSections(body, filePath) {
+  const sections = []
+  let section = null
+  let paragraph = []
+  let list = null
+
+  function flushParagraph() {
+    if (paragraph.length > 0) {
+      section.blocks.push({ type: 'paragraph', text: paragraph.join(' ') })
+      paragraph = []
+    }
+  }
+
+  function flushList() {
+    if (list) {
+      section.blocks.push(list)
+      list = null
+    }
+  }
+
+  for (const rawLine of body.split(/\r?\n/u)) {
+    const line = rawLine.trim()
+    const levelTwo = line.match(/^##\s+(.+)$/u)
+    const nestedHeading = line.match(/^(#{3,4})\s+(.+)$/u)
+    const unorderedItem = line.match(/^-\s+(.+)$/u)
+    const orderedItem = line.match(/^\d+\.\s+(.+)$/u)
+
+    if (levelTwo) {
+      flushParagraph()
+      flushList()
+      section = { heading: levelTwo[1].trim(), blocks: [] }
+      sections.push(section)
+    } else if (!section || !line || nestedHeading || unorderedItem || orderedItem) {
+      if (section) {
+        flushParagraph()
+        if (nestedHeading) {
+          flushList()
+          section.blocks.push({
+            type: 'heading',
+            level: nestedHeading[1].length,
+            text: nestedHeading[2].trim(),
+          })
+        } else if (unorderedItem || orderedItem) {
+          const ordered = Boolean(orderedItem)
+          if (!list || list.ordered !== ordered) {
+            flushList()
+            list = { type: 'list', ordered, items: [] }
+          }
+          list.items.push((unorderedItem ?? orderedItem)[1].trim())
+        } else {
+          flushList()
+        }
+      }
+    } else {
+      flushList()
+      paragraph.push(line)
+    }
+  }
+  flushParagraph()
+  flushList()
+
+  if (sections.length === 0 || sections.some(({ blocks }) => blocks.length === 0)) {
+    fail(`${filePath} must contain headings with publishable content`)
+  }
+  return sections
+}
+
 function countWords(value) {
   return value.trim().split(/\s+/u).filter(Boolean).length
 }
@@ -111,20 +256,23 @@ function escapeHtml(value) {
 function articleHtml(article, translation) {
   const language = translation.language
   const locale = localeMetadata[language]
+  const availableLanguages = Object.keys(article.translations)
   const alternates = Object.fromEntries(
-    languages.map((code) => [
+    availableLanguages.map((code) => [
       code,
       article.translations[code].canonicalUrl,
     ]),
   )
-  const description = escapeHtml(translation.cardCopete)
+  const description = escapeHtml(
+    translation.seoDescription ?? translation.cardCopete,
+  )
   const title = escapeHtml(translation.title)
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     '@id': `${translation.canonicalUrl}#article`,
     headline: translation.title,
-    description: translation.cardCopete,
+    description: translation.seoDescription ?? translation.cardCopete,
     url: translation.canonicalUrl,
     mainEntityOfPage: translation.canonicalUrl,
     datePublished: article.datePublished,
@@ -143,7 +291,7 @@ function articleHtml(article, translation) {
     keywords: article.tags,
     inLanguage: language,
   }
-  const alternateLinks = languages
+  const alternateLinks = availableLanguages
     .map(
       (code) =>
         `    <link rel="alternate" hreflang="${code}" href="${alternates[code]}" />`,
@@ -169,7 +317,7 @@ function articleHtml(article, translation) {
     <meta name="theme-color" content="#ffffff" />
     <link rel="canonical" href="${translation.canonicalUrl}" />
 ${alternateLinks}
-    <link rel="alternate" hreflang="x-default" href="${alternates.en}" />
+    <link rel="alternate" hreflang="x-default" href="${alternates.en ?? translation.canonicalUrl}" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>${title} | Endpoint</title>
     <meta property="og:type" content="article" />
@@ -233,7 +381,9 @@ async function clearGeneratedArticlePages() {
 const records = []
 for (const filePath of await markdownFiles(contentRoot)) {
   const source = await readFile(filePath, 'utf8')
-  const { metadata, body } = parseFrontmatter(source, filePath)
+  const { metadata, body } = source.startsWith('---')
+    ? parseFrontmatter(source, filePath)
+    : parseEditorialPackage(source, filePath)
   const required = [
     'id',
     'number',
@@ -272,7 +422,9 @@ for (const filePath of await markdownFiles(contentRoot)) {
 
   records.push({
     ...metadata,
-    sections: parseSections(body, filePath),
+    sections: metadata.richContent
+      ? parseRichSections(body, filePath)
+      : parseSections(body, filePath),
     filePath,
   })
 }
@@ -310,10 +462,8 @@ for (const [id, translations] of groups) {
   }
 
   const localized = Object.fromEntries(
-    languages.map((language) => {
-      const translation = translations.find(
-        (item) => item.language === language,
-      )
+    translations.map((translation) => {
+      const language = translation.language
       const routePath = `${languageRoots[language]}/${translation.slug}/`
       if (usedPaths.has(routePath)) {
         fail(`duplicate route "${routePath}"`)
@@ -323,9 +473,9 @@ for (const [id, translations] of groups) {
         translation.title,
         translation.copete,
         translation.bajada,
-        ...translation.sections.flatMap(({ heading, paragraphs }) => [
+        ...translation.sections.flatMap(({ heading, paragraphs, blocks }) => [
           heading,
-          ...paragraphs,
+          ...(paragraphs ?? blocks.flatMap((block) => block.items ?? block.text)),
         ]),
       ].join(' ')
 
@@ -339,6 +489,7 @@ for (const [id, translations] of groups) {
           copete: translation.copete,
           bajada: translation.bajada,
           disclosure: translation.disclosure,
+          seoDescription: translation.seoDescription,
           sections: translation.sections,
           language,
           path: routePath,
@@ -371,8 +522,7 @@ for (const [index, article] of articles.entries()) {
 
 await clearGeneratedArticlePages()
 for (const article of articles) {
-  for (const language of languages) {
-    const translation = article.translations[language]
+  for (const translation of Object.values(article.translations)) {
     const outputPath = path.join(
       projectRoot,
       translation.path.slice(1),
@@ -392,8 +542,8 @@ await writeFile(
 
 const staticUrls = ['/', '/es/', '/fr/']
 const articleUrls = articles.flatMap((article) =>
-  languages.map((language) => ({
-    path: article.translations[language].path,
+  Object.values(article.translations).map((translation) => ({
+    path: translation.path,
     lastmod: article.datePublished,
   })),
 )

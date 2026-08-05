@@ -213,7 +213,7 @@
 .experience-entry__languages li {
   padding: 0.1875rem var(--space-2);
   border: 1px solid var(--color-git-blue);
-  border-radius: 999px;
+  border-radius: 0.25rem;
   color: var(--color-heading-secondary);
   background: var(--color-accent-soft);
   font-size: 0.75rem;

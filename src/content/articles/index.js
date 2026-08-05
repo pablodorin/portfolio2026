@@ -12,14 +12,26 @@ export function getArticlePage(pathname) {
   const normalized = pathname.endsWith('/') ? pathname : `${pathname}/`
 
   for (const article of articles) {
-    for (const language of articleLanguages) {
-      if (article.translations[language].path === normalized) {
-        return { article, language, translation: article.translations[language] }
+    for (const [language, translation] of Object.entries(article.translations)) {
+      if (translation.path === normalized) {
+        return { article, language, translation }
       }
     }
   }
 
   return null
+}
+
+export function getAdjacentArticle(id, language, direction) {
+  const localizedArticles = articles.filter(
+    (article) => article.translations[language],
+  )
+  const currentIndex = localizedArticles.findIndex((article) => article.id === id)
+  const offset = direction === 'previous' ? -1 : 1
+
+  return localizedArticles[
+    (currentIndex + offset + localizedArticles.length) % localizedArticles.length
+  ]
 }
 
 export function formatArticleDate(date, language) {

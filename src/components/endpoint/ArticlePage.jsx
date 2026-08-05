@@ -1,6 +1,6 @@
 import {
   formatArticleDate,
-  getArticleById,
+  getAdjacentArticle,
 } from '../../content/articles/index.js'
 import useTheme from '../../hooks/useTheme.js'
 import useTranslation from '../../i18n/useTranslation.js'
@@ -38,12 +38,35 @@ function renderInlineMarkdown(text) {
   return content
 }
 
+function ArticleBlock({ block }) {
+  if (block.type === 'heading') {
+    return block.level === 4 ? (
+      <h4>{renderInlineMarkdown(block.text)}</h4>
+    ) : (
+      <h3>{renderInlineMarkdown(block.text)}</h3>
+    )
+  }
+
+  if (block.type === 'list') {
+    const List = block.ordered ? 'ol' : 'ul'
+    return (
+      <List>
+        {block.items.map((item) => (
+          <li key={item}>{renderInlineMarkdown(item)}</li>
+        ))}
+      </List>
+    )
+  }
+
+  return <p>{renderInlineMarkdown(block.text)}</p>
+}
+
 function ArticlePage({ article, language, translation }) {
   const { messages } = useTranslation()
   const { theme, toggleTheme } = useTheme()
   const labels = messages.endpointBlog.article
-  const previous = getArticleById(article.previousId)
-  const next = getArticleById(article.nextId)
+  const previous = getAdjacentArticle(article.id, language, 'previous')
+  const next = getAdjacentArticle(article.id, language, 'next')
 
   return (
     <div className="article-page">
@@ -102,12 +125,19 @@ function ArticlePage({ article, language, translation }) {
             </p>
           </header>
           <div className="article-body">
-            {translation.sections.map(({ heading, paragraphs }) => (
+            {translation.sections.map(({ heading, paragraphs, blocks }) => (
               <section key={heading}>
                 <h2>{heading}</h2>
-                {paragraphs.map((paragraph) => (
-                  <p key={paragraph}>{renderInlineMarkdown(paragraph)}</p>
-                ))}
+                {blocks
+                  ? blocks.map((block, index) => (
+                      <ArticleBlock
+                        key={`${block.type}-${block.text ?? block.items[0]}-${index}`}
+                        block={block}
+                      />
+                    ))
+                  : paragraphs.map((paragraph) => (
+                      <p key={paragraph}>{renderInlineMarkdown(paragraph)}</p>
+                    ))}
               </section>
             ))}
           </div>
