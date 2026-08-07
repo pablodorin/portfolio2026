@@ -11,21 +11,40 @@
     "build": "vite build",
     "prelint": "npm run generate:endpoint",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "jest --runInBand",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --runInBand",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run --browser chrome",
+    "test:e2e": "npm run build && start-server-and-test preview http://127.0.0.1:4173 cy:run",
+    "test:all": "npm run generate:endpoint && npm run lint && npm test && npm run test:coverage && npm run test:e2e"
   },
   "dependencies": {
     "react": "^19.2.7",
     "react-dom": "^19.2.7"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.29.7",
+    "@babel/preset-react": "^7.29.7",
     "@eslint/js": "^10.0.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.3",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.3",
+    "babel-jest": "^30.4.1",
+    "cypress": "^15.20.0",
+    "cypress-axe": "^1.7.0",
     "eslint": "^10.6.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.3",
     "globals": "^17.7.0",
+    "jest": "^30.4.2",
+    "jest-axe": "^11.0.0",
+    "jest-environment-jsdom": "^30.4.1",
+    "start-server-and-test": "^2.1.5",
     "vite": "^8.1.1"
   }
 }

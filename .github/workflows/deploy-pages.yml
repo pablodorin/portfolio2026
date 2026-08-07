@@ -36,11 +36,38 @@ jobs:
       - name: Install locked dependencies
         run: npm ci
 
+      - name: Generate Endpoint
+        run: npm run generate:endpoint
+
       - name: Lint
-        run: npm run lint
+        run: npm run lint -- --no-warn-ignored
+
+      - name: Test with Jest
+        run: npm test
+
+      - name: Enforce coverage thresholds
+        run: npm run test:coverage
 
       - name: Build
         run: npm run build
+
+      - name: Run Cypress in Chrome
+        uses: cypress-io/github-action@c65adadc3c1689f2a5b1079b56a1eaf4a7c60e1c # v7
+        with:
+          browser: chrome
+          install: false
+          start: npm run preview
+          wait-on: http://127.0.0.1:4173
+
+      - name: Preserve Cypress failure artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-failure-artifacts
+          path: |
+            cypress/screenshots
+            cypress/videos
+          if-no-files-found: ignore
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
